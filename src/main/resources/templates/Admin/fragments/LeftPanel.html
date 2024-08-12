@@ -1,0 +1,71 @@
+
+<aside id="left-panel" class="left-panel" th:fragment="leftpanel">
+    <nav class="navbar navbar-expand-sm navbar-default">
+
+        <div class="navbar-header">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="/admin"><img src="fe/img/logo.png" alt="Logo"></a>
+            <a class="navbar-brand hidden" href="/admin"><img src="fe/img/logo.png" alt="Logo"></a>
+        </div>
+
+        <div id="main-menu" class="main-menu collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    <a href="/admin"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
+                    <a href="/home"> <i class="menu-icon fa fa-home"></i>Back to Home </a>
+
+                </li>
+
+                <h3 class="menu-title">Actions</h3><!-- /.menu-title -->
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-film"></i>Movie</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-plus"></i><a href="/addMovie">Add</a></li>
+                        <li><i class="fa fa-wrench"></i><a href="/addMovie">Update</a></li>
+                        <li><i class="fa fa-search"></i><a href="/addMovie">Search</a></li>
+                        <li><i class="fa fa-trash"></i><a href="/addMovie">Delete</a></li>
+
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user-circle-o"></i>Customers</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-search"></i><a href="/userManage"> Search</a></li>
+                        <li><i class="fa fa-trash"></i><a href="/userManage"> Delete</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-video-camera"></i>Theatre</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-wrench"></i><a href="/theatre">Update</a></li>
+                        <li><i class="menu-icon fa fa-search"></i><a href="/theatre">Search</a></li>
+                        <li><i class="menu-icon fa fa-trash"></i><a href="/theatre">Delete</a></li>
+
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cutlery"></i>Snacks</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-plus"></i><a href="/snacks"> Add</a></li>
+                        <li><i class="fa fa-wrench"></i><a href="/snacks"> Update</a></li>
+                        <li><i class="fa fa-search"></i><a href="/snacks"> Search</a></li>
+                        <li><i class="fa fa-trash"></i><a href="/snacks"> Delete</a></li>
+                    </ul>
+                </li>
+
+                <h3 class="menu-title">Data Comings</h3><!-- /.menu-title -->
+
+                <li class="menu-item-has-children dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-table"></i><a href="/basicTable">Basic Table</a></li>
+                        <li><i class="fa fa-table"></i><a href="/dataTable">Data Table</a></li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+</aside>

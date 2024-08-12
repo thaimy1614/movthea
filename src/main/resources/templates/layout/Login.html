@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Login</title>
+	<link rel="stylesheet" href="loginStatic/css/style.css">
+	<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<section class="container forms">
+	<div class="form login">
+		<div class="form-content">
+			<header>Login</header>
+			<form th:action="@{/login}" method="post">
+				<div class="field input-field">
+					<input type="text" class="form-control" placeholder="UserName" name="username">
+				</div>
+
+				<div class="field input-field">
+					<input type="password" class="password" placeholder="Password" name="password">
+					<i class='bx bx-hide eye-icon'></i>
+				</div>
+
+				<div class="form-link">
+					<a href="#" class="forgot-pass">Forgot password?</a>
+				</div>
+
+				<div class="field button-field">
+					<button type="submit">Login</button>
+				</div>
+			</form>
+
+			<div class="form-link">
+				<span>Don't have an account? <a th:href="@{/signup-page}" class="link signup-link">Signup</a></span><br>
+				<a th:href="@{/home}">Back to home page</a>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script src="../../static/loginStatic/js/script.js"></script>
+</body>
+</html>
