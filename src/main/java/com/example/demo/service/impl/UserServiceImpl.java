@@ -58,5 +58,11 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
 
+    public List<UserEntity> getAllUsers(){
+        return userRepository.findAll();
+    }
 
+    public List<UserEntity> searchUser(String username, String name, String email){
+        return userRepository.findByUsernameContainingOrNameContainingOrEmailContaining(username, name, email);
+    }
 }
