@@ -12,20 +12,20 @@
     <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link type="text/css" rel="stylesheet" th:href="@{/fe/css/bootstrap.min.css}"/>
 
     <!-- Slick -->
-    <link type="text/css" rel="stylesheet" th:href="@{/css/slick.css}"/>
-    <link type="text/css" rel="stylesheet" th:href="@{/css/slick-theme.css}"/>
+    <link type="text/css" rel="stylesheet" th:href="@{/fe/css/slick.css}"/>
+    <link type="text/css" rel="stylesheet" th:href="@{/fe/css/slick-theme.css}"/>
 
     <!-- nouislider -->
-    <link type="text/css" rel="stylesheet" th:href="@{/css/nouislider.min.css}"/>
+    <link type="text/css" rel="stylesheet" th:href="@{/fe/css/nouislider.min.css}"/>
 
     <!-- Font Awesome Icon -->
-    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/fe/css/font-awesome.min.css}">
 
     <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link type="text/css" rel="stylesheet" th:href="@{/fe/css/style.css}"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -34,12 +34,12 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-    <script th:src="@{/js/jquery.min.js}"></script>
-    <script th:src="@{/js/bootstrap.min.js}"></script>
-    <script th:src="@{/js/slick.min.js}"></script>
-    <script th:src="@{/js/nouislider.min.js}"></script>
-    <script th:src="@{/js/jquery.zoom.min.js}"></script>
-    <script th:src="@{/js/main.js}"></script>
+    <script th:src="@{/fe/js/jquery.min.js}"></script>
+    <script th:src="@{/fe/js/bootstrap.min.js}"></script>
+    <script th:src="@{/fe/js/slick.min.js}"></script>
+    <script th:src="@{/fe/js/nouislider.min.js}"></script>
+    <script th:src="@{/fe/js/jquery.zoom.min.js}"></script>
+    <script th:src="@{/fe/js/main.js}"></script>
 
     <!-- my -->
     <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
@@ -281,14 +281,13 @@
                                     document.getElementById("userName").innerHTML = "My Account";
                                     var setPage = document.getElementById("LogStatusBtn");
                                     setPage.innerHTML = "Log In";
-                                    setPage.setAttribute("href", "main.html");
+                                    setPage.setAttribute("th:href", "@{/user/myAccount}");
                                 }
-
                             } else {
                                 document.getElementById("userName").innerHTML = "My Account";
                                 var setPage = document.getElementById("LogStatusBtn");
                                 setPage.innerHTML = "Log In";
-                                setPage.setAttribute("href", "login.html");
+                                setPage.setAttribute("th:href", "@{/login}");
                             }
                         });
 
@@ -301,8 +300,8 @@
                 <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
                 <li><a href="#"><i class="fa fa-heart-o"></i> Future Film Wishlist</a></li>
                 <li><a href="#"><i class="fa fa-check"></i> Checkout</a></li>
-                <li><a href="Login.html"><i class="fa fa-unlock-alt"></i> Login</a></li>
-                <li><a href="Signup.html"><i class="fa fa-user-plus"></i> Create An Account</a></li>
+                <li><a th:href="@{/login}"><i class="fa fa-unlock-alt"></i> Login</a></li>
+                <li><a th:href="@{/signup}"><i class="fa fa-user-plus"></i> Create An Account</a></li>
             </ul>
             </li>
             <!-- /Account -->
