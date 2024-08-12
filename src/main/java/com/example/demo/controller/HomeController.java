@@ -52,6 +52,6 @@ public class HomeController {
 
     @GetMapping("/buyTicket")
     public String buyTicket() {
-        return "layout/Select Time.html";
+        return "layout/SelectTime.html";
     }
 }

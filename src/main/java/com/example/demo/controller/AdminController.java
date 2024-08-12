@@ -27,7 +27,7 @@ public class AdminController {
         return "Admin/admin.dashboard";
     }
 
-    @GetMapping("/addMovie")
+    @GetMapping("/show-movie")
     public String addMovie() {
         return "Admin/admin.movie.html";
     }

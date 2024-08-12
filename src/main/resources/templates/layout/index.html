@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
-
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-security">
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -223,7 +222,7 @@
 										<!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
 										<!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
 
-										<button class="primary-btn add-to-cart" id="SherlockHolmes" value="SherlockHolmes"><a href="Select Time.html">Buy Tickets </a><i class="fa fa-ticket"></i></button>
+										<button class="primary-btn add-to-cart" id="SherlockHolmes" value="SherlockHolmes"><a th:href="@{/user/select-time}">Buy Tickets </a><i class="fa fa-ticket"></i></button>
 									</div>
 								</div>
 							</div>
@@ -266,7 +265,7 @@
 											<!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
 											<!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
 
-											<button class="primary-btn add-to-cart" id="DespicableMe3" value="DespicableMe3"><a href="Select Time.html">Buy Tickets </a><i class="fa fa-ticket"></i></button>
+											<button class="primary-btn add-to-cart" id="DespicableMe3" value="DespicableMe3"><a href="SelectTime.html">Buy Tickets </a><i class="fa fa-ticket"></i></button>
 										</div>
 									</div>
 								</div>
@@ -309,7 +308,7 @@
 											<!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
 											<!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
 
-											<button class="primary-btn add-to-cart" id="Mechanic" value="Mechanic" ><a href="Select Time.html">Buy Tickets </a><i class="fa fa-ticket"></i></button>
+											<button class="primary-btn add-to-cart" id="Mechanic" value="Mechanic" ><a href="SelectTime.html">Buy Tickets </a><i class="fa fa-ticket"></i></button>
 										</div>
 									</div>
 								</div>
@@ -515,7 +514,7 @@
 							<div class="product-btns">
 								<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
 								<!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-								<button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a href="Select Time.html"> Reserve</a></button>
+								<button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a href="SelectTime.html"> Reserve</a></button>
 							</div>
 						</div>
 					</div>
@@ -550,7 +549,7 @@
 							<div class="product-btns">
 								<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
 								<!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-								<button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a href="Select Time.html"> Reserve </a></button>
+								<button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a href="SelectTime.html"> Reserve </a></button>
 							</div>
 						</div>
 					</div>
@@ -589,7 +588,7 @@
 							<div class="product-btns">
 								<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
 								<!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-								<button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a href="Select Time.html"> Reserve </a></button>
+								<button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a href="SelectTime.html"> Reserve </a></button>
 							</div>
 						</div>
 					</div>
@@ -625,7 +624,7 @@
 							<div class="product-btns">
 								<button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
 								<!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-								<button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a href="Select Time.html"> Reserve </a></button>
+								<button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a href="SelectTime.html"> Reserve </a></button>
 							</div>
 						</div>
 					</div>

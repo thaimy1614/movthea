@@ -13,20 +13,20 @@
 	<link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
 
 	<!-- Bootstrap -->
-	<link type="text/css" rel="stylesheet" href="fe/css/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" th:href="@{/fe/css/bootstrap.min.css}" />
 
 	<!-- Slick -->
-	<link type="text/css" rel="stylesheet" href="fe/css/slick.css" />
-	<link type="text/css" rel="stylesheet" href="fe/css/slick-theme.css" />
+	<link type="text/css" rel="stylesheet" th:href="@{/fe/css/slick.css}" />
+	<link type="text/css" rel="stylesheet" th:href="@{/fe/css/slick-theme.css}" />
 
 	<!-- nouislider -->
-	<link type="text/css" rel="stylesheet" href="fe/css/nouislider.min.css" />
+	<link type="text/css" rel="stylesheet" th:href="@{/fe/css/nouislider.min.css}" />
 
 	<!-- Font Awesome Icon -->
-	<link rel="stylesheet" href="fe/css/font-awesome.min.css">
+	<link rel="stylesheet" th:href="@{/fe/css/font-awesome.min.css}">
 
 	<!-- Custom stlylesheet -->
-	<link type="text/css" rel="stylesheet" href="fe/css/style.css" />
+	<link type="text/css" rel="stylesheet" th:href="@{/fe/css/style.css}" />
 
 	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,12 +35,12 @@
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     
-    <script src="fe/js/jquery.min.js"></script>
-    <script src="fe/js/bootstrap.min.js"></script>
-    <script src="fe/js/slick.min.js"></script>
-    <script src="fe/js/nouislider.min.js"></script>
-    <script src="fe/js/jquery.zoom.min.js"></script>
-	<script src="fe/js/main.js"></script>
+    <script th:src="@{/fe/js/jquery.min.js}"></script>
+    <script th:src="@{/fe/js/bootstrap.min.js}"></script>
+    <script th:src="@{/fe/js/slick.min.js}"></script>
+    <script th:src="@{/fe/js/nouislider.min.js}"></script>
+    <script th:src="@{/fe/js/jquery.zoom.min.js}"></script>
+	<script th:src="@{/fe/js/main.js}"></script>
 	
 
     <!-- my -->
@@ -181,7 +181,7 @@ padding: 20px;">
 </div>
 <br>
 <div align="center">
-		<button class="main-btn quick-view"> <a href="Seats.html"> <i class="fa fa-certificate" data-toggle="tooltip" data-placement="top" title="Hooray!"></i> Proceed to Seat Booking</a></button>
+		<button class="main-btn quick-view"> <a th:href="@{/user/seat}"> <i class="fa fa-certificate" data-toggle="tooltip" data-placement="top" title="Hooray!"></i> Proceed to Seat Booking</a></button>
 	  </div>
         
 </div>
@@ -223,7 +223,7 @@ padding: 20px;">
 		}
 
 	</script>
-	<script src="index.js"></script>
+	<script th:src="@{/index.js}"></script>
      
    </body>
    </html>
