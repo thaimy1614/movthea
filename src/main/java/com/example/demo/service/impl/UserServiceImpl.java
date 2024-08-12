@@ -59,7 +59,7 @@ public class UserServiceImpl implements UserService {
     }
 
     public List<UserEntity> getAllUsers(){
-        return userRepository.findAll();
+        return userRepository.findAllByRoleEquals(UserEntity.UserRole.USER);
     }
 
     public List<UserEntity> searchUser(String username, String name, String email){

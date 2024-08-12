@@ -33,7 +33,7 @@ public class AdminController {
     }
 
     @GetMapping("/show-user")
-    public String userManage(Model model) {
+    public String showUser(Model model) {
         List<UserEntity> users = userService.getAllUsers();
         model.addAttribute("users", users);
         return "Admin/admin.dataTable.html";
@@ -46,9 +46,9 @@ public class AdminController {
         return "Admin/admin.dataTable.html";
     }
 
-    @GetMapping("/theatre")
-    public String theatre() {
-        return "Admin/admin.theatre.html";
+    @GetMapping("/show-all")
+    public String showTheatre() {
+        return "Admin/admin.basicTable.html";
     }
 
     @GetMapping("/snacks")

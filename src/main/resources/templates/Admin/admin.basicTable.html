@@ -1,8 +1,12 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,17 +14,17 @@
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="apple-touch-icon" th:href="@{/apple-icon.png}">
+    <link rel="shortcut icon" th:href="@{/favicon.ico}">
 
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/themify-icons.css">
-    <link rel="stylesheet" href="assets/css/flag-icon.min.css">
-    <link rel="stylesheet" href="assets/css/cs-skin-elastic.css">
+    <link rel="stylesheet" th:href="@{/assets/css/normalize.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/themify-icons.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/flag-icon.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/cs-skin-elastic.css}">
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
-    <link rel="stylesheet" href="assets/scss/style.css">
+    <link rel="stylesheet" th:href="@{/assets/scss/style.css}">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -28,51 +32,52 @@
 
 </head>
 <body>
-        <!-- Left Panel -->
+<!-- Left Panel -->
 
 
-        <aside th:replace="Admin/fragments/LeftPanel :: leftpanel"></aside><!-- /#left-panel -->
-    
-        <!-- Left Panel -->
-    
+<aside th:replace="Admin/fragments/LeftPanel :: leftpanel"></aside><!-- /#left-panel -->
 
-    <!-- Right Panel -->
+<!-- Left Panel -->
 
-    <div id="right-panel" class="right-panel">
 
-        <!-- Header-->
-        <!-- Header-->
-        <header th:replace="Admin/fragments/Header :: header11"></header><!-- /header -->
-        <!-- Header-->
+<!-- Right Panel -->
 
-        <div class="breadcrumbs">
-            <div class="col-sm-4">
-                <div class="page-header float-left">
-                    <div class="page-title">
-                        <h1>Dashboard</h1>
-                        <button type="button" class="btn btn-success btn-sm" onclick="refresh();" >
-                                <i class="fa fa-refresh"></i> Refresh Page
-                              </button>
-                              
-                    </div><br>
+<div id="right-panel" class="right-panel">
+
+    <!-- Header-->
+    <!-- Header-->
+    <header th:replace="Admin/fragments/Header :: header11"></header><!-- /header -->
+    <!-- Header-->
+
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1>Dashboard</h1>
+                    <button type="button" class="btn btn-success btn-sm" onclick="refresh();">
+                        <i class="fa fa-refresh"></i> Refresh Page
+                    </button>
+
                 </div>
+                <br>
             </div>
-            <div class="col-sm-8">
-                <div class="page-header float-right">
-                    <div class="page-title">
-                        <ol class="breadcrumb text-right">
-                            <li><a href="#">Dashboard</a></li>
-                            <li class="active">Entry Tables</li>
-                        </ol>
-                    </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li><a href="#">Dashboard</a></li>
+                        <li class="active">Entry Tables</li>
+                    </ol>
                 </div>
             </div>
         </div>
+    </div>
 
-        <div class="content mt-3">
-            <div class="animated fadeIn">
-                <div class="row">
-                    <div class="col-lg-1"></div>
+    <div class="content mt-3">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-lg-1"></div>
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-header">
@@ -80,73 +85,74 @@
                         </div>
                         <div class="card-body">
                             <table class="table">
-                              <thead class="thead-dark">
+                                <thead class="thead-dark">
                                 <tr>
-                                  <th scope="col" id="movieid" >FilmId</th>
-                                  <th scope="col" id="moviename" >Name</th>
-                                  <th scope="col" id="movietheatre" >Theatre</th>
-                                  <th scope="col" id="moviedescription" >Description</th>
-                                  <th scope="col" id="movieactor" >Main Actor</th>
-                                  <th scope="col" id="movieactress" >Main Actress</th>
-                                  <th scope="col" id="movieproducer" >Producer</th>
-                                  <th scope="col" id="movieimage" >Image Link</th>
+                                    <th scope="col" id="movieid">FilmId</th>
+                                    <th scope="col" id="moviename">Name</th>
+                                    <th scope="col" id="movietheatre">Theatre</th>
+                                    <th scope="col" id="moviedescription">Description</th>
+                                    <th scope="col" id="movieactor">Main Actor</th>
+                                    <th scope="col" id="movieactress">Main Actress</th>
+                                    <th scope="col" id="movieproducer">Producer</th>
+                                    <th scope="col" id="movieimage">Image Link</th>
 
                                 </tr>
-                              </thead>
-                              <tbody>
+                                </thead>
+                                <tbody>
                                 <tr>
-                                  <th scope="row" id="id1" >F001</th>
-                                  <td id="name1" >Nobody's Fool (2018)</td>
-                                  <td id="theatre1" >A</td>
-                                  <td id="status1" >Now Showing</td>
-                                  <td id="actor1" > Tiffany Haddish</td>
-                                  <td id="actress1" > Courtney Henggeler</td>
-                                  <td id="producer1" > Tyler Perry</td>
-                                  <td id="link1" > localhost/imageone</td>
+                                    <th scope="row" id="id1">F001</th>
+                                    <td id="name1">Nobody's Fool (2018)</td>
+                                    <td id="theatre1">A</td>
+                                    <td id="status1">Now Showing</td>
+                                    <td id="actor1"> Tiffany Haddish</td>
+                                    <td id="actress1"> Courtney Henggeler</td>
+                                    <td id="producer1"> Tyler Perry</td>
+                                    <td id="link1"> localhost/imageone</td>
                                 </tr>
-                              </tbody>
+                                </tbody>
                             </table>
 
                         </div>
-                    </div>  
+                    </div>
                 </div>
                 <div class="col-lg-1"></div>
 
 
                 <div class="col-lg-1"></div>
                 <div class="col-lg-10">
-                    
+
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Customers  - List of recently added data will be shown here</strong>
+                            <strong class="card-title">Customers - List of recently added data will be shown
+                                here</strong>
                         </div>
                         <div class="card-body">
                             <table class="table">
-                              <thead class="thead-dark">
+                                <thead class="thead-dark">
                                 <tr>
-                                  <th scope="col">Customer Id</th>
-                                  <th scope="col">First Name</th>
-                                   <th scope="col">Last Name</th>
-                                  <th scope="col">Email</th>
-                                  <th scope="col">Mobile Number</th>
-                                  <th scope="col">Password</th>
+                                    <th scope="col">Customer Id</th>
+                                    <th scope="col">First Name</th>
+                                    <th scope="col">Last Name</th>
+                                    <th scope="col">Email</th>
+                                    <th scope="col">Mobile Number</th>
+                                    <th scope="col">Password</th>
                                 </tr>
-                              </thead>
-                              <tbody>
+                                </thead>
+                                <tbody>
                                 <tr>
-                                  <th scope="row" id="id2">B001</th>
-                                  <td id="first2">U001</td>
-                                  <td id="last2">01.01.2018</td>
-                                  <td id="email2">Tiger </td>
-                                  <td id="mobile2">TH01</td>
-                                  <td id="password2">10.30</td>
-                                  
+                                    <th scope="row" id="id2">B001</th>
+                                    <td id="first2">U001</td>
+                                    <td id="last2">01.01.2018</td>
+                                    <td id="email2">Tiger</td>
+                                    <td id="mobile2">TH01</td>
+                                    <td id="password2">10.30</td>
+
                                 </tr>
-                              </tbody>
+                                </tbody>
                             </table>
 
                         </div>
-                    </div> 
+                    </div>
                 </div>
                 <div class="col-lg-1"></div>
 
@@ -155,87 +161,39 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Theatres  - List of recently added data will be shown here</strong>
+                            <strong class="card-title">Theatres - List of recently added data will be shown
+                                here</strong>
                         </div>
                         <div class="card-body">
                             <table class="table">
-                              <thead class="thead-dark">
+                                <thead class="thead-dark">
                                 <tr>
-                                  <th scope="col">Theatre Id</th>
-                                  <th scope="col">Name</th>
-                                  <th scope="col">Movie Runninng</th>
-                                  <th scope="col">Next Movie</th>
-                                  <th scope="col">Remaining Seats</th>
-                                  <th scope="col">Reserved Seats</th>
-                                  <th scope="col">Time Slot</th>
+                                    <th scope="col">Theatre Id</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Movie Running</th>
+                                    <th scope="col">Next Movie</th>
+                                    <th scope="col">Remaining Seats</th>
+                                    <th scope="col">Reserved Seats</th>
+                                    <th scope="col">Time Slot</th>
 
                                 </tr>
-                              </thead>
-                              <tbody>
+                                </thead>
+                                <tbody>
                                 <tr>
-                                  <th scope="row" id="id3" >U001</th>
-                                  <td id="name3" >Kalhara</td>
-                                  <td id="movierunning3" >Perera</td>
-                                  <td id="nextmovie3" >adorekasun@icloud.com</td>
-                                  <td id="remainingseats3" >0779219315</td>
-                                  <td id="reservedseats3" >0779219315</td>
-                                  <td id="timeslot3" >0779219315</td>
+                                    <th scope="row" id="id3">U001</th>
+                                    <td id="name3">Kalhara</td>
+                                    <td id="movierunning3">Perera</td>
+                                    <td id="nextmovie3">adorekasun@icloud.com</td>
+                                    <td id="remainingseats3">0779219315</td>
+                                    <td id="reservedseats3">0779219315</td>
+                                    <td id="timeslot3">0779219315</td>
                                 </tr>
-                                
-                              </tbody>
+
+                                </tbody>
                             </table>
 
                         </div>
-                    </div>  
-                </div>
-                <div class="col-lg-1"></div>
-
-                <div class="col-lg-1"></div>
-                <div class="col-lg-10">
-                    <div class="card">
-                        <div class="card-header">
-                            <strong class="card-title">Buying  - List of recently added data will be shown here</strong>
-                        </div>
-                        <div class="card-body">
-                            <table class="table">
-                              <thead class="thead-dark">
-                                <tr>
-                                  <th scope="col">Buying Id</th>
-                                  <th scope="col">Date</th>
-                                  <th scope="col">Movie</th>
-                                  <th scope="col">Seats</th>
-                                  <th scope="col">Snack Price</th>
-                                  <th scope="col">Snacks</th>
-                                  <th scope="col">Ticket Price</th>
-                                  <th scope="col">Total Price</th>
-                                  <th scope="col">User</th>
-
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <th scope="row">1</th>
-                                  <td>Mark</td>
-                                  <td>Otto</td>
-                                  <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">2</th>
-                                  <td>Jacob</td>
-                                  <td>Thornton</td>
-                                  <td>@fat</td>
-                                </tr>
-                                <tr>
-                                  <th scope="row">3</th>
-                                  <td>Larry</td>
-                                  <td>the Bird</td>
-                                  <td>@twitter</td>
-                                </tr>
-                              </tbody>
-                            </table>
-
-                        </div>
-                    </div>  
+                    </div>
                 </div>
                 <div class="col-lg-1"></div>
 
@@ -243,42 +201,91 @@
                 <div class="col-lg-10">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Snacks  - List of recently added data will be shown here</strong>
+                            <strong class="card-title">Buying - List of recently added data will be shown here</strong>
                         </div>
                         <div class="card-body">
                             <table class="table">
-                              <thead class="thead-dark">
+                                <thead class="thead-dark">
                                 <tr>
-                                  <th scope="col">SnackId</th>
-                                  <th scope="col">Name</th>
-                                  <th scope="col">Description</th>
-                                  <th scope="col">Price</th>
+                                    <th scope="col">Buying Id</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Movie</th>
+                                    <th scope="col">Seats</th>
+                                    <th scope="col">Snack Price</th>
+                                    <th scope="col">Snacks</th>
+                                    <th scope="col">Ticket Price</th>
+                                    <th scope="col">Total Price</th>
+                                    <th scope="col">User</th>
+
                                 </tr>
-                              </thead>
-                              <tbody>
+                                </thead>
+                                <tbody>
                                 <tr>
-                                  <th scope="row">1</th>
-                                  <td>Mark</td>
-                                  <td>Otto</td>
-                                  <td>@mdo</td>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
                                 </tr>
                                 <tr>
-                                  <th scope="row">2</th>
-                                  <td>Jacob</td>
-                                  <td>Thornton</td>
-                                  <td>@fat</td>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
                                 </tr>
                                 <tr>
-                                  <th scope="row">3</th>
-                                  <td>Larry</td>
-                                  <td>the Bird</td>
-                                  <td>@twitter</td>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
                                 </tr>
-                              </tbody>
+                                </tbody>
                             </table>
 
                         </div>
-                    </div>  
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Snacks - List of recently added data will be shown here</strong>
+                        </div>
+                        <div class="card-body">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col">SnackId</th>
+                                    <th scope="col">Name</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Price</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
                 </div>
                 <div class="col-lg-1"></div>
 
@@ -290,65 +297,65 @@
                         </div>
                         <div class="card-body">
                             <table class="table">
-                              <thead class="thead-dark">
+                                <thead class="thead-dark">
                                 <tr>
-                                  <th scope="col">Seats Id</th>
-                                  <th scope="col">Status</th>
-                                  
+                                    <th scope="col">Seats Id</th>
+                                    <th scope="col">Status</th>
+
                                 </tr>
-                              </thead>
-                              <tbody>
+                                </thead>
+                                <tbody>
                                 <tr>
-                                  <th scope="row">1</th>
-                                  <td>Mark</td>
-                                 
-                                </tr>
-                                <tr>
-                                  <th scope="row">2</th>
-                                  <td>Jacob</td>
-                                 
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+
                                 </tr>
                                 <tr>
-                                  <th scope="row">3</th>
-                                  <td>Larry</td>
-                                  
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+
                                 </tr>
-                              </tbody>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+
+                                </tr>
+                                </tbody>
                             </table>
 
                         </div>
-                    </div>  
+                    </div>
                 </div>
                 <div class="col-lg-1"></div>
 
-                </div>
-            </div><!-- .animated -->
-        </div><!-- .content -->
+            </div>
+        </div><!-- .animated -->
+    </div><!-- .content -->
 
 
-    </div><!-- /#right-panel -->
+</div><!-- /#right-panel -->
 
-    <!-- Right Panel -->
+<!-- Right Panel -->
 
 
-    <script src="assets/js/vendor/jquery-2.1.4.min.js"></script>
-    <script src="assets/js/popper.min.js"></script>
-    <script src="assets/js/plugins.js"></script>
-    <script src="assets/js/main.js"></script>
+<script th:src="@{/assets/js/vendor/jquery-2.1.4.min.js}"></script>
+<script th:src="@{/assets/js/popper.min.js}"></script>
+<script th:src="@{/assets/js/plugins.js}"></script>
+<script th:src="@{/assets/js/main.js}"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
+<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
         apiKey: "AIzaSyA6swDC9X6ngehYczHLzxsk_Pck-b20ikY",
         authDomain: "nathan-james-web.firebaseapp.com",
         databaseURL: "https://nathan-james-web.firebaseio.com",
         projectId: "nathan-james-web",
         storageBucket: "nathan-james-web.appspot.com",
         messagingSenderId: "429172932466"
-      };
-      firebase.initializeApp(config);
-    </script>
+    };
+    firebase.initializeApp(config);
+</script>
 
 <script src="admin.basicTable.js"></script>
 
