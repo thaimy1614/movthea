@@ -28,6 +28,7 @@ public class Movie {
 
     private String genre;
     private int duration;
+    private String theatre;
 
     private String mainActor;
     private String mainActress;
