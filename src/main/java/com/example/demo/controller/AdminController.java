@@ -15,6 +15,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/admin")
@@ -63,6 +64,13 @@ public class AdminController {
         return "Admin/admin.snacks.html";
     }
 
+    @GetMapping("/show-all-movies")
+    public String showAllMovies(Model model) {
+        List<Movie> movies = movieService.getAllMovies(null);
+        model.addAttribute("movies", movies);
+        return "Admin/admin.searchMovie.html";
+    }
+
     @GetMapping("/add-movie")
     public String addMovie(Model model) {
         model.addAttribute("movie", new Movie());
@@ -80,14 +88,22 @@ public class AdminController {
         }
 
         try {
-            String fileName = fileService.store(file);
+            String fileName = "";
+            if (file.isEmpty()) {
+                if (movieService.getMovie(movie.getId()).isPresent()) {
+                    fileName = movieService.getMovie(movie.getId()).get().getImageLink();
+                }
+            } else {
+                fileName = fileService.store(file);
+            }
 
             movie.setImageLink(fileName);
 
             if (movieService.addMovie(movie)) {
-                return "redirect:/admin/add-movie";
+                redirectAttributes.addFlashAttribute("message", "Movie saved successfully!");
+                return "redirect:/admin/show-all-movies";
             } else {
-                redirectAttributes.addFlashAttribute("message", "Failed to save product");
+                redirectAttributes.addFlashAttribute("message", "Failed to save movie");
                 return "redirect:/admin/add-movie";
             }
         } catch (IOException e) {
@@ -103,22 +119,28 @@ public class AdminController {
         return "Admin/admin.searchMovie.html";
     }
 
-    @GetMapping("/update-movie")
-    public String updateMovie(Model model, @RequestParam int id) {
-        return "Admin/admin.addMovie.html";
+    @GetMapping("/update-movie/{id}")
+    public String updateMovie(Model model, @PathVariable Long id, RedirectAttributes ra) {
+        Optional<Movie> movie = movieService.getMovie(id);
+        if (movie.isEmpty()) {
+            ra.addFlashAttribute("message", "Movie not found!");
+        } else {
+            model.addAttribute("movie", movie.get());
+        }
+        return "Admin/admin.updateMovie.html";
     }
 
-    @PostMapping("/update-movie/{id}")
-    public String updateMovie(@PathVariable Long id, @ModelAttribute Movie movie, RedirectAttributes redirectAttributes) {
+    @PostMapping("/update-movie")
+    public String updateMovie(@ModelAttribute("movie") Movie movie, RedirectAttributes redirectAttributes) {
         movieService.addMovie(movie);
-        redirectAttributes.addAttribute("msg", "Movie updated successfully!");
+        redirectAttributes.addAttribute("message", "Movie updated successfully!");
         return "redirect:/admin/add-movie";
     }
 
     @PostMapping("/delete-movie/{id}")
     public String deleteMovie(@PathVariable Long id, RedirectAttributes redirectAttributes) {
         movieService.deleteMovie(id);
-        redirectAttributes.addAttribute("msg", "Movie deleted successfully!");
+        redirectAttributes.addAttribute("message", "Movie deleted successfully!");
         return "Admin/admin.addMovie.html";
     }
 }

@@ -76,123 +76,71 @@
     </div>
 
     <div class="content mt-3">
-        <div class="row">
-            <div class="col-lg-3"></div>
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-lg-1"></div>
+                <div class="col-lg-10">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Movie - List of recently added data will be shown here</strong>
+                        </div>
+                        <div class="card-body">
+                            <span th:text="${message}"></span>
+                            <table class="table">
+                                <thead class="thead-dark">
+                                <tr>
+                                    <th scope="col" id="movieid">MovieId</th>
+                                    <th scope="col" id="moviename">Name</th>
+                                    <th scope="col" id="movieduration">Duration</th>
+                                    <th scope="col" id="movieprice">Price</th>
+                                    <th scope="col" id="movietheatre">Theatre</th>
+                                    <th scope="col" id="moviedescription">Description</th>
+                                    <th scope="col" id="movieactor">Main Actor</th>
+                                    <th scope="col" id="movieactress">Main Actress</th>
+                                    <th scope="col" id="movieproducer">Producer</th>
+                                    <th scope="col" id="movieimage">Image</th>
+                                    <th scope="col" id="moviestatus">Status</th>
 
-            <div class="col-lg-6">
-                <div class="card">
-                    <div class="card-header">
-                        <strong>Movie</strong> Updates
-                    </div>
-                    <div class="card-body card-block">
-                        <form th:action="@{/admin/add-movie}" method="post" th:object="${movie}" enctype="multipart/form-data" class="form-horizontal">
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label class=" form-control-label">Movie ID </label></div>
-                                <div class="col-12 col-md-9"><input type="text" id="MovieId" name="text-input"
-                                                                    class="form-control" disabled></div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="MovieName"
-                                                                 class=" form-control-label">Name </label></div>
-                                <div class="col-12 col-md-9"><input type="text" id="MovieName" name="text-input"
-                                                                    placeholder="Name of the Movie."
-                                                                    class="form-control" th:field="*{id}" required></div>
-                            </div>
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="MovieDuration"
-                                                                 class=" form-control-label">Duration </label></div>
-                                <div class="col-12 col-md-9"><input type="number" id="MovieDuration" name="text-input"
-                                                                    placeholder="Duration of the Movie."
-                                                                    class="form-control" th:field="*{duration}" required></div>
-                            </div>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <th:block th:each="m:${movies}">
+                                    <tr>
+                                        <td th:text="${m.id}"></td>
+                                        <td th:text="${m.title}"></td>
+                                        <td th:text="${m.duration}"></td>
+                                        <td th:text="${m.price}"></td>
+                                        <td th:text="${m.theatre}"></td>
+                                        <td th:text="${m.description}"></td>
+                                        <td th:text="${m.mainActor}"></td>
+                                        <td th:text="${m.mainActress}"></td>
+                                        <td th:text="${m.Producer}"></td>
+                                        <td>
+                                            <img class="img-thumbnail" alt="MOVIE IMG"
+                                                 th:src="@{'/uploads/'+${m.imageLink}}"/>
+                                        </td>
+                                        <td th:text="${m.status}"></td>
+                                        <td>
+                                            <a th:href="@{'/admin/update-movie/'+${m.id}}"
+                                               class="btn btn-primary">Edit</a>
+                                            <a th:href="@{'/admin/delete-movie/'+${m.id}}"
+                                               class="btn btn-danger">Delete</a>
+                                        </td>
+                                    </tr>
 
-                            <!-- <div class="row form-group">
-                                  <div class="col col-md-3"><label class=" form-control-label">Status</label></div>
-                                  <div class="col col-md-9">
-                                    <div class="form-check">
-                                      <div class="checkbox">
-                                        <label for="checkbox1" class="form-check-label ">
-                                          <input type="checkbox" id="InTheatres" name="checkbox1" value="option1" class="form-check-input">In Theatres
-                                        </label>
-                                      </div>
-                                      <div class="checkbox">
-                                        <label for="checkbox2" class="form-check-label ">
-                                          <input type="checkbox" id="NotinTheatres" name="checkbox2" value="option2" class="form-check-input"> Not in Theatres
-                                        </label>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div> -->
+                                </th:block>
+                                </tbody>
+                            </table>
 
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="MovieDescription" class=" form-control-label">Description</label>
-                                </div>
-                                <div class="col-12 col-md-9"><textarea name="textarea-input" id="MovieDescription"
-                                                                       rows="9" placeholder="Content..."
-                                                                       class="form-control" th:field="*{description}" required></textarea></div>
-                            </div>
-
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="MainActor" class=" form-control-label">Main
-                                    Actor </label></div>
-                                <div class="col-12 col-md-9"><input type="text" id="MainActor" name="text-input"
-                                                                    class="form-control" th:field="*{mainActor}" required></div>
-                            </div>
-
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="MainActress" class=" form-control-label">Main
-                                    Actress </label></div>
-                                <div class="col-12 col-md-9"><input type="text" id="MainActress" name="text-input"
-                                                                    class="form-control" th:field="*{mainActress}" required></div>
-                            </div>
-
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="MovieProducer" class=" form-control-label">Producer </label>
-                                </div>
-                                <div class="col-12 col-md-9"><input type="text" id="MovieProducer" name="text-input"
-                                                                    class="form-control" th:field="*{producer}" required></div>
-                            </div>
-
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="MovieTheatre"
-                                                                 class=" form-control-label">Theatre </label></div>
-                                <div class="col-12 col-md-9"><input type="text" id="MovieTheatre" name="text-input"
-                                                                    class="form-control" th:field="*{theatre}" required></div>
-                            </div>
-
-                            <div class="row form-group">
-                                <div class="col col-md-3"><label for="MovieImage" class=" form-control-label">Movie
-                                    Image input</label></div>
-                                <div class="col-12 col-md-9"><input type="file" id="MovieImage" name="file-input"
-                                                                    class="form-control-file" ></div>
-                            </div>
-
-
-                            <div class="card-footer">
-                                <button type="button" class="btn btn-primary btn-sm" onclick="searchmovie();">
-                                    <i class="fa fa-search"></i> By Name
-                                </button>
-                                <button type="button" class="btn btn-primary btn-sm" onclick="addFilm()">
-                                    <i class="fa fa-plus"></i> Add
-                                </button>
-                                <button type="button" class="btn btn-primary btn-sm" onclick="updateMovie()">
-                                    <i class="fa fa-wrench"></i> Update
-                                </button>
-                                <button type="button" class="btn btn-danger btn-sm" onclick="DeleteFilm()">
-                                    <i class="fa fa-trash"></i> Delete
-                                </button>
-                                <button type="button" class="btn btn-danger btn-sm" onclick="ClearFields()">
-                                    <i class="fas fa-eraser"></i> Clear Fields
-                                </button>
-                            </div>
-                        </form>
+                        </div>
+                        <div class="card-footer">
+                            <button type="button" class="btn btn-primary btn-sm" onclick="searchmovie();">
+                                <i class="fa fa-search"></i> By Name
+                            </button>
+                        </div>
                     </div>
                 </div>
-
-                <div class="col-lg-3"></div>
             </div>
-
-
         </div><!-- /#right-panel -->
     </div>
 </div>

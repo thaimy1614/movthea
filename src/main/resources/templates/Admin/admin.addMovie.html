@@ -85,6 +85,7 @@
                         <strong>Movie</strong> Updates
                     </div>
                     <div class="card-body card-block">
+                        <span th:text="${message}"></span>
                         <form th:action="@{/admin/add-movie}" method="post" th:object="${movie}" enctype="multipart/form-data" class="form-horizontal">
                             <div class="row form-group">
                                 <div class="col col-md-3"><label class=" form-control-label">Movie ID </label></div>
