@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
@@ -25,19 +24,18 @@ public class Movie {
     @Column(nullable = false)
     private String title;
 
-    @Lob
     private String description;
 
-    private String director;
-    private String cast;
     private String genre;
-    private Integer duration; // in minutes
+    private int duration;
 
-    @Column(name = "release_date")
-    private LocalDate releaseDate;
+    private String mainActor;
+    private String mainActress;
+    private String producer;
+    private String imageLink;
 
-    private String trailerUrl;
-    private String posterUrl;
+    @Column(nullable = false)
+    private Long price;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
