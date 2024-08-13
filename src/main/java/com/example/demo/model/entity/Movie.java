@@ -39,7 +39,6 @@ public class Movie {
     private Long price;
 
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
     private MovieStatus status;
 
     @CreationTimestamp

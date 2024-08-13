@@ -85,25 +85,33 @@
                         <strong>Movie</strong> Updates
                     </div>
                     <div class="card-body card-block">
-                        <form th:action="@{/admin/add-movie}" method="post" th:object="${movie}" enctype="multipart/form-data" class="form-horizontal">
+                        <form th:action="@{/admin-js/add-movie}" method="post" th:object="${movie}" enctype="multipart/form-data" class="form-horizontal">
                             <div class="row form-group">
                                 <div class="col col-md-3"><label class=" form-control-label">Movie ID </label></div>
                                 <div class="col-12 col-md-9"><input type="text" id="MovieId" name="text-input"
-                                                                    class="form-control" disabled></div>
+                                                                    class="form-control" th:field="*{id}"  hidden></div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="MovieName"
                                                                  class=" form-control-label">Name </label></div>
                                 <div class="col-12 col-md-9"><input type="text" id="MovieName" name="text-input"
-                                                                    placeholder="Name of the Movie."
-                                                                    class="form-control" th:field="*{id}" required></div>
+                                                                    placeholder="Name of the Movie"
+                                                                    class="form-control" th:field="*{title}" required></div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="MovieDuration"
                                                                  class=" form-control-label">Duration </label></div>
                                 <div class="col-12 col-md-9"><input type="number" id="MovieDuration" name="text-input"
-                                                                    placeholder="Duration of the Movie."
+                                                                    placeholder="Duration of the Movie"
                                                                     class="form-control" th:field="*{duration}" required></div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="MoviePrice"
+                                                                 class=" form-control-label">Price </label></div>
+                                <div class="col-12 col-md-9"><input type="number" id="MoviePrice" name="text-input"
+                                                                    placeholder="Price of the Movie"
+                                                                    class="form-control" th:field="*{price}" required></div>
                             </div>
 
                             <!-- <div class="row form-group">
@@ -133,30 +141,52 @@
                             </div>
 
                             <div class="row form-group">
+                                <div class="col col-md-3"><label for="MovieGenre" class=" form-control-label">Genre</label>
+                                </div>
+                                <div class="col-12 col-md-9"><input type="text" id="MovieGenre" name="genre"
+                                                                    class="form-control" th:field="*{genre}"
+                                                                    placeholder="Genre of the Movie."
+                                                                    required></div>
+                            </div>
+
+                            <div class="row form-group">
                                 <div class="col col-md-3"><label for="MainActor" class=" form-control-label">Main
                                     Actor </label></div>
-                                <div class="col-12 col-md-9"><input type="text" id="MainActor" name="text-input"
+                                <div class="col-12 col-md-9"><input type="text" id="MainActor" name="mainActor"
                                                                     class="form-control" th:field="*{mainActor}" required></div>
                             </div>
 
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="MainActress" class=" form-control-label">Main
                                     Actress </label></div>
-                                <div class="col-12 col-md-9"><input type="text" id="MainActress" name="text-input"
+                                <div class="col-12 col-md-9"><input type="text" id="MainActress" name="mainActress"
                                                                     class="form-control" th:field="*{mainActress}" required></div>
                             </div>
 
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="MovieProducer" class=" form-control-label">Producer </label>
                                 </div>
-                                <div class="col-12 col-md-9"><input type="text" id="MovieProducer" name="text-input"
+                                <div class="col-12 col-md-9"><input type="text" id="MovieProducer" name="Producer"
                                                                     class="form-control" th:field="*{producer}" required></div>
                             </div>
 
                             <div class="row form-group">
+                                <div class="col col-md-3"><label for="MovieStatus" class=" form-control-label">Producer </label>
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <select class="form-control select2 select2-hidden-accessible" id="MovieStatus" th:field="*{status}">
+                                        <option value="NOW_SHOWING">NOW_SHOWING</option>
+                                        <option value="COMING_SOON">COMING_SOON</option>
+                                        <option value="TRENDING">TRENDING</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="row form-group">
                                 <div class="col col-md-3"><label for="MovieTheatre"
                                                                  class=" form-control-label">Theatre </label></div>
-                                <div class="col-12 col-md-9"><input type="text" id="MovieTheatre" name="text-input"
+                                <div class="col-12 col-md-9"><input type="text" id="MovieTheatre" name="Theatre"
                                                                     class="form-control" th:field="*{theatre}" required></div>
                             </div>
 
@@ -236,7 +266,7 @@
     firebase.initializeApp(config);
 </script>
 
-<script th:src="@{/admin.movie.js}"></script>
+<script th:src="@{/admin-js/admin.addMovie.js}"></script>
 
 
 </body>

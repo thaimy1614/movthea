@@ -1,5 +1,7 @@
 package com.example.demo.service;
 
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -14,6 +16,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.Objects;
 
 @Service
+@Slf4j
 public class FileSystemStorageService {
     private final Path rootLocation;
 
@@ -23,11 +26,18 @@ public class FileSystemStorageService {
     }
 
     public String store(MultipartFile file) throws IOException {
-        Path destinationFile = this.rootLocation.resolve(Paths.get(Objects.requireNonNull(file.getOriginalFilename()))).normalize().toAbsolutePath();
+        String filename = Objects.requireNonNull(file.getOriginalFilename());
+        Path destinationFile = this.rootLocation.resolve(Paths.get(filename)).normalize().toAbsolutePath();
+        log.info("Destination file path: {}", destinationFile);
+
         try (InputStream inputStream = file.getInputStream()) {
             Files.copy(inputStream, destinationFile, StandardCopyOption.REPLACE_EXISTING);
+            log.info("File saved successfully: {}", filename);
+        } catch (IOException e) {
+            log.error("Failed to save file: {}", e.getMessage());
+            throw e;
         }
-        return file.getOriginalFilename(); // Return the filename
+        return filename;
     }
 
     @PostConstruct

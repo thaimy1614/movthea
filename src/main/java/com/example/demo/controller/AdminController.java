@@ -70,7 +70,7 @@ public class AdminController {
     }
 
     @PostMapping("/add-movie")
-    public String addMovie(@ModelAttribute Movie movie,
+    public String addMovie(@ModelAttribute("movie") Movie movie,
                            @RequestParam("file-input") MultipartFile file,
                            BindingResult result,
                            RedirectAttributes redirectAttributes) {
