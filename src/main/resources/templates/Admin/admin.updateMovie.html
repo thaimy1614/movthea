@@ -85,7 +85,7 @@
                         <strong>Movie</strong> Updates
                     </div>
                     <div class="card-body card-block">
-                        <form th:action="@{/admin-js/add-movie}" method="post" th:object="${movie}" enctype="multipart/form-data" class="form-horizontal">
+                        <form th:action="@{/admin/add-movie}" method="post" th:object="${movie}" enctype="multipart/form-data" class="form-horizontal">
                             <div class="row form-group">
                                 <div class="col col-md-3"><label class=" form-control-label">Movie ID </label></div>
                                 <div class="col-12 col-md-9"><input type="text" id="MovieId" name="text-input"
@@ -96,7 +96,7 @@
                                                                  class=" form-control-label">Name </label></div>
                                 <div class="col-12 col-md-9"><input type="text" id="MovieName" name="text-input"
                                                                     placeholder="Name of the Movie."
-                                                                    class="form-control" th:field="*{id}" required></div>
+                                                                    class="form-control" th:field="*{id} " required></div>
                             </div>
                             <div class="row form-group">
                                 <div class="col col-md-3"><label for="MovieDuration"
@@ -169,17 +169,8 @@
 
 
                             <div class="card-footer">
-                                <button type="button" class="btn btn-primary btn-sm" onclick="searchmovie();">
-                                    <i class="fa fa-search"></i> By Name
-                                </button>
-                                <button type="button" class="btn btn-primary btn-sm" onclick="addFilm()">
-                                    <i class="fa fa-plus"></i> Add
-                                </button>
-                                <button type="button" class="btn btn-primary btn-sm" onclick="updateMovie()">
+                                <button type="submit" class="btn btn-primary btn-sm">
                                     <i class="fa fa-wrench"></i> Update
-                                </button>
-                                <button type="button" class="btn btn-danger btn-sm" onclick="DeleteFilm()">
-                                    <i class="fa fa-trash"></i> Delete
                                 </button>
                                 <button type="button" class="btn btn-danger btn-sm" onclick="ClearFields()">
                                     <i class="fas fa-eraser"></i> Clear Fields
@@ -245,7 +236,7 @@
     firebase.initializeApp(config);
 </script>
 
-<script th:src="@{/admin-js/admin.movie.js}"></script>
+<script th:src="@{/assets/js/admin-movie.js}"></script>
 
 
 </body>

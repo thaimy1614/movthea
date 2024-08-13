@@ -85,7 +85,7 @@
                         <strong>Movie</strong> Updates
                     </div>
                     <div class="card-body card-block">
-                        <form th:action="@{/admin-js/add-movie}" method="post" th:object="${movie}" enctype="multipart/form-data" class="form-horizontal">
+                        <form th:action="@{/admin/add-movie}" method="post" th:object="${movie}" enctype="multipart/form-data" class="form-horizontal">
                             <div class="row form-group">
                                 <div class="col col-md-3"><label class=" form-control-label">Movie ID </label></div>
                                 <div class="col-12 col-md-9"><input type="text" id="MovieId" name="text-input"
@@ -245,7 +245,7 @@
     firebase.initializeApp(config);
 </script>
 
-<script th:src="@{/admin-js/admin.movie.js}"></script>
+<script th:src="@{/assets/js/admin-movie.js}"></script>
 
 
 </body>
