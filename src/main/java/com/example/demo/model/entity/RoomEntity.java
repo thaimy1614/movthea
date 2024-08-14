@@ -29,8 +29,8 @@ public class RoomEntity {
     @Column(name = "selected_seat")
     private String selectedSeat;
 
-    @OneToMany(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "theatre_id")
-    private List<Theatre> theatre;
+    private Theatre theatre;
 
 }

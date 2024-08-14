@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Nathan James - Admin</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link th:href="@{/apple-icon.png}" rel="apple-touch-icon">
+    <link th:href="@{/favicon.ico}" rel="shortcut icon">
+
+    <!-- Stylesheets -->
+    <link th:href="@{/assets/css/normalize.css}" rel="stylesheet">
+    <link th:href="@{/assets/css/bootstrap.min.css}" rel="stylesheet">
+    <link th:href="@{/assets/css/font-awesome.min.css}" rel="stylesheet">
+    <link th:href="@{/assets/css/themify-icons.css}" rel="stylesheet">
+    <link th:href="@{/assets/css/flag-icon.min.css}" rel="stylesheet">
+    <link th:href="@{/assets/css/cs-skin-elastic.css}" rel="stylesheet">
+    <link th:href="@{/assets/scss/style.css}" rel="stylesheet">
+    <link th:href="@{/assets/css/lib/vector-map/jqvmap.min.css}" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+</head>
+<body>
+
+<!-- Left Panel -->
+<aside th:replace="Admin/fragments/LeftPanel :: leftpanel"></aside>
+
+<!-- Right Panel -->
+<div id="right-panel" class="right-panel">
+
+    <!-- Header -->
+    <header th:replace="Admin/fragments/Header :: header11"></header>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1>Theatre</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li class="active">Movie Updates</li>
+                        <li><a th:href="@{/admin}">Dashboard</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content mt-3">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Theatre</strong> Updates
+                    </div>
+                    <div class="card-body card-block">
+                        <span th:text="${message}"></span>
+                        <form class="form-horizontal" method="post" enctype="multipart/form-data"
+                              th:action="@{/admin/schedule/add-schedule}" th:object="${schedule}">
+
+                            <!-- Theatre ID (Hidden) -->
+                            <div class="row form-group" hidden>
+                                <div class="col-12 col-md-9">
+                                    <input type="text" id="id" class="form-control" th:field="*{id}">
+                                </div>
+                            </div>
+
+                            <!-- Start Time -->
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="startAt" class="form-control-label">Start At</label>
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <input type="date" id="startAt" class="form-control" th:field="*{startAt}" required>
+                                </div>
+                            </div>
+
+                            <!-- Movie Selection -->
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="movieForm" class="form-control-label">Movie</label>
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <select class="form-control select2" id="movieForm" th:field="*{movie}">
+                                        <th:block th:each="movie : ${movies}">
+                                            <option th:text="${movie.title}" th:value="${movie.id}"></option>
+                                        </th:block>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Theatre Selection -->
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="theatreForm" class="form-control-label">Theatre</label>
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <select class="form-control select2" id="theatreForm" th:field="*{theatre}">
+                                        <th:block th:each="theatre : ${theatres}">
+                                            <option th:text="${theatre.name}" th:value="${theatre.id}"></option>
+                                        </th:block>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Room Selection -->
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="roomForm" class="form-control-label">Room</label>
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <select class="form-control select2" id="roomForm" th:field="*{room}">
+                                        <th:block th:each="room : ${rooms}">
+                                            <option th:text="${room.name}" th:value="${room.id}"></option>
+                                        </th:block>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Slot Selection -->
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="slotForm" class="form-control-label">Slot</label>
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <select class="form-control select2" id="slotForm" th:field="*{slot}">
+                                        <th:block th:each="slot : ${slots}">
+                                            <option th:text="${slot.startTime} + ' - ' + ${slot.endTime}" th:value="${slot.id}"></option>
+                                        </th:block>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Buttons -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-plus"></i> Add
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script th:src="@{/assets/js/vendor/jquery-2.1.4.min.js}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+<script th:src="@{/assets/js/plugins.js}"></script>
+<script th:src="@{/assets/js/main.js}"></script>
+<script th:src="@{/assets/js/lib/chart-js/Chart.bundle.js}"></script>
+<script th:src="@{/assets/js/dashboard.js}"></script>
+<script th:src="@{/assets/js/widgets.js}"></script>
+<script th:src="@{/assets/js/lib/vector-map/jquery.vmap.js}"></script>
+<script th:src="@{/assets/js/lib/vector-map/jquery.vmap.min.js}"></script>
+<script th:src="@{/assets/js/lib/vector-map/jquery.vmap.sampledata.js}"></script>
+<script th:src="@{/assets/js/lib/vector-map/country/jquery.vmap.world.js}"></script>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+<script>
+    var config = {
+        apiKey: "AIzaSyA6swDC9X6ngehYczHLzxsk_Pck-b20ikY",
+        authDomain: "nathan-james-web.firebaseapp.com",
+        databaseURL: "https://nathan-james-web.firebaseio.com",
+        projectId: "nathan-james-web",
+        storageBucket: "nathan-james-web.appspot.com",
+        messagingSenderId: "429172932466"
+    };
+    firebase.initializeApp(config);
+</script>
+
+<script th:src="@{/assets/js/admin-theatre.js}"></script>
+
+</body>
+</html>

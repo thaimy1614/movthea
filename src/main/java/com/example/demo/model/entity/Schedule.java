@@ -11,6 +11,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 @Entity
 @Table(name = "schedule")
@@ -34,12 +35,15 @@ public class Schedule {
     @Column(name = "start_at")
     private LocalDate startAt;
 
-    @Column(name = "slot_id")
+    @Transient
+    private String startAtFormatted;
+
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "slot_id")
     private Slot slot;
 
-    @Column(name = "room_id")
     @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "room_id")
     private RoomEntity room;
 
     @CreationTimestamp

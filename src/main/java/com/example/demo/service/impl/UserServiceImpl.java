@@ -1,7 +1,6 @@
 package com.example.demo.service.impl;
 
 import com.example.demo.model.entity.UserEntity;
-import com.example.demo.model.response.UserResponse;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -19,18 +18,6 @@ public class UserServiceImpl implements UserService {
 
     public UserEntity findByUsername(String username) {
         return userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("User not found"));
-    }
-
-
-    private UserResponse userResponse(UserEntity userEntity) {
-        UserResponse userResponse = new UserResponse();
-        userResponse.setEmail(userEntity.getEmail());
-        userResponse.setPassword(userEntity.getPassword());
-        userResponse.setUsername(userEntity.getUsername());
-        userResponse.setId(userEntity.getId());
-        userResponse.setAge(userEntity.getAge());
-        userResponse.setName(userEntity.getName());
-        return userResponse;
     }
 
     public void createUser(String username, String password) {

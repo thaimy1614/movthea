@@ -58,7 +58,6 @@
             <div class="page-header float-left">
                 <div class="page-title">
                     <h1>Dashboard</h1>
-                    <p>Please Search the Movie by Name before Operating the functions!</p>
                 </div>
             </div>
         </div>
@@ -66,7 +65,7 @@
             <div class="page-header float-right">
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
-                        <li class="active">Movie Updates</a></li>
+                        <li class="active">Schedule Updates</a></li>
                         <li><a href="/admin">Dashboard</a></li>
 
 
@@ -83,30 +82,38 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">List Of Theatres</strong>
+                            <strong class="card-title">List Of Schedule</strong>
                         </div>
                         <div class="card-body">
                             <span class="text-success" th:text="${message}"></span>
                             <table class="table" id="bootstrap-data-table">
                                 <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col">Theatre Id</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Location</th>
+                                    <th scope="col">Schedule Id</th>
+                                    <th scope="col">Movie Name</th>
+                                    <th scope="col">Theatre Name</th>
+                                    <th scope="col">Time Slot</th>
+                                    <th scope="col">Room Name</th>
+                                    <th scope="col">Start At</th>
+
                                     <th scope="col"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <th:block th:each="t:${theatres}">
+                                <th:block th:each="t:${schedules}">
                                     <tr>
                                         <td th:text="${t.id}"></td>
-                                        <td th:text="${t.name}"></td>
-                                        <td th:text="${t.location}"></td>
+                                        <td th:text="${t.movie.title}"></td>
+                                        <td th:text="${t.theatre.name}"></td>
+                                        <td th:text="${t.slot.startTime} + ' - ' + ${t.slot.endTime}"></td>
+                                        <td th:text="${t.room.name}"></td>
+                                        <td th:text="${t.startAt}"></td>
+
                                         <td>
                                             <div class="d-flex flex-column align-items-stretch">
                                                 <a class="btn btn-primary mb-2"
-                                                   th:href="@{'/admin/theatre/update-theatre/'+${t.id}}">Edit</a>
-                                                <a class="btn btn-danger" th:href="@{'/admin/theatre/delete-theatre/'+${t.id}}">Delete</a>
+                                                   th:href="@{'/admin/schedule/update-schedule/'+${t.id}}">Edit</a>
+                                                <a class="btn btn-danger" th:href="@{'/admin/schedule/delete-schedule/'+${t.id}}">Delete</a>
                                             </div>
                                         </td>
                                     </tr>

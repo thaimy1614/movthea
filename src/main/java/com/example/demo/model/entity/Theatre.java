@@ -26,11 +26,7 @@ public class Theatre {
     @Column(nullable = false)
     private String name;
 
-    private Long movieRunning;
-    private Long nextMovie;
-    private Integer remainingSeats;
-    private Integer reservedSeats;
-    private Long timeSlot;
+    private String location;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

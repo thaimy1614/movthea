@@ -36,7 +36,6 @@
             <div class="page-header float-left">
                 <div class="page-title">
                     <h1>Dashboard</h1>
-                    <p>Please Search the Movie by Name before Operating the functions!</p>
                 </div>
             </div>
         </div>
@@ -44,8 +43,8 @@
             <div class="page-header float-right">
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
-                        <li class="active">Movie Updates</li>
-                        <li><a href="#">Dashboard</a></li>
+                        <li class="active">Theatre Updates</li>
+                        <li><a href="/admin">Dashboard</a></li>
                     </ol>
                 </div>
             </div>
@@ -58,7 +57,7 @@
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-header">
-                        <strong>Movie Updates</strong>
+                        <strong>Theatre Updates</strong>
                     </div>
                     <div class="card-body card-block">
                         <span th:text="${message}"></span>
@@ -78,33 +77,10 @@
                             <div class="form-group row">
                                 <label for="movie" class="col-md-3 form-control-label">Movie</label>
                                 <div class="col-md-9">
-                                    <input type="number" id="movie" class="form-control" th:field="*{movieRunning}" required>
+                                    <input type="text" id="movie" class="form-control" th:field="*{location}" required>
                                 </div>
                             </div>
-                            <div class="form-group row">
-                                <label for="remainingseats" class="col-md-3 form-control-label">Remaining Seats</label>
-                                <div class="col-md-9">
-                                    <input type="number" id="remainingseats" class="form-control" th:field="*{remainingSeats}" required>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="timeslot" class="col-md-3 form-control-label">Time Slot</label>
-                                <div class="col-md-9">
-                                    <input type="number" id="timeslot" class="form-control" th:field="*{timeSlot}" required>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="nextmovie" class="col-md-3 form-control-label">Next Movie</label>
-                                <div class="col-md-9">
-                                    <input type="number" id="nextmovie" class="form-control" th:field="*{nextMovie}" required>
-                                </div>
-                            </div>
-                            <div class="form-group row">
-                                <label for="reservations" class="col-md-3 form-control-label">Reservations</label>
-                                <div class="col-md-9">
-                                    <input type="number" id="reservations" class="form-control" th:field="*{reservedSeats}" required>
-                                </div>
-                            </div>
+
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary btn-sm">
                                     <i class="fa fa-wrench"></i> Update

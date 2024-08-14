@@ -2,7 +2,7 @@
 <html class="no-js" lang="" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Nathan James - Admin</title>
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -18,7 +18,6 @@
     <link rel="stylesheet" th:href="@{/assets/css/cs-skin-elastic.css}">
     <link rel="stylesheet" th:href="@{/assets/scss/style.css}">
     <link rel="stylesheet" th:href="@{/assets/css/lib/vector-map/jqvmap.min.css}">
-
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
 </head>
 <body>
@@ -27,16 +26,16 @@
 <aside th:replace="Admin/fragments/LeftPanel :: leftpanel"></aside>
 
 <!-- Right Panel -->
-<div id="right-panel" class="right-panel">
+<div class="right-panel" id="right-panel">
 
-    <!-- Header-->
+    <!-- Header -->
     <header th:replace="Admin/fragments/Header :: header11"></header>
 
     <div class="breadcrumbs">
         <div class="col-sm-4">
             <div class="page-header float-left">
                 <div class="page-title">
-                    <h1>Theatre</h1>
+                    <h1>Dashboard</h1>
                 </div>
             </div>
         </div>
@@ -44,8 +43,8 @@
             <div class="page-header float-right">
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
-                        <li class="active">Theatre Updates</li>
-                        <li><a th:href="@{/admin}">Dashboard</a></li>
+                        <li class="active">Schedule Updates</li>
+                        <li><a href="/admin">Dashboard</a></li>
                     </ol>
                 </div>
             </div>
@@ -58,46 +57,88 @@
             <div class="col-lg-6">
                 <div class="card">
                     <div class="card-header">
-                        <strong>Theatre</strong> Updates
+                        <strong>Schedule Updates</strong>
                     </div>
                     <div class="card-body card-block">
                         <span th:text="${message}"></span>
-                        <form class="form-horizontal" method="post" enctype="multipart/form-data"
-                              th:action="@{/admin/theatre/add-theatre}" th:object="${theatre}">
+                        <form class="form-horizontal" method="post" enctype="multipart/form-data" th:action="@{/admin/schedule/add-schedule}" th:object="${schedule}">
+                            <div class="row form-group">
+                                <label for="id" class="col-md-3 form-control-label">Schedule ID</label>
 
-                            <!-- Theatre ID (Hidden) -->
-                            <div class="row form-group" hidden>
                                 <div class="col-12 col-md-9">
-                                    <input type="text" id="id" class="form-control" th:field="*{id}">
+                                    <input type="text" id="id" class="form-control" readonly th:field="*{id}">
                                 </div>
                             </div>
 
-                            <!-- Name -->
+                            <!-- Start Time -->
                             <div class="row form-group">
                                 <div class="col col-md-3">
-                                    <label for="name" class="form-control-label">Name</label>
+                                    <label for="h" class="form-control-label">Start At</label>
                                 </div>
                                 <div class="col-12 col-md-9">
-                                    <input type="text" id="name" class="form-control" th:field="*{name}" required>
-                                </div>
-                            </div>
-                            <!-- Name -->
-                            <div class="row form-group">
-                                <div class="col col-md-3">
-                                    <label for="location" class="form-control-label">Location</label>
-                                </div>
-                                <div class="col-12 col-md-9">
-                                    <input type="text" id="location" class="form-control" th:field="*{location}" required>
+                                    <input type="date" id="h" class="form-control" th:field="*{startAt}" required>
                                 </div>
                             </div>
 
-                            <!-- Buttons -->
+                            <!-- Movie Selection -->
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="movieForm" class="form-control-label">Movie</label>
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <select class="form-control select2" id="movieForm" th:field="*{movie}">
+                                        <th:block th:each="movie : ${movies}">
+                                            <option th:text="${movie.title}" th:value="${movie.id}"></option>
+                                        </th:block>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Theatre Selection -->
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="scheduleForm" class="form-control-label">Theatre</label>
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <select class="form-control select2" id="scheduleForm" th:field="*{theatre}">
+                                        <th:block th:each="theatre : ${theatres}">
+                                            <option th:text="${theatre.name}" th:value="${theatre.id}"></option>
+                                        </th:block>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Room Selection -->
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="roomForm" class="form-control-label">Room</label>
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <select class="form-control select2" id="roomForm" th:field="*{room}">
+                                        <th:block th:each="room : ${rooms}">
+                                            <option th:text="${room.name}" th:value="${room.id}"></option>
+                                        </th:block>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Slot Selection -->
+                            <div class="row form-group">
+                                <div class="col col-md-3">
+                                    <label for="slotForm" class="form-control-label">Slot</label>
+                                </div>
+                                <div class="col-12 col-md-9">
+                                    <select class="form-control select2" id="slotForm" th:field="*{slot}">
+                                        <th:block th:each="slot : ${slots}">
+                                            <option th:text="${slot.startTime} + ' - ' + ${slot.endTime}" th:value="${slot.id}"></option>
+                                        </th:block>
+                                    </select>
+                                </div>
+                            </div>
+
                             <div class="card-footer">
                                 <button type="submit" class="btn btn-primary btn-sm">
-                                    <i class="fa fa-plus"></i> Add
-                                </button>
-                                <button type="button" class="btn btn-danger btn-sm" onclick="ClearFields()">
-                                    <i class="fas fa-eraser"></i> Clear Fields
+                                    <i class="fa fa-wrench"></i> Update
                                 </button>
                             </div>
                         </form>
@@ -125,6 +166,7 @@
 <!-- Firebase -->
 <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
 <script>
+    // Initialize Firebase
     var config = {
         apiKey: "AIzaSyA6swDC9X6ngehYczHLzxsk_Pck-b20ikY",
         authDomain: "nathan-james-web.firebaseapp.com",
@@ -135,8 +177,7 @@
     };
     firebase.initializeApp(config);
 </script>
-
-<script th:src="@{/assets/js/admin-theatre.js}"></script>
+<script th:src="@{/assets/js/admin-movie.js}"></script>
 
 </body>
 </html>

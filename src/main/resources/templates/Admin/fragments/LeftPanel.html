@@ -38,11 +38,21 @@
                 </li>
                 <li class="menu-item-has-children dropdown">
                     <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle"
-                       data-toggle="dropdown" th:href="@{/admin/show-theatre}"> <i
+                       data-toggle="dropdown" th:href="@{/admin/theatre/show-theatre}"> <i
                             class="menu-icon fa fa-video-camera"></i>Theatre</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="menu-icon fa fa-wrench"></i><a th:href="@{/admin/theatre/add-theatre}">Add</a></li>
                         <li><i class="menu-icon fa fa-search"></i><a th:href="@{/admin/theatre/show-theatre}">Show all theatres</a></li>
+
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle"
+                       data-toggle="dropdown" th:href="@{/admin/schedule/show-schedule}"> <i
+                            class="menu-icon fa fa-video-camera"></i>Schedule</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="menu-icon fa fa-wrench"></i><a th:href="@{/admin/schedule/add-schedule}">Add</a></li>
+                        <li><i class="menu-icon fa fa-search"></i><a th:href="@{/admin/schedule/show-schedule}">Show all Schedule</a></li>
 
                     </ul>
                 </li>
