@@ -43,13 +43,11 @@ public class TheatreController {
 
         if (theatreService.addTheatre(theatre)) {
             redirectAttributes.addFlashAttribute("message", "Theatre saved successfully!");
-            return "redirect:/admin/theatre/show-all-theatres";
+            return "redirect:/admin/theatre/show-theatre";
         } else {
             redirectAttributes.addFlashAttribute("message", "Failed to save theatre");
             return "redirect:/admin/theatre/add-theatre";
         }
-
-//        return "redirect:/admin/add-theatre";
     }
 
     @GetMapping("/search-theatre")
@@ -71,14 +69,14 @@ public class TheatreController {
     @PostMapping("/update-theatre")
     public String updateTheatre(@ModelAttribute("theatre") Theatre theatre, RedirectAttributes redirectAttributes) {
         theatreService.addTheatre(theatre);
-        redirectAttributes.addAttribute("message", "Theatre updated successfully!");
+        redirectAttributes.addFlashAttribute("message", "Theatre updated successfully!");
         return "redirect:/admin/theatre/add-theatre";
     }
 
     @GetMapping("/delete-theatre/{id}")
     public String deleteTheatre(@PathVariable Long id, RedirectAttributes redirectAttributes) {
         theatreService.deleteTheatre(id);
-        redirectAttributes.addAttribute("message", "Theatre deleted successfully!");
-        return "redirect:/admin/theatre/show-all-theatres";
+        redirectAttributes.addFlashAttribute("message", "Theatre deleted successfully!");
+        return "redirect:/admin/theatre/show-theatre";
     }
 }
