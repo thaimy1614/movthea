@@ -34,20 +34,19 @@ public class TheatreController {
 
     @PostMapping("/add-theatre")
     public String addTheatre(@ModelAttribute("theatre") Theatre theatre,
-                             @RequestParam("file-input") MultipartFile file,
                              BindingResult result,
                              RedirectAttributes redirectAttributes) {
         if (result.hasErrors()) {
             redirectAttributes.addFlashAttribute("message", "Failed validation");
-            return "redirect:/admin/add-theatre";
+            return "redirect:/admin/theatre/add-theatre";
         }
 
         if (theatreService.addTheatre(theatre)) {
             redirectAttributes.addFlashAttribute("message", "Theatre saved successfully!");
-            return "redirect:/admin/show-all-theatres";
+            return "redirect:/admin/theatre/show-all-theatres";
         } else {
             redirectAttributes.addFlashAttribute("message", "Failed to save theatre");
-            return "redirect:/admin/add-theatre";
+            return "redirect:/admin/theatre/add-theatre";
         }
 
 //        return "redirect:/admin/add-theatre";
@@ -73,13 +72,13 @@ public class TheatreController {
     public String updateTheatre(@ModelAttribute("theatre") Theatre theatre, RedirectAttributes redirectAttributes) {
         theatreService.addTheatre(theatre);
         redirectAttributes.addAttribute("message", "Theatre updated successfully!");
-        return "redirect:/admin/add-theatre";
+        return "redirect:/admin/theatre/add-theatre";
     }
 
     @GetMapping("/delete-theatre/{id}")
     public String deleteTheatre(@PathVariable Long id, RedirectAttributes redirectAttributes) {
         theatreService.deleteTheatre(id);
         redirectAttributes.addAttribute("message", "Theatre deleted successfully!");
-        return "redirect:/admin/show-all-theatres";
+        return "redirect:/admin/theatre/show-all-theatres";
     }
 }
