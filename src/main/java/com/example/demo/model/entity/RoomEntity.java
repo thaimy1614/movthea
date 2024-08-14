@@ -30,7 +30,7 @@ public class RoomEntity {
     private String selectedSeat;
 
     @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "localtion")
-    private List<LocationEntity> location;
+    @JoinColumn(name = "theatre_id")
+    private List<Theatre> theatre;
 
 }

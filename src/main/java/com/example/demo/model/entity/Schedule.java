@@ -24,21 +24,23 @@ public class Schedule {
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "movie_id", nullable = false)
+    @JoinColumn(name = "movie_id")
     private Movie movie;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cinema_id", nullable = false)
-    private Theatre cinema;
+    @JoinColumn(name = "theatre_id")
+    private Theatre theatre;
 
-    @Column(name = "show_date", nullable = false)
-    private LocalDate showDate;
+    @Column(name = "start_at")
+    private LocalDate startAt;
 
-    @Column(name = "show_time", nullable = false)
-    private LocalTime showTime;
+    @Column(name = "slot_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Slot slot;
 
-    private Integer screenNumber;
-    private Integer availableSeats;
+    @Column(name = "room_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    private RoomEntity room;
 
     @CreationTimestamp
     private LocalDateTime createdAt;
