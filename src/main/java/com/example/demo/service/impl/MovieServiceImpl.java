@@ -48,7 +48,7 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public void deleteMovie(Long id) {
-
+        movieRepository.deleteById(id);
     }
 
     public Optional<Movie> getMovie(Long id){

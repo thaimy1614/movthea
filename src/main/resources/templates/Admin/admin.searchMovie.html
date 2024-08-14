@@ -23,6 +23,7 @@
     <link rel="stylesheet" th:href="@{/assets/css/themify-icons.css}">
     <link rel="stylesheet" th:href="@{/assets/css/flag-icon.min.css}">
     <link rel="stylesheet" th:href="@{/assets/css/cs-skin-elastic.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/lib/datatable/dataTables.bootstrap.min.css}">
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" th:href="@{/assets/scss/style.css}">
     <link th:href="@{/assets/css/lib/vector-map/jqvmap.min.css}" rel="stylesheet">
@@ -66,7 +67,7 @@
                 <div class="page-title">
                     <ol class="breadcrumb text-right">
                         <li class="active">Movie Updates</a></li>
-                        <li><a href="#">Dashboard</a></li>
+                        <li><a href="/admin">Dashboard</a></li>
 
 
                     </ol>
@@ -78,15 +79,15 @@
     <div class="content mt-3">
         <div class="animated fadeIn">
             <div class="row">
-                <div class="col-lg-1"></div>
-                <div class="col-lg-10">
+
+                <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Movie - List of recently added data will be shown here</strong>
+                            <strong class="card-title">List Of Movies</strong>
                         </div>
                         <div class="card-body">
-                            <span th:text="${message}"></span>
-                            <table class="table">
+                            <span class="text-success" th:text="${message}"></span>
+                            <table id="bootstrap-data-table" class="table">
                                 <thead class="thead-dark">
                                 <tr>
                                     <th scope="col" id="movieid">MovieId</th>
@@ -100,7 +101,7 @@
                                     <th scope="col" id="movieproducer">Producer</th>
                                     <th scope="col" id="movieimage">Image</th>
                                     <th scope="col" id="moviestatus">Status</th>
-
+                                    <th scope="col"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -121,10 +122,10 @@
                                         </td>
                                         <td th:text="${m.status}"></td>
                                         <td>
-                                            <a th:href="@{'/admin/update-movie/'+${m.id}}"
-                                               class="btn btn-primary">Edit</a>
-                                            <a th:href="@{'/admin/delete-movie/'+${m.id}}"
-                                               class="btn btn-danger">Delete</a>
+                                            <div class="d-flex flex-column align-items-stretch">
+                                                <a th:href="@{'/admin/update-movie/'+${m.id}}" class="btn btn-primary mb-2">Edit</a>
+                                                <a th:href="@{'/admin/delete-movie/'+${m.id}}" class="btn btn-danger">Delete</a>
+                                            </div>
                                         </td>
                                     </tr>
 
@@ -194,7 +195,24 @@
 </script>
 
 <script th:src="@{/assets/js/admin-movie.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/datatables.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/dataTables.bootstrap.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/dataTables.buttons.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/buttons.bootstrap.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/jszip.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/pdfmake.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/vfs_fonts.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/buttons.html5.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/buttons.print.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/buttons.colVis.min.js}"></script>
+<script th:src="@{/assets/js/lib/data-table/datatables-init.js}"></script>
 
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#bootstrap-data-table-export').DataTable();
+    });
+</script>
 
 </body>
 </html>

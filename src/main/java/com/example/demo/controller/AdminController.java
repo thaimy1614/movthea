@@ -137,10 +137,22 @@ public class AdminController {
         return "redirect:/admin/add-movie";
     }
 
-    @PostMapping("/delete-movie/{id}")
+    @GetMapping("/delete-movie/{id}")
     public String deleteMovie(@PathVariable Long id, RedirectAttributes redirectAttributes) {
+        Movie movie = movieService.getMovie(id).orElseThrow();
+        if (
+                !movie.getImageLink().isEmpty()
+        ) {
+            try{
+                fileService.delete(movie.getImageLink());
+            }catch (Exception e) {
+                redirectAttributes.addFlashAttribute("message", "Failed to delete image");
+                return "redirect:/admin/show-all-movies";
+            }
+
+        }
         movieService.deleteMovie(id);
         redirectAttributes.addAttribute("message", "Movie deleted successfully!");
-        return "Admin/admin.addMovie.html";
+        return "redirect:/admin/show-all-movies";
     }
 }

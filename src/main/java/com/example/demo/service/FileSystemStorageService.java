@@ -40,6 +40,19 @@ public class FileSystemStorageService {
         return filename;
     }
 
+    public void delete(String filename) throws IOException {
+        Path filePath = this.rootLocation.resolve(Paths.get(filename)).normalize().toAbsolutePath();
+        log.info("Deleting file: {}", filePath);
+
+        try {
+            Files.deleteIfExists(filePath);
+            log.info("File deleted successfully: {}", filename);
+        } catch (IOException e) {
+            log.error("Failed to delete file: {}", e.getMessage());
+            throw e;
+        }
+    }
+
     @PostConstruct
     public void init() {
         try {
