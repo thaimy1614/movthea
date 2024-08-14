@@ -1,0 +1,240 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>Nathan James - Admin</title>
+    <meta content="Sufee Admin - HTML5 Admin Template" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link rel="apple-touch-icon" th:href="@{/Ơapple-icon.png}">
+    <link rel="shortcut icon" th:href="@{/favicon.ico}">
+
+    <link rel="stylesheet" th:href="@{/assets/css/normalize.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/themify-icons.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/flag-icon.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/cs-skin-elastic.css}">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" th:href="@{/assets/scss/style.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/lib/vector-map/jqvmap.min.css}">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+
+</head>
+<body>
+
+
+<!-- Left Panel -->
+
+
+<aside th:replace="Admin/fragments/LeftPanel :: leftpanel"></aside><!-- /#left-panel -->
+
+<!-- Left Panel -->
+
+
+<!-- Right Panel -->
+
+<div class="right-panel" id="right-panel">
+
+    <!-- Header-->
+    <!-- Header-->
+    <header th:replace="Admin/fragments/Header :: header11"></header><!-- /header -->
+    <!-- Header-->
+
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1>Dashboard</h1>
+                    <p>Please Search the Movie by Name before Operating the functions!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li class="active">Movie Updates</a></li>
+                        <li><a href="#">Dashboard</a></li>
+
+
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content mt-3">
+        <div class="row">
+            <div class="col-lg-3"></div>
+
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Movie</strong> Updates
+                    </div>
+                    <div class="card-body card-block">
+                        <form action="" class="form-horizontal" enctype="multipart/form-data" method="post">
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label class=" form-control-label">Movie ID </label></div>
+                                <div class="col-12 col-md-9"><input class="form-control" disabled id="MovieId"
+                                                                    name="text-input" type="text"></div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label class=" form-control-label"
+                                                                 for="text-input">Name </label></div>
+                                <div class="col-12 col-md-9"><input class="form-control" id="MovieName" name="text-input"
+                                                                    placeholder="Name of the Movie."
+                                                                    required type="text"></div>
+                            </div>
+
+                            <!-- <div class="row form-group">
+                                  <div class="col col-md-3"><label class=" form-control-label">Status</label></div>
+                                  <div class="col col-md-9">
+                                    <div class="form-check">
+                                      <div class="checkbox">
+                                        <label for="checkbox1" class="form-check-label ">
+                                          <input type="checkbox" id="InTheatres" name="checkbox1" value="option1" class="form-check-input">In Theatres
+                                        </label>
+                                      </div>
+                                      <div class="checkbox">
+                                        <label for="checkbox2" class="form-check-label ">
+                                          <input type="checkbox" id="NotinTheatres" name="checkbox2" value="option2" class="form-check-input"> Not in Theatres
+                                        </label>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div> -->
+
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label class=" form-control-label" for="textarea-input">Description</label>
+                                </div>
+                                <div class="col-12 col-md-9"><textarea class="form-control" id="MovieDescription"
+                                                                       name="textarea-input" placeholder="Content..."
+                                                                       required rows="9"></textarea></div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label class=" form-control-label" for="text-input">Main
+                                    Actor </label></div>
+                                <div class="col-12 col-md-9"><input class="form-control" id="MainActor" name="text-input"
+                                                                    required type="text"></div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label class=" form-control-label" for="text-input">Main
+                                    Actress </label></div>
+                                <div class="col-12 col-md-9"><input class="form-control" id="MainActress" name="text-input"
+                                                                    required type="text"></div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label class=" form-control-label"
+                                                                 for="text-input">Producer </label></div>
+                                <div class="col-12 col-md-9"><input class="form-control" id="MovieProducer" name="text-input"
+                                                                    required type="text"></div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label class=" form-control-label"
+                                                                 for="text-input">Theatre </label></div>
+                                <div class="col-12 col-md-9"><input class="form-control" id="MovieTheatre" name="text-input"
+                                                                    required type="text"></div>
+                            </div>
+
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label class=" form-control-label" for="file-input">Movie
+                                    Image input</label></div>
+                                <div class="col-12 col-md-9"><input class="form-control-file" id="MovieImage" name="file-input"
+                                                                    type="file"></div>
+                            </div>
+
+
+                            <div class="card-footer">
+                                <button class="btn btn-primary btn-sm" onclick="searchmovie();" type="button">
+                                    <i class="fa fa-search"></i> By Name
+                                </button>
+                                <button class="btn btn-primary btn-sm" onclick="addFilm()" type="button">
+                                    <i class="fa fa-plus"></i> Add
+                                </button>
+                                <button class="btn btn-primary btn-sm" onclick="UpdateMovie()" type="button">
+                                    <i class="fa fa-wrench"></i> Update
+                                </button>
+                                <button class="btn btn-danger btn-sm" onclick="DeleteFilm()" type="button">
+                                    <i class="fa fa-trash"></i> Delete
+                                </button>
+                                <button class="btn btn-danger btn-sm" onclick="ClearFields()" type="button">
+                                    <i class="fas fa-eraser"></i> Clear Fields
+                                </button>
+                            </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3"></div>
+            </div>
+
+
+        </div><!-- /#right-panel -->
+
+        <!-- Right Panel -->
+
+        <script th:src="@{/assets/js/vendor/jquery-2.1.4.min.js}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+        <script th:src="@{/assets/js/plugins.js}"></script>
+        <script th:src="@{/assets/js/main.js}"></script>
+
+
+        <script th:src="@{/assets/js/lib/chart-js/Chart.bundle.js}"></script>
+        <script th:src="@{/assets/js/dashboard.js}"></script>
+        <script th:src="@{/assets/js/widgets.js}"></script>
+        <script th:src="@{/assets/js/lib/vector-map/jquery.vmap.js}"></script>
+        <script th:src="@{/assets/js/lib/vector-map/jquery.vmap.min.js}"></script>
+        <script th:src="@{/assets/js/lib/vector-map/jquery.vmap.sampledata.js}"></script>
+        <script th:src="@{/assets/js/lib/vector-map/country/jquery.vmap.world.js}"></script>
+        <script>
+            (function ($) {
+                "use strict";
+
+                jQuery('#vmap').vectorMap({
+                    map: 'world_en',
+                    backgroundColor: null,
+                    color: '#ffffff',
+                    hoverOpacity: 0.7,
+                    selectedColor: '#1de9b6',
+                    enableZoom: true,
+                    showTooltip: true,
+                    values: sample_data,
+                    scaleColors: ['#1de9b6', '#03a9f5'],
+                    normalizeFunction: 'polynomial'
+                });
+            })(jQuery);
+        </script>
+
+
+        <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyA6swDC9X6ngehYczHLzxsk_Pck-b20ikY",
+                authDomain: "nathan-james-web.firebaseapp.com",
+                databaseURL: "https://nathan-james-web.firebaseio.com",
+                projectId: "nathan-james-web",
+                storageBucket: "nathan-james-web.appspot.com",
+                messagingSenderId: "429172932466"
+            };
+            firebase.initializeApp(config);
+        </script>
+
+        <script th:src="@{/admin/admin-movie.js}"></script>
+
+
+</body>
+</html>

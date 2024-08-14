@@ -1,0 +1,204 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <title>Admin</title>
+    <meta content="Sufee Admin - HTML5 Admin Template" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link href="apple-icon.png" rel="apple-touch-icon">
+    <link href="favicon.ico" rel="shortcut icon">
+
+    <link rel="stylesheet" th:href="@{/assets/css/normalize.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/themify-icons.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/flag-icon.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/cs-skin-elastic.css}">
+    <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
+    <link rel="stylesheet" th:href="@{/assets/scss/style.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/lib/vector-map/jqvmap.min.css}">
+
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
+
+</head>
+<body>
+
+
+<aside th:replace="Admin/fragments/LeftPanel :: leftpanel"></aside><!-- /#left-panel -->
+
+<!-- Left Panel -->
+
+
+<!-- Right Panel -->
+
+<div class="right-panel" id="right-panel">
+
+    <!-- Header-->
+    <!-- Header-->
+    <header class="header" id="header">
+
+        <header th:replace="Admin/fragments/Header :: header11"></header><!-- /header -->
+        <!-- Header-->
+        <div class="breadcrumbs">
+            <div class="col-sm-4">
+                <div class="page-header float-left">
+                    <div class="page-title">
+                        <h1>Dashboard</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-8">
+                <div class="page-header float-right">
+                    <div class="page-title">
+                        <ol class="breadcrumb text-right">
+                            <li class="active">Customer Updates</li>
+                            <li><a href="admin.dashboard.html">Dashboard</a></li>
+
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content mt-3">
+
+            <div class="row">
+                <div class="col-lg-3"></div>
+
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong>Customer</strong> Updates
+                        </div>
+                        <div class="card-body card-block">
+                            <form action="" class="form-horizontal" enctype="multipart/form-data" method="post">
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label">User ID </label></div>
+
+                                    <div class="col-12 col-md-9"><input class="form-control" disabled id="userid"
+                                                                        name="text-input" required type="text"></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label" for="text-input">First
+                                        Name </label></div>
+                                    <div class="col-12 col-md-9"><input class="form-control" id="firstname" name="text-input"
+                                                                        required type="text"></div>
+                                </div>
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label" for="text-input">Last
+                                        Name </label></div>
+                                    <div class="col-12 col-md-9"><input class="form-control" id="lastname" name="text-input"
+                                                                        required type="text"></div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label" for="email-input">Email
+                                        Input</label></div>
+                                    <div class="col-12 col-md-9"><input class="form-control" id="email" name="email-input"
+                                                                        required type="email"></div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label"
+                                                                     for="text-input">Mobile </label></div>
+                                    <div class="col-12 col-md-9"><input class="form-control" id="mobile" name="text-input"
+                                                                        required type="number"></div>
+                                </div>
+
+                                <div class="row form-group">
+                                    <div class="col col-md-3"><label class=" form-control-label" for="password-input">Password</label>
+                                    </div>
+                                    <div class="col-12 col-md-9"><input class="form-control" id="password"
+                                                                        name="password-input" required
+                                                                        type="password">
+                                        <small class="help-block form-text">Please enter a complex password</small>
+                                    </div>
+                                </div>
+
+                                <div class="card-footer">
+                                    <button class="btn btn-primary btn-sm" onclick="SearchUser()" type="button">
+                                        <i class="fa fa-search"></i> By Name
+                                    </button>
+                                    <button class="btn btn-primary btn-sm" onclick="AddUser()" type="button">
+                                        <i class="fa fa-plus"></i> Add
+                                    </button>
+                                    <button class="btn btn-primary btn-sm" onclick="UpdateUser()" type="button">
+                                        <i class="fa fa-wrench"></i> Update
+                                    </button>
+                                    <button class="btn btn-danger btn-sm" onclick="DeleteUser()" type="button">
+                                        <i class="fa fa-trash"></i> Delete
+                                    </button>
+                                    <button class="btn btn-danger btn-sm" onclick="ClearFields()" type="button">
+                                        <i class="fas fa-eraser"></i> Clear Fields
+                                    </button>
+                                </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3"></div>
+                </div>
+
+
+            </div>
+        </div><!-- /#right-panel -->
+
+        <!-- Right Panel -->
+
+        <script th:src="@{/assets/js/vendor/jquery-2.1.4.min.js}"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+        <script th:src="@{/assets/js/plugins.js}"></script>
+        <script th:src="@{/assets/js/main.js}"></script>
+
+
+        <script th:src="@{/assets/js/lib/chart-js/Chart.bundle.js}"></script>
+        <script th:src="@{/assets/js/dashboard.js}"></script>
+        <script th:src="@{/assets/js/widgets.js}"></script>
+        <script th:src="@{/assets/js/lib/vector-map/jquery.vmap.js}"></script>
+        <script th:src="@{/assets/js/lib/vector-map/jquery.vmap.min.js}"></script>
+        <script th:src="@{/assets/js/lib/vector-map/jquery.vmap.sampledata.js}"></script>
+        <script th:src="@{/assets/js/lib/vector-map/country/jquery.vmap.world.js}"></script>
+        <script>
+            (function ($) {
+                "use strict";
+
+                jQuery('#vmap').vectorMap({
+                    map: 'world_en',
+                    backgroundColor: null,
+                    color: '#ffffff',
+                    hoverOpacity: 0.7,
+                    selectedColor: '#1de9b6',
+                    enableZoom: true,
+                    showTooltip: true,
+                    values: sample_data,
+                    scaleColors: ['#1de9b6', '#03a9f5'],
+                    normalizeFunction: 'polynomial'
+                });
+            })(jQuery);
+        </script>
+
+        <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyA6swDC9X6ngehYczHLzxsk_Pck-b20ikY",
+                authDomain: "nathan-james-web.firebaseapp.com",
+                databaseURL: "https://nathan-james-web.firebaseio.com",
+                projectId: "nathan-james-web",
+                storageBucket: "nathan-james-web.appspot.com",
+                messagingSenderId: "429172932466"
+            };
+            firebase.initializeApp(config);
+        </script>
+
+        <script th:src="@{/admin.user.js}"></script>
+
+</body>
+</html>

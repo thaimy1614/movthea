@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Login</title>
+    <link th:href="@{/loginStatic/css/style.css}" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+<section class="container forms">
+    <div class="form login">
+        <div class="form-content">
+            <header>Login</header>
+            <span class="text-danger" style="color: red;" th:text="${error}"></span>
+
+            <form method="post" th:action="@{/login}">
+                <div class="field input-field">
+                    <input class="form-control" name="username" placeholder="UserName" type="text">
+                </div>
+
+                <div class="field input-field">
+                    <input class="password" name="password" placeholder="Password" type="password">
+                    <i class='bx bx-hide eye-icon'></i>
+                </div>
+
+                <div class="form-link">
+                    <a class="forgot-pass" href="#">Forgot password?</a>
+                </div>
+
+                <div class="field button-field">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+
+            <div class="form-link">
+                <span>Don't have an account? <a th:href="@{/signup-page}">Signup</a></span><br>
+                <a th:href="@{/home}">Back to home page</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script th:src="@{/loginStatic/js/script.js}"></script>
+</body>
+</html>

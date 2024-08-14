@@ -1,0 +1,155 @@
+<!doctype html>
+<html class="no-js" lang="" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Nathan James - Admin</title>
+    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" th:href="@{/apple-icon.png}">
+    <link rel="shortcut icon" th:href="@{/favicon.ico}">
+
+    <link rel="stylesheet" th:href="@{/assets/css/normalize.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/font-awesome.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/themify-icons.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/flag-icon.min.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/cs-skin-elastic.css}">
+    <link rel="stylesheet" th:href="@{/assets/scss/style.css}">
+    <link rel="stylesheet" th:href="@{/assets/css/lib/vector-map/jqvmap.min.css}">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet">
+</head>
+<body>
+
+<!-- Left Panel -->
+<aside th:replace="Admin/fragments/LeftPanel :: leftpanel"></aside>
+
+<!-- Right Panel -->
+<div class="right-panel" id="right-panel">
+
+    <!-- Header -->
+    <header th:replace="Admin/fragments/Header :: header11"></header>
+
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1>Dashboard</h1>
+                    <p>Please Search the Movie by Name before Operating the functions!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li class="active">Movie Updates</li>
+                        <li><a href="#">Dashboard</a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content mt-3">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Movie Updates</strong>
+                    </div>
+                    <div class="card-body card-block">
+                        <span th:text="${message}"></span>
+                        <form class="form-horizontal" method="post" enctype="multipart/form-data" th:action="@{/admin/theatre/add-theatre}" th:object="${theatre}">
+                            <div class="form-group row">
+                                <label for="TheatreId" class="col-md-3 form-control-label">Theatre ID</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="TheatreId" class="form-control" th:field="*{id}" readonly>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="name" class="col-md-3 form-control-label">Name</label>
+                                <div class="col-md-9">
+                                    <input type="text" id="name" class="form-control" th:field="*{name}" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="movie" class="col-md-3 form-control-label">Movie</label>
+                                <div class="col-md-9">
+                                    <input type="number" id="movie" class="form-control" th:field="*{movieRunning}" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="remainingseats" class="col-md-3 form-control-label">Remaining Seats</label>
+                                <div class="col-md-9">
+                                    <input type="number" id="remainingseats" class="form-control" th:field="*{remainingSeats}" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="timeslot" class="col-md-3 form-control-label">Time Slot</label>
+                                <div class="col-md-9">
+                                    <input type="number" id="timeslot" class="form-control" th:field="*{timeSlot}" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="nextmovie" class="col-md-3 form-control-label">Next Movie</label>
+                                <div class="col-md-9">
+                                    <input type="number" id="nextmovie" class="form-control" th:field="*{nextMovie}" required>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label for="reservations" class="col-md-3 form-control-label">Reservations</label>
+                                <div class="col-md-9">
+                                    <input type="number" id="reservations" class="form-control" th:field="*{reservedSeats}" required>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary btn-sm">
+                                    <i class="fa fa-wrench"></i> Update
+                                </button>
+                                <button type="button" class="btn btn-danger btn-sm" onclick="ClearFields()">
+                                    <i class="fas fa-eraser"></i> Clear Fields
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Scripts -->
+<script th:src="@{/assets/js/vendor/jquery-2.1.4.min.js}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+<script th:src="@{/assets/js/plugins.js}"></script>
+<script th:src="@{/assets/js/main.js}"></script>
+<script th:src="@{/assets/js/lib/chart-js/Chart.bundle.js}"></script>
+<script th:src="@{/assets/js/dashboard.js}"></script>
+<script th:src="@{/assets/js/widgets.js}"></script>
+<script th:src="@{/assets/js/lib/vector-map/jquery.vmap.js}"></script>
+<script th:src="@{/assets/js/lib/vector-map/jquery.vmap.min.js}"></script>
+<script th:src="@{/assets/js/lib/vector-map/jquery.vmap.sampledata.js}"></script>
+<script th:src="@{/assets/js/lib/vector-map/country/jquery.vmap.world.js}"></script>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyA6swDC9X6ngehYczHLzxsk_Pck-b20ikY",
+        authDomain: "nathan-james-web.firebaseapp.com",
+        databaseURL: "https://nathan-james-web.firebaseio.com",
+        projectId: "nathan-james-web",
+        storageBucket: "nathan-james-web.appspot.com",
+        messagingSenderId: "429172932466"
+    };
+    firebase.initializeApp(config);
+</script>
+<script th:src="@{/assets/js/admin-movie.js}"></script>
+
+</body>
+</html>
