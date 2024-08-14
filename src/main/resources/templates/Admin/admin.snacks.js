@@ -1,4 +1,4 @@
-function addsnack(){
+function addsnack() {
 
     var name = document.getElementById("name").value;
     var status = document.getElementById("status").value;
@@ -6,29 +6,29 @@ function addsnack(){
     var price = document.getElementById("price").value;
     var image = document.getElementById("image").value;
 
-    
+
     var firebaseref = firebase.database().ref('Snacks/');
 
     firebaseref.push().set({
-        SnackName : name ,
-        Status : status,
-        Description : description,
-        Price : price,
-        ImageURL : image,
-   } );
-    
-    
-  document.getElementById("name").value = "";
-   document.getElementById("status").value = "";
-   document.getElementById("description").value = "";
-   document.getElementById("price").value = "";
-   document.getElementById("image").value = "";
+        SnackName: name,
+        Status: status,
+        Description: description,
+        Price: price,
+        ImageURL: image,
+    });
+
+
+    document.getElementById("name").value = "";
+    document.getElementById("status").value = "";
+    document.getElementById("description").value = "";
+    document.getElementById("price").value = "";
+    document.getElementById("image").value = "";
 
     alert("Snack added Succesfully");
 }
 
 
-function searchsnack(){
+function searchsnack() {
 
     var Id = document.getElementById("id");
     var name = document.getElementById("name").value;
@@ -39,14 +39,14 @@ function searchsnack(){
 
     const firebaseref = firebase.database().ref();
 
-    firebaseref.child('Snacks').orderByChild('SnackName').equalTo(name).on("value", function(snacksnapshot) {
+    firebaseref.child('Snacks').orderByChild('SnackName').equalTo(name).on("value", function (snacksnapshot) {
         console.log(snacksnapshot.val());
 
-        snacksnapshot.forEach(function(data) {
+        snacksnapshot.forEach(function (data) {
             var alldata = data.val()
             console.log(data.key);
 
-           // movie.value = alldata.Movie;
+            // movie.value = alldata.Movie;
             //name.value = alldata.SnackName;
             Id.value = data.key;
             status.value = alldata.Status;
@@ -59,27 +59,23 @@ function searchsnack(){
 }
 
 
+function updatesnack() {
+    // A post entry.
 
-function updatesnack(){
-        // A post entry.
-      
-        // Get a key for a new Post.
-        var newPostKey = firebase.database().ref().child('posts').push().key;
-      
-        // Write the new post's data simultaneously in the posts list and the user's post list.
-        var updates = {};
-        updates['/posts/' + newPostKey] = postData;
-        updates['/user-posts/' + uid + '/' + newPostKey] = postData;
-      
-        return firebase.database().ref().update(updates);
-      }
+    // Get a key for a new Post.
+    var newPostKey = firebase.database().ref().child('posts').push().key;
 
+    // Write the new post's data simultaneously in the posts list and the user's post list.
+    var updates = {};
+    updates['/posts/' + newPostKey] = postData;
+    updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+
+    return firebase.database().ref().update(updates);
+}
 
 
+function ClearFields() {
 
-
-function ClearFields(){
-        
     document.getElementById("name").value = "";
     document.getElementById("status").value = "";
     document.getElementById("description").value = "";
@@ -88,7 +84,7 @@ function ClearFields(){
 
 }
 
-function deletesnack(){
+function deletesnack() {
 
     var Id = document.getElementById("id").value;
 
@@ -103,41 +99,9 @@ function deletesnack(){
     document.getElementById("image").value = "";
 
 
-
     window.alert("Snack has been removed from the database succesfully!!");
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // uploading the image open

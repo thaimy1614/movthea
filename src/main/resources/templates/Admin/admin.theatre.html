@@ -9,10 +9,10 @@
 <html class="no-js" lang="" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <title>Nathan James - Admin</title>
-    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="Sufee Admin - HTML5 Admin Template" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
 
     <link rel="apple-touch-icon" th:href="@{/apple-icon.png}">
     <link rel="shortcut icon" th:href="@{/favicon.ico}">
@@ -25,7 +25,7 @@
     <link rel="stylesheet" th:href="@{/assets/css/cs-skin-elastic.css}">
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" th:href="@{/assets/scss/style.css}">
-    <link th:href="@{/assets/css/lib/vector-map/jqvmap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/assets/css/lib/vector-map/jqvmap.min.css}">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -45,11 +45,11 @@
 
 <!-- Right Panel -->
 
-<div id="right-panel" class="right-panel">
+<div class="right-panel" id="right-panel">
 
     <!-- Header-->
     <!-- Header-->
-    <header id="header" class="header">
+    <header class="header" id="header">
 
         <header th:replace="Admin/fragments/Header :: header11"></header><!-- /header -->
         <!-- Header-->
@@ -86,71 +86,71 @@
                             <strong>Theatre</strong> Elements
                         </div>
                         <div class="card-body card-block">
-                            <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                            <form action="" class="form-horizontal" enctype="multipart/form-data" method="post">
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label class=" form-control-label">Theatre ID </label>
                                     </div>
 
-                                    <div class="col-12 col-md-9"><input type="text" id="id" name="text-input"
-                                                                        class="form-control" disabled required></div>
+                                    <div class="col-12 col-md-9"><input class="form-control" disabled id="id"
+                                                                        name="text-input" required type="text"></div>
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">
+                                    <div class="col col-md-3"><label class=" form-control-label" for="text-input">
                                         Name </label></div>
-                                    <div class="col-12 col-md-9"><input type="text" id="name" name="text-input"
-                                                                        class="form-control" required></div>
+                                    <div class="col-12 col-md-9"><input class="form-control" id="name" name="text-input"
+                                                                        required type="text"></div>
                                 </div>
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="text-input"
-                                                                     class=" form-control-label">Movie </label></div>
-                                    <div class="col-12 col-md-9"><input type="text" id="movie" name="text-input"
-                                                                        class="form-control" required></div>
+                                    <div class="col col-md-3"><label class=" form-control-label"
+                                                                     for="text-input">Movie </label></div>
+                                    <div class="col-12 col-md-9"><input class="form-control" id="movie" name="text-input"
+                                                                        required type="text"></div>
                                 </div>
 
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="email-input" class=" form-control-label">Remaining
+                                    <div class="col col-md-3"><label class=" form-control-label" for="email-input">Remaining
                                         Seats</label></div>
-                                    <div class="col-12 col-md-9"><input type="text" id="remainingseats"
-                                                                        name="text-input" class="form-control" required>
+                                    <div class="col-12 col-md-9"><input class="form-control" id="remainingseats"
+                                                                        name="text-input" required type="text">
                                     </div>
                                 </div>
 
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Time
+                                    <div class="col col-md-3"><label class=" form-control-label" for="text-input">Time
                                         Slot </label></div>
-                                    <div class="col-12 col-md-9"><input type="number" id="timeslot" name="text-input"
-                                                                        class="form-control" required></div>
+                                    <div class="col-12 col-md-9"><input class="form-control" id="timeslot" name="text-input"
+                                                                        required type="number"></div>
                                 </div>
 
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Next
+                                    <div class="col col-md-3"><label class=" form-control-label" for="text-input">Next
                                         Movie </label></div>
-                                    <div class="col-12 col-md-9"><input type="time" id="nextmovie" name="time-input"
-                                                                        class="form-control" required></div>
+                                    <div class="col-12 col-md-9"><input class="form-control" id="nextmovie" name="time-input"
+                                                                        required type="time"></div>
                                 </div>
 
                                 <div class="row form-group">
-                                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Reservations </label>
+                                    <div class="col col-md-3"><label class=" form-control-label" for="text-input">Reservations </label>
                                     </div>
-                                    <div class="col-12 col-md-9"><input type="number" id="reservations"
-                                                                        name="text-input" class="form-control" required>
+                                    <div class="col-12 col-md-9"><input class="form-control" id="reservations"
+                                                                        name="text-input" required type="number">
                                     </div>
                                 </div>
 
                                 <div class="card-footer">
-                                    <button type="button" class="btn btn-primary btn-sm" onclick="searchtheatre();">
+                                    <button class="btn btn-primary btn-sm" onclick="searchtheatre();" type="button">
                                         <i class="fa fa-search"></i> By Name
                                     </button>
-                                    <button type="button" class="btn btn-primary btn-sm" onclick="addtheatre()">
+                                    <button class="btn btn-primary btn-sm" onclick="addtheatre()" type="button">
                                         <i class="fa fa-plus"></i> Add
                                     </button>
-                                    <button type="button" class="btn btn-primary btn-sm" onclick="updatetheatre()">
+                                    <button class="btn btn-primary btn-sm" onclick="updatetheatre()" type="button">
                                         <i class="fa fa-wrench"></i> Update
                                     </button>
-                                    <button type="button" class="btn btn-danger btn-sm" onclick="deletetheatre()">
+                                    <button class="btn btn-danger btn-sm" onclick="deletetheatre()" type="button">
                                         <i class="fa fa-trash"></i> Delete
                                     </button>
-                                    <button type="button" class="btn btn-danger btn-sm" onclick="ClearFields()">
+                                    <button class="btn btn-danger btn-sm" onclick="ClearFields()" type="button">
                                         <i class="fas fa-eraser"></i> Clear Fields
                                     </button>
                                 </div>

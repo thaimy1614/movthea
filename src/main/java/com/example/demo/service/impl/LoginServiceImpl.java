@@ -1,15 +1,11 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.exception.LoginFalseException;
-import com.example.demo.model.entity.UserEntity;
 import com.example.demo.model.request.LoginRequest;
 import com.example.demo.model.response.LoginResponse;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.LoginService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor

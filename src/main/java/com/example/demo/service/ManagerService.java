@@ -1,6 +1,9 @@
 package com.example.demo.service;
 
-import com.example.demo.model.entity.*;
+import com.example.demo.model.entity.FilmEntity;
+import com.example.demo.model.entity.LocationEntity;
+import com.example.demo.model.entity.RoomEntity;
+import com.example.demo.model.entity.UserEntity;
 import com.example.demo.model.request.AddFilmRequest;
 import com.example.demo.model.request.AddRoomRequest;
 import com.example.demo.model.response.RoomResponse;

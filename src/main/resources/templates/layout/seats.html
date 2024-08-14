@@ -2,8 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <title>Nathan James</title>
@@ -12,20 +12,20 @@
     <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" th:href="@{/fe/css/bootstrap.min.css}"/>
+    <link rel="stylesheet" th:href="@{/fe/css/bootstrap.min.css}" type="text/css"/>
 
     <!-- Slick -->
-    <link type="text/css" rel="stylesheet" th:href="@{/fe/css/slick.css}"/>
-    <link type="text/css" rel="stylesheet" th:href="@{/fe/css/slick-theme.css}"/>
+    <link rel="stylesheet" th:href="@{/fe/css/slick.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/fe/css/slick-theme.css}" type="text/css"/>
 
     <!-- nouislider -->
-    <link type="text/css" rel="stylesheet" th:href="@{/fe/css/nouislider.min.css}"/>
+    <link rel="stylesheet" th:href="@{/fe/css/nouislider.min.css}" type="text/css"/>
 
     <!-- Font Awesome Icon -->
     <link rel="stylesheet" th:href="@{/fe/css/font-awesome.min.css}">
 
     <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" th:href="@{/fe/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/fe/css/style.css}" type="text/css"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -43,10 +43,10 @@
 
     <!-- my -->
     <!-- Special version of Bootstrap that only affects content wrapped in .bootstrap-iso -->
-    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css"/>
+    <link href="https://formden.com/static/cdn/bootstrap-iso.css" rel="stylesheet"/>
 
     <!--Font Awesome (added because you use icons in your prepend/append)-->
-    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css"/>
+    <link href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
 
     <!-- Inline CSS based on choices in "Settings" tab -->
     <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form {
@@ -63,13 +63,13 @@
     }</style>
     <!-- Extra JavaScript/CSS added manually in "Settings" tab -->
     <!-- Include jQuery -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js" type="text/javascript"></script>
 
     <!-- Include Date Range Picker -->
-    <script type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"
+            type="text/javascript"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"
+          rel="stylesheet"/>
     <!-- <META HTTP-EQUIV="refresh" CONTENT="15"> -->
 
     <script>
@@ -200,7 +200,7 @@
                     <li><a href="#">Film Newsletter</a></li>
                     <li><a href="#">FAQ</a></li>
                     <li class="dropdown default-dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">ENG <i
+                        <a aria-expanded="true" class="dropdown-toggle" data-toggle="dropdown">ENG <i
                                 class="fa fa-caret-down"></i></a>
                         <ul class="custom-menu">
                             <li><a href="#">English (ENG)</a></li>
@@ -210,7 +210,7 @@
                         </ul>
                     </li>
                     <li class="dropdown default-dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">LKR <i
+                        <a aria-expanded="true" class="dropdown-toggle" data-toggle="dropdown">LKR <i
                                 class="fa fa-caret-down"></i></a>
                         <ul class="custom-menu">
                             <li><a href="#">LKR (RS)</a></li>
@@ -232,7 +232,7 @@
                 <!-- Logo -->
                 <div class="header-logo">
                     <a class="logo" href="index.html">
-                        <img src="./img/logo.png" alt="">
+                        <img alt="" src="./img/logo.png">
                     </a>
                 </div>
                 <!-- /Logo -->
@@ -240,7 +240,7 @@
                 <!-- Search -->
                 <div class="header-search">
                     <form>
-                        <input class="input search-input" type="text" placeholder="Enter your keyword">
+                        <input class="input search-input" placeholder="Enter your keyword" type="text">
                         <select class="input search-categories">
                             <option value="0">Film Categories</option>
                             <option value="1">All Movies</option>
@@ -257,7 +257,7 @@
                 <ul class="header-btns">
                     <!-- Account -->
                     <ul class="header-account dropdown default-dropdown">
-                        <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+                        <div aria-expanded="true" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <div class="header-btns-icon">
                                 <i class="fa fa-user-o"></i>
                             </div>
@@ -265,7 +265,7 @@
                             <strong class="text-uppercase" id="userName"><i class="fa fa-caret-down"></i></strong>
                         </div>
 
-                        <a href="#" class="text-uppercase" id="LogStatusBtn"></a>
+                        <a class="text-uppercase" href="#" id="LogStatusBtn"></a>
                         <!-- <button href="#" class="text-uppercase" id="LogStatusBtn"></button> -->
 
                     </ul>
@@ -420,60 +420,60 @@
         </div>
         <div class="col-sm-3">
             <br>
-            <button id="A1" type="button" name="button" class="seat" value="A1 " onclick="A1();">A1</button>
-            <button id="A2" type="button" name="button" class="seat" value="A2 " onclick="A2();">A2</button>
-            <button id="A3" type="button" name="button" class="seat" value="A3 " onclick="A3();">A3</button>
-            <button id="A4" type="button" name="button" class="seat" value="A4 " onclick="A4();">A4</button>
-            <button id="A5" type="button" name="button" class="seat" value="A5 " onclick="A5();">A5</button>
-            <button id="B1" type="button" name="button" class="seat" value="B1 " onclick="B1();">B1</button>
-            <button id="B2" type="button" name="button" class="seat" value="B2 " onclick="B2();">B2</button>
-            <button id="B3" type="button" name="button" class="seat" value="B3 " onclick="B3();">B3</button>
-            <button id="B4" type="button" name="button" class="seat" value="B4 " onclick="B4();">B4</button>
-            <button id="B5" type="button" name="button" class="seat" value="B5 " onclick="B5();">B5</button>
-            <button id="C1" type="button" name="button" class="seat" value="C1 " onclick="C1();">C1</button>
-            <button id="C2" type="button" name="button" class="seat" value="C2 " onclick="C2();">C2</button>
-            <button id="C3" type="button" name="button" class="seat" value="C3 " onclick="C3();">C3</button>
-            <button id="C4" type="button" name="button" class="seat" value="C4 " onclick="C4();">C4</button>
-            <button id="C5" type="button" name="button" class="seat" value="C5 " onclick="C5();">C5</button>
-            <button id="D1" type="button" name="button" class="seat" value="D1 " onclick="D1();">D1</button>
-            <button id="D2" type="button" name="button" class="seat" value="D2 " onclick="D2();">D2</button>
-            <button id="D3" type="button" name="button" class="seat" value="D3 " onclick="D3();">D3</button>
-            <button id="D4" type="button" name="button" class="seat" value="D4 " onclick="D4();">D4</button>
-            <button id="D5" type="button" name="button" class="seat" value="D5 " onclick="D5();">D5</button>
-            <button id="E1" type="button" name="button" class="seat" value="E1 " onclick="E1();">E1</button>
-            <button id="E2" type="button" name="button" class="seat" value="E2 " onclick="E2();">E2</button>
-            <button id="E3" type="button" name="button" class="seat" value="E3 " onclick="E3();">E3</button>
-            <button id="E4" type="button" name="button" class="seat" value="E4 " onclick="E4();">E4</button>
-            <button id="E5" type="button" name="button" class="seat" value="E5 " onclick="E5();">E5</button>
-            <button id="F1" type="button" name="button" class="seat" value="F1 " onclick="F1();">F1</button>
-            <button id="F2" type="button" name="button" class="seat" value="F2 " onclick="F2();">F2</button>
-            <button id="F3" type="button" name="button" class="seat" value="F3 " onclick="F3();">F3</button>
-            <button id="F4" type="button" name="button" class="seat" value="F4 " onclick="F4();">F4</button>
-            <button id="F5" type="button" name="button" class="seat" value="F5 " onclick="F5();">F5</button>
-            <button id="G1" type="button" name="button" class="seat" value="G1 " onclick="G1();">G1</button>
-            <button id="G2" type="button" name="button" class="seat" value="G2 " onclick="G2();">G2</button>
-            <button id="G3" type="button" name="button" class="seat" value="G3 " onclick="G3();">G3</button>
-            <button id="G4" type="button" name="button" class="seat" value="G4 " onclick="G4();">G4</button>
-            <button id="G5" type="button" name="button" class="seat" value="G5 " onclick="G5();">G5</button>
-            <button id="H1" type="button" name="button" class="seat" value="H1 " onclick="H1();">H1</button>
-            <button id="H2" type="button" name="button" class="seat" value="H2 " onclick="H2();">H2</button>
-            <button id="H3" type="button" name="button" class="seat" value="H3 " onclick="H3();">H3</button>
-            <button id="H4" type="button" name="button" class="seat" value="H4 " onclick="H4();">H4</button>
-            <button id="H5" type="button" name="button" class="seat" value="H5 " onclick="H5();">H5</button>
-            <button id="I1" type="button" name="button" class="seat" value="I1 " onclick="I1();">I1</button>
-            <button id="I2" type="button" name="button" class="seat" value="I2 " onclick="I2();">I2</button>
-            <button id="I3" type="button" name="button" class="seat" value="I3 " onclick="I3();">I3</button>
-            <button id="I4" type="button" name="button" class="seat" value="I4 " onclick="I4();">I4</button>
-            <button id="I5" type="button" name="button" class="seat" value="I5 " onclick="I5();">I5</button>
-            <button id="J1" type="button" name="button" class="seat" value="J1 " onclick="J1();">J1</button>
-            <button id="J2" type="button" name="button" class="seat" value="J2 " onclick="J2();">J2</button>
-            <button id="J3" type="button" name="button" class="seat" value="J3 " onclick="J3();">J3</button>
-            <button id="J4" type="button" name="button" class="seat" value="J4 " onclick="J4();">J4</button>
-            <button id="J5" type="button" name="button" class="seat" value="J5 " onclick="J5();">J5</button>
+            <button class="seat" id="A1" name="button" onclick="A1();" type="button" value="A1 ">A1</button>
+            <button class="seat" id="A2" name="button" onclick="A2();" type="button" value="A2 ">A2</button>
+            <button class="seat" id="A3" name="button" onclick="A3();" type="button" value="A3 ">A3</button>
+            <button class="seat" id="A4" name="button" onclick="A4();" type="button" value="A4 ">A4</button>
+            <button class="seat" id="A5" name="button" onclick="A5();" type="button" value="A5 ">A5</button>
+            <button class="seat" id="B1" name="button" onclick="B1();" type="button" value="B1 ">B1</button>
+            <button class="seat" id="B2" name="button" onclick="B2();" type="button" value="B2 ">B2</button>
+            <button class="seat" id="B3" name="button" onclick="B3();" type="button" value="B3 ">B3</button>
+            <button class="seat" id="B4" name="button" onclick="B4();" type="button" value="B4 ">B4</button>
+            <button class="seat" id="B5" name="button" onclick="B5();" type="button" value="B5 ">B5</button>
+            <button class="seat" id="C1" name="button" onclick="C1();" type="button" value="C1 ">C1</button>
+            <button class="seat" id="C2" name="button" onclick="C2();" type="button" value="C2 ">C2</button>
+            <button class="seat" id="C3" name="button" onclick="C3();" type="button" value="C3 ">C3</button>
+            <button class="seat" id="C4" name="button" onclick="C4();" type="button" value="C4 ">C4</button>
+            <button class="seat" id="C5" name="button" onclick="C5();" type="button" value="C5 ">C5</button>
+            <button class="seat" id="D1" name="button" onclick="D1();" type="button" value="D1 ">D1</button>
+            <button class="seat" id="D2" name="button" onclick="D2();" type="button" value="D2 ">D2</button>
+            <button class="seat" id="D3" name="button" onclick="D3();" type="button" value="D3 ">D3</button>
+            <button class="seat" id="D4" name="button" onclick="D4();" type="button" value="D4 ">D4</button>
+            <button class="seat" id="D5" name="button" onclick="D5();" type="button" value="D5 ">D5</button>
+            <button class="seat" id="E1" name="button" onclick="E1();" type="button" value="E1 ">E1</button>
+            <button class="seat" id="E2" name="button" onclick="E2();" type="button" value="E2 ">E2</button>
+            <button class="seat" id="E3" name="button" onclick="E3();" type="button" value="E3 ">E3</button>
+            <button class="seat" id="E4" name="button" onclick="E4();" type="button" value="E4 ">E4</button>
+            <button class="seat" id="E5" name="button" onclick="E5();" type="button" value="E5 ">E5</button>
+            <button class="seat" id="F1" name="button" onclick="F1();" type="button" value="F1 ">F1</button>
+            <button class="seat" id="F2" name="button" onclick="F2();" type="button" value="F2 ">F2</button>
+            <button class="seat" id="F3" name="button" onclick="F3();" type="button" value="F3 ">F3</button>
+            <button class="seat" id="F4" name="button" onclick="F4();" type="button" value="F4 ">F4</button>
+            <button class="seat" id="F5" name="button" onclick="F5();" type="button" value="F5 ">F5</button>
+            <button class="seat" id="G1" name="button" onclick="G1();" type="button" value="G1 ">G1</button>
+            <button class="seat" id="G2" name="button" onclick="G2();" type="button" value="G2 ">G2</button>
+            <button class="seat" id="G3" name="button" onclick="G3();" type="button" value="G3 ">G3</button>
+            <button class="seat" id="G4" name="button" onclick="G4();" type="button" value="G4 ">G4</button>
+            <button class="seat" id="G5" name="button" onclick="G5();" type="button" value="G5 ">G5</button>
+            <button class="seat" id="H1" name="button" onclick="H1();" type="button" value="H1 ">H1</button>
+            <button class="seat" id="H2" name="button" onclick="H2();" type="button" value="H2 ">H2</button>
+            <button class="seat" id="H3" name="button" onclick="H3();" type="button" value="H3 ">H3</button>
+            <button class="seat" id="H4" name="button" onclick="H4();" type="button" value="H4 ">H4</button>
+            <button class="seat" id="H5" name="button" onclick="H5();" type="button" value="H5 ">H5</button>
+            <button class="seat" id="I1" name="button" onclick="I1();" type="button" value="I1 ">I1</button>
+            <button class="seat" id="I2" name="button" onclick="I2();" type="button" value="I2 ">I2</button>
+            <button class="seat" id="I3" name="button" onclick="I3();" type="button" value="I3 ">I3</button>
+            <button class="seat" id="I4" name="button" onclick="I4();" type="button" value="I4 ">I4</button>
+            <button class="seat" id="I5" name="button" onclick="I5();" type="button" value="I5 ">I5</button>
+            <button class="seat" id="J1" name="button" onclick="J1();" type="button" value="J1 ">J1</button>
+            <button class="seat" id="J2" name="button" onclick="J2();" type="button" value="J2 ">J2</button>
+            <button class="seat" id="J3" name="button" onclick="J3();" type="button" value="J3 ">J3</button>
+            <button class="seat" id="J4" name="button" onclick="J4();" type="button" value="J4 ">J4</button>
+            <button class="seat" id="J5" name="button" onclick="J5();" type="button" value="J5 ">J5</button>
             <br><br>
             <div align="center">
-                <button id="Box1" type="button" class="box" value="Box1 " onclick="Box1();">Box 1</button>
-                <button id="Box2" type="button" class="box" value="Box2 " onclick="Box2();">Box 2</button>
+                <button class="box" id="Box1" onclick="Box1();" type="button" value="Box1 ">Box 1</button>
+                <button class="box" id="Box2" onclick="Box2();" type="button" value="Box2 ">Box 2</button>
             </div>
 
 
@@ -483,60 +483,60 @@
         </div>
         <div class="col-sm-3">
             <br>
-            <button id="A6" type="button" name="button" class="seat" value="A6 " onclick="A6();">A6</button>
-            <button id="A7" type="button" name="button" class="seat" value="A7 " onclick="A7();">A7</button>
-            <button id="A8" type="button" name="button" class="seat" value="A8 " onclick="A8();">A8</button>
-            <button id="A9" type="button" name="button" class="seat" value="A9 " onclick="A9();">A9</button>
-            <button id="A10" type="button" name="button" class="seat" value="A10 " onclick="A10();">A10</button>
-            <button id="B6" type="button" name="button" class="seat" value="B6 " onclick="B6();">B6</button>
-            <button id="B7" type="button" name="button" class="seat" value="B7 " onclick="B7();">B7</button>
-            <button id="B8" type="button" name="button" class="seat" value="B8 " onclick="B8();">B8</button>
-            <button id="B9" type="button" name="button" class="seat" value="B9 " onclick="B9();">B9</button>
-            <button id="B10" type="button" name="button" class="seat" value="B10 " onclick="B10();">B10</button>
-            <button id="C6" type="button" name="button" class="seat" value="C6 " onclick="C6();">C6</button>
-            <button id="C7" type="button" name="button" class="seat" value="C7 " onclick="C7();">C7</button>
-            <button id="C8" type="button" name="button" class="seat" value="C8 " onclick="C8();">C8</button>
-            <button id="C9" type="button" name="button" class="seat" value="C9 " onclick="C9();">C9</button>
-            <button id="C10" type="button" name="button" class="seat" value="C10 " onclick="C10();">C10</button>
-            <button id="D6" type="button" name="button" class="seat" value="D6 " onclick="D6();">D6</button>
-            <button id="D7" type="button" name="button" class="seat" value="D7 " onclick="D7();">D7</button>
-            <button id="D8" type="button" name="button" class="seat" value="D8 " onclick="D8();">D8</button>
-            <button id="D9" type="button" name="button" class="seat" value="D9 " onclick="D9();">D9</button>
-            <button id="D10" type="button" name="button" class="seat" value="D10 " onclick="D10();">D10</button>
-            <button id="E6" type="button" name="button" class="seat" value="E6 " onclick="E6();">E6</button>
-            <button id="E7" type="button" name="button" class="seat" value="E7 " onclick="E7();">E7</button>
-            <button id="E8" type="button" name="button" class="seat" value="E8 " onclick="E8();">E8</button>
-            <button id="E9" type="button" name="button" class="seat" value="E9 " onclick="E9();">E9</button>
-            <button id="E10" type="button" name="button" class="seat" value="E10 " onclick="E10();">E10</button>
-            <button id="F6" type="button" name="button" class="seat" value="F6 " onclick="F6();">F6</button>
-            <button id="F7" type="button" name="button" class="seat" value="F7 " onclick="F7();">F7</button>
-            <button id="F8" type="button" name="button" class="seat" value="F8 " onclick="F8();">F8</button>
-            <button id="F9" type="button" name="button" class="seat" value="F9 " onclick="F9();">F9</button>
-            <button id="F10" type="button" name="button" class="seat" value="F10 " onclick="F10();">F10</button>
-            <button id="G6" type="button" name="button" class="seat" value="G6 " onclick="G6();">G6</button>
-            <button id="G7" type="button" name="button" class="seat" value="G7 " onclick="G7();">G7</button>
-            <button id="G8" type="button" name="button" class="seat" value="G8 " onclick="G8();">G8</button>
-            <button id="G9" type="button" name="button" class="seat" value="G9 " onclick="G9();">G9</button>
-            <button id="G10" type="button" name="button" class="seat" value="G10 " onclick="G10();">G10</button>
-            <button id="H6" type="button" name="button" class="seat" value="H6 " onclick="H6();">H6</button>
-            <button id="H7" type="button" name="button" class="seat" value="H7 " onclick="H7();">H7</button>
-            <button id="H8" type="button" name="button" class="seat" value="H8 " onclick="H8();">H8</button>
-            <button id="H9" type="button" name="button" class="seat" value="H9 " onclick="H9();">H9</button>
-            <button id="H10" type="button" name="button" class="seat" value="H10 " onclick="H10();">H10</button>
-            <button id="I6" type="button" name="button" class="seat" value="I6 " onclick="I6();">I6</button>
-            <button id="I7" type="button" name="button" class="seat" value="I7 " onclick="I7();">I7</button>
-            <button id="I8" type="button" name="button" class="seat" value="I8 " onclick="I8();">I8</button>
-            <button id="I9" type="button" name="button" class="seat" value="I9 " onclick="I9();">I9</button>
-            <button id="I10" type="button" name="button" class="seat" value="I10 " onclick="I10();">I10</button>
-            <button id="J6" type="button" name="button" class="seat" value="J6 " onclick="J6();">J6</button>
-            <button id="J7" type="button" name="button" class="seat" value="J7 " onclick="J7();">J7</button>
-            <button id="J8" type="button" name="button" class="seat" value="J8 " onclick="J8();">J8</button>
-            <button id="J9" type="button" name="button" class="seat" value="J9 " onclick="J9();">J9</button>
-            <button id="J10" type="button" name="button" class="seat" value="J10 " onclick="J10();">J10</button>
+            <button class="seat" id="A6" name="button" onclick="A6();" type="button" value="A6 ">A6</button>
+            <button class="seat" id="A7" name="button" onclick="A7();" type="button" value="A7 ">A7</button>
+            <button class="seat" id="A8" name="button" onclick="A8();" type="button" value="A8 ">A8</button>
+            <button class="seat" id="A9" name="button" onclick="A9();" type="button" value="A9 ">A9</button>
+            <button class="seat" id="A10" name="button" onclick="A10();" type="button" value="A10 ">A10</button>
+            <button class="seat" id="B6" name="button" onclick="B6();" type="button" value="B6 ">B6</button>
+            <button class="seat" id="B7" name="button" onclick="B7();" type="button" value="B7 ">B7</button>
+            <button class="seat" id="B8" name="button" onclick="B8();" type="button" value="B8 ">B8</button>
+            <button class="seat" id="B9" name="button" onclick="B9();" type="button" value="B9 ">B9</button>
+            <button class="seat" id="B10" name="button" onclick="B10();" type="button" value="B10 ">B10</button>
+            <button class="seat" id="C6" name="button" onclick="C6();" type="button" value="C6 ">C6</button>
+            <button class="seat" id="C7" name="button" onclick="C7();" type="button" value="C7 ">C7</button>
+            <button class="seat" id="C8" name="button" onclick="C8();" type="button" value="C8 ">C8</button>
+            <button class="seat" id="C9" name="button" onclick="C9();" type="button" value="C9 ">C9</button>
+            <button class="seat" id="C10" name="button" onclick="C10();" type="button" value="C10 ">C10</button>
+            <button class="seat" id="D6" name="button" onclick="D6();" type="button" value="D6 ">D6</button>
+            <button class="seat" id="D7" name="button" onclick="D7();" type="button" value="D7 ">D7</button>
+            <button class="seat" id="D8" name="button" onclick="D8();" type="button" value="D8 ">D8</button>
+            <button class="seat" id="D9" name="button" onclick="D9();" type="button" value="D9 ">D9</button>
+            <button class="seat" id="D10" name="button" onclick="D10();" type="button" value="D10 ">D10</button>
+            <button class="seat" id="E6" name="button" onclick="E6();" type="button" value="E6 ">E6</button>
+            <button class="seat" id="E7" name="button" onclick="E7();" type="button" value="E7 ">E7</button>
+            <button class="seat" id="E8" name="button" onclick="E8();" type="button" value="E8 ">E8</button>
+            <button class="seat" id="E9" name="button" onclick="E9();" type="button" value="E9 ">E9</button>
+            <button class="seat" id="E10" name="button" onclick="E10();" type="button" value="E10 ">E10</button>
+            <button class="seat" id="F6" name="button" onclick="F6();" type="button" value="F6 ">F6</button>
+            <button class="seat" id="F7" name="button" onclick="F7();" type="button" value="F7 ">F7</button>
+            <button class="seat" id="F8" name="button" onclick="F8();" type="button" value="F8 ">F8</button>
+            <button class="seat" id="F9" name="button" onclick="F9();" type="button" value="F9 ">F9</button>
+            <button class="seat" id="F10" name="button" onclick="F10();" type="button" value="F10 ">F10</button>
+            <button class="seat" id="G6" name="button" onclick="G6();" type="button" value="G6 ">G6</button>
+            <button class="seat" id="G7" name="button" onclick="G7();" type="button" value="G7 ">G7</button>
+            <button class="seat" id="G8" name="button" onclick="G8();" type="button" value="G8 ">G8</button>
+            <button class="seat" id="G9" name="button" onclick="G9();" type="button" value="G9 ">G9</button>
+            <button class="seat" id="G10" name="button" onclick="G10();" type="button" value="G10 ">G10</button>
+            <button class="seat" id="H6" name="button" onclick="H6();" type="button" value="H6 ">H6</button>
+            <button class="seat" id="H7" name="button" onclick="H7();" type="button" value="H7 ">H7</button>
+            <button class="seat" id="H8" name="button" onclick="H8();" type="button" value="H8 ">H8</button>
+            <button class="seat" id="H9" name="button" onclick="H9();" type="button" value="H9 ">H9</button>
+            <button class="seat" id="H10" name="button" onclick="H10();" type="button" value="H10 ">H10</button>
+            <button class="seat" id="I6" name="button" onclick="I6();" type="button" value="I6 ">I6</button>
+            <button class="seat" id="I7" name="button" onclick="I7();" type="button" value="I7 ">I7</button>
+            <button class="seat" id="I8" name="button" onclick="I8();" type="button" value="I8 ">I8</button>
+            <button class="seat" id="I9" name="button" onclick="I9();" type="button" value="I9 ">I9</button>
+            <button class="seat" id="I10" name="button" onclick="I10();" type="button" value="I10 ">I10</button>
+            <button class="seat" id="J6" name="button" onclick="J6();" type="button" value="J6 ">J6</button>
+            <button class="seat" id="J7" name="button" onclick="J7();" type="button" value="J7 ">J7</button>
+            <button class="seat" id="J8" name="button" onclick="J8();" type="button" value="J8 ">J8</button>
+            <button class="seat" id="J9" name="button" onclick="J9();" type="button" value="J9 ">J9</button>
+            <button class="seat" id="J10" name="button" onclick="J10();" type="button" value="J10 ">J10</button>
             <br><br>
             <div align="center">
-                <button id="Box3" type="button" class="box" value="Box3 " onclick="Box3();">Box 3</button>
-                <button id="Box4" type="button" class="box" value="Box4 " onclick="Box4();">Box 4</button>
+                <button class="box" id="Box3" onclick="Box3();" type="button" value="Box3 ">Box 3</button>
+                <button class="box" id="Box4" onclick="Box4();" type="button" value="Box4 ">Box 4</button>
             </div>
 
         </div>
@@ -545,60 +545,60 @@
         </div>
         <div class="col-sm-3">
             <br>
-            <button id="A11" type="button" name="button" class="seat" value="A11 " onclick="A11();">A11</button>
-            <button id="A12" type="button" name="button" class="seat" value="A12 " onclick="A12();">A12</button>
-            <button id="A13" type="button" name="button" class="seat" value="A13 " onclick="A13();">A13</button>
-            <button id="A14" type="button" name="button" class="seat" value="A14 " onclick="A14();">A14</button>
-            <button id="A15" type="button" name="button" class="seat" value="A15 " onclick="A15();">A15</button>
-            <button id="B11" type="button" name="button" class="seat" value="B11 " onclick="B11();">B11</button>
-            <button id="B12" type="button" name="button" class="seat" value="B12 " onclick="B12();">B12</button>
-            <button id="B13" type="button" name="button" class="seat" value="B13 " onclick="B13();">B13</button>
-            <button id="B14" type="button" name="button" class="seat" value="B14 " onclick="B14();">B14</button>
-            <button id="B15" type="button" name="button" class="seat" value="B15 " onclick="B15();">B15</button>
-            <button id="C11" type="button" name="button" class="seat" value="C11 " onclick="C11();">C11</button>
-            <button id="C12" type="button" name="button" class="seat" value="C12 " onclick="C12();">C12</button>
-            <button id="C13" type="button" name="button" class="seat" value="C13 " onclick="C13();">C13</button>
-            <button id="C14" type="button" name="button" class="seat" value="C14 " onclick="C14();">C14</button>
-            <button id="C15" type="button" name="button" class="seat" value="C15 " onclick="C15();">C15</button>
-            <button id="D11" type="button" name="button" class="seat" value="D11 " onclick="D11();">D11</button>
-            <button id="D12" type="button" name="button" class="seat" value="D12 " onclick="D12();">D12</button>
-            <button id="D13" type="button" name="button" class="seat" value="D13 " onclick="D13();">D13</button>
-            <button id="D14" type="button" name="button" class="seat" value="D14 " onclick="D14();">D14</button>
-            <button id="D15" type="button" name="button" class="seat" value="D15 " onclick="D15();">D15</button>
-            <button id="E11" type="button" name="button" class="seat" value="E11 " onclick="E11();">E11</button>
-            <button id="E12" type="button" name="button" class="seat" value="E12 " onclick="E12();">E12</button>
-            <button id="E13" type="button" name="button" class="seat" value="E13 " onclick="E13();">E13</button>
-            <button id="E14" type="button" name="button" class="seat" value="E14 " onclick="E14();">E14</button>
-            <button id="E15" type="button" name="button" class="seat" value="E15 " onclick="E15();">E15</button>
-            <button id="F11" type="button" name="button" class="seat" value="F11 " onclick="F11();">F11</button>
-            <button id="F12" type="button" name="button" class="seat" value="F12 " onclick="F12();">F12</button>
-            <button id="F13" type="button" name="button" class="seat" value="F13 " onclick="F13();">F13</button>
-            <button id="F14" type="button" name="button" class="seat" value="F14 " onclick="F14();">F14</button>
-            <button id="F15" type="button" name="button" class="seat" value="F15 " onclick="F15();">F15</button>
-            <button id="G11" type="button" name="button" class="seat" value="G11 " onclick="G11();">G11</button>
-            <button id="G12" type="button" name="button" class="seat" value="G12 " onclick="G12();">G12</button>
-            <button id="G13" type="button" name="button" class="seat" value="G13 " onclick="G13();">G13</button>
-            <button id="G14" type="button" name="button" class="seat" value="G14 " onclick="G14();">G14</button>
-            <button id="G15" type="button" name="button" class="seat" value="G15 " onclick="G15();">G15</button>
-            <button id="H11" type="button" name="button" class="seat" value="H11 " onclick="H11();">H11</button>
-            <button id="H12" type="button" name="button" class="seat" value="H12 " onclick="H12();">H12</button>
-            <button id="H13" type="button" name="button" class="seat" value="H13 " onclick="H13();">H13</button>
-            <button id="H14" type="button" name="button" class="seat" value="H14 " onclick="H14();">H14</button>
-            <button id="H15" type="button" name="button" class="seat" value="H15 " onclick="H15();">H15</button>
-            <button id="I11" type="button" name="button" class="seat" value="I11 " onclick="I11();">I11</button>
-            <button id="I12" type="button" name="button" class="seat" value="I12 " onclick="I12();">I12</button>
-            <button id="I13" type="button" name="button" class="seat" value="I13 " onclick="I13();">I13</button>
-            <button id="I14" type="button" name="button" class="seat" value="I14 " onclick="I14();">I14</button>
-            <button id="I15" type="button" name="button" class="seat" value="I15 " onclick="I15();">I15</button>
-            <button id="J11" type="button" name="button" class="seat" value="J11 " onclick="J11();">J11</button>
-            <button id="J12" type="button" name="button" class="seat" value="J12 " onclick="J12();">J12</button>
-            <button id="J13" type="button" name="button" class="seat" value="J13 " onclick="J13();">J13</button>
-            <button id="J14" type="button" name="button" class="seat" value="J14 " onclick="J14();">J14</button>
-            <button id="J15" type="button" name="button" class="seat" value="J15 " onclick="J15();">J15</button>
+            <button class="seat" id="A11" name="button" onclick="A11();" type="button" value="A11 ">A11</button>
+            <button class="seat" id="A12" name="button" onclick="A12();" type="button" value="A12 ">A12</button>
+            <button class="seat" id="A13" name="button" onclick="A13();" type="button" value="A13 ">A13</button>
+            <button class="seat" id="A14" name="button" onclick="A14();" type="button" value="A14 ">A14</button>
+            <button class="seat" id="A15" name="button" onclick="A15();" type="button" value="A15 ">A15</button>
+            <button class="seat" id="B11" name="button" onclick="B11();" type="button" value="B11 ">B11</button>
+            <button class="seat" id="B12" name="button" onclick="B12();" type="button" value="B12 ">B12</button>
+            <button class="seat" id="B13" name="button" onclick="B13();" type="button" value="B13 ">B13</button>
+            <button class="seat" id="B14" name="button" onclick="B14();" type="button" value="B14 ">B14</button>
+            <button class="seat" id="B15" name="button" onclick="B15();" type="button" value="B15 ">B15</button>
+            <button class="seat" id="C11" name="button" onclick="C11();" type="button" value="C11 ">C11</button>
+            <button class="seat" id="C12" name="button" onclick="C12();" type="button" value="C12 ">C12</button>
+            <button class="seat" id="C13" name="button" onclick="C13();" type="button" value="C13 ">C13</button>
+            <button class="seat" id="C14" name="button" onclick="C14();" type="button" value="C14 ">C14</button>
+            <button class="seat" id="C15" name="button" onclick="C15();" type="button" value="C15 ">C15</button>
+            <button class="seat" id="D11" name="button" onclick="D11();" type="button" value="D11 ">D11</button>
+            <button class="seat" id="D12" name="button" onclick="D12();" type="button" value="D12 ">D12</button>
+            <button class="seat" id="D13" name="button" onclick="D13();" type="button" value="D13 ">D13</button>
+            <button class="seat" id="D14" name="button" onclick="D14();" type="button" value="D14 ">D14</button>
+            <button class="seat" id="D15" name="button" onclick="D15();" type="button" value="D15 ">D15</button>
+            <button class="seat" id="E11" name="button" onclick="E11();" type="button" value="E11 ">E11</button>
+            <button class="seat" id="E12" name="button" onclick="E12();" type="button" value="E12 ">E12</button>
+            <button class="seat" id="E13" name="button" onclick="E13();" type="button" value="E13 ">E13</button>
+            <button class="seat" id="E14" name="button" onclick="E14();" type="button" value="E14 ">E14</button>
+            <button class="seat" id="E15" name="button" onclick="E15();" type="button" value="E15 ">E15</button>
+            <button class="seat" id="F11" name="button" onclick="F11();" type="button" value="F11 ">F11</button>
+            <button class="seat" id="F12" name="button" onclick="F12();" type="button" value="F12 ">F12</button>
+            <button class="seat" id="F13" name="button" onclick="F13();" type="button" value="F13 ">F13</button>
+            <button class="seat" id="F14" name="button" onclick="F14();" type="button" value="F14 ">F14</button>
+            <button class="seat" id="F15" name="button" onclick="F15();" type="button" value="F15 ">F15</button>
+            <button class="seat" id="G11" name="button" onclick="G11();" type="button" value="G11 ">G11</button>
+            <button class="seat" id="G12" name="button" onclick="G12();" type="button" value="G12 ">G12</button>
+            <button class="seat" id="G13" name="button" onclick="G13();" type="button" value="G13 ">G13</button>
+            <button class="seat" id="G14" name="button" onclick="G14();" type="button" value="G14 ">G14</button>
+            <button class="seat" id="G15" name="button" onclick="G15();" type="button" value="G15 ">G15</button>
+            <button class="seat" id="H11" name="button" onclick="H11();" type="button" value="H11 ">H11</button>
+            <button class="seat" id="H12" name="button" onclick="H12();" type="button" value="H12 ">H12</button>
+            <button class="seat" id="H13" name="button" onclick="H13();" type="button" value="H13 ">H13</button>
+            <button class="seat" id="H14" name="button" onclick="H14();" type="button" value="H14 ">H14</button>
+            <button class="seat" id="H15" name="button" onclick="H15();" type="button" value="H15 ">H15</button>
+            <button class="seat" id="I11" name="button" onclick="I11();" type="button" value="I11 ">I11</button>
+            <button class="seat" id="I12" name="button" onclick="I12();" type="button" value="I12 ">I12</button>
+            <button class="seat" id="I13" name="button" onclick="I13();" type="button" value="I13 ">I13</button>
+            <button class="seat" id="I14" name="button" onclick="I14();" type="button" value="I14 ">I14</button>
+            <button class="seat" id="I15" name="button" onclick="I15();" type="button" value="I15 ">I15</button>
+            <button class="seat" id="J11" name="button" onclick="J11();" type="button" value="J11 ">J11</button>
+            <button class="seat" id="J12" name="button" onclick="J12();" type="button" value="J12 ">J12</button>
+            <button class="seat" id="J13" name="button" onclick="J13();" type="button" value="J13 ">J13</button>
+            <button class="seat" id="J14" name="button" onclick="J14();" type="button" value="J14 ">J14</button>
+            <button class="seat" id="J15" name="button" onclick="J15();" type="button" value="J15 ">J15</button>
             <br><br>
             <div align="center">
-                <button type="button" id="Box5" class="box" value="Box5 " onclick="Box5();">Box 5</button>
-                <button type="button" id="Box6" class="box" value="Box6 " onclick="Box6();">Box 6</button>
+                <button class="box" id="Box5" onclick="Box5();" type="button" value="Box5 ">Box 5</button>
+                <button class="box" id="Box6" onclick="Box6();" type="button" value="Box6 ">Box 6</button>
             </div>
 
         </div>
@@ -619,12 +619,12 @@
 
     </div>
 
-    <div class="row" align="center">
+    <div align="center" class="row">
         <div class="col-sm-2">
             <br>
             <button class="main-btn quick-view"><a href="dateAndTime.html"> <i class="fa fa-hand-o-left"
-                                                                               data-toggle="tooltip"
-                                                                               data-placement="top" title="Hooray!"></i>
+                                                                               data-placement="top"
+                                                                               data-toggle="tooltip" title="Hooray!"></i>
                 Back to time Selection</a></button>
         </div>
 
@@ -638,13 +638,13 @@
 
         <div class="col-sm-8">
             <br>
-            <form class="form-inline" action="/action_page.php">
+            <form action="/action_page.php" class="form-inline">
                 <div class="form-group">
                     <span class="label label-warning">Box Seats :</span>
-                    <input type="text" id="BoxSeats" class="form-control" placeholder="Selected Boxes" disabled>
+                    <input class="form-control" disabled id="BoxSeats" placeholder="Selected Boxes" type="text">
 
-                    <div class="form-group" align="center">
-                        <input type="text" id="fill" class="form-control" placeholder="Booked Seats" size="25" disabled>
+                    <div align="center" class="form-group">
+                        <input class="form-control" disabled id="fill" placeholder="Booked Seats" size="25" type="text">
                     </div>
 
                     <div class="form-group">
@@ -676,13 +676,13 @@
             <input type="text" id="Total" class="form-control" value="0 LKR" placeholder="Total Price" size="15" onclick="total();"  >
 
         </div> -->
-                <button class="primary-btn add-to-cart" data-toggle="popover" data-placement="top" title="Seat prices"
-                        data-content="Normal : 700LKR | Half : 400LKR | Box : 1500LKR"><i class="fa fa-credit-card"></i>
+                <button class="primary-btn add-to-cart" data-content="Normal : 700LKR | Half : 400LKR | Box : 1500LKR" data-placement="top" data-toggle="popover"
+                        title="Seat prices"><i class="fa fa-credit-card"></i>
                     Seat Prices
                 </button>
 
                 <!-- <button class="primary-btn add-to-cart"><i class="fa fa-money"></i> Seat Prices</button> -->
-                <INPUT TYPE="button" class="primary-btn" onClick="history.go(0)" VALUE="Reset Seats">
+                <INPUT TYPE="button" VALUE="Reset Seats" class="primary-btn" onClick="history.go(0)">
 
             </form>
 
@@ -692,9 +692,9 @@
 
         <div class="col-sm-2">
             <br>
-            <button class="main-btn quick-view" align="right"><a href="snacks.html"> <i class="fa fa-hand-o-right"
-                                                                                        data-toggle="tooltip"
+            <button align="right" class="main-btn quick-view"><a href="snacks.html"> <i class="fa fa-hand-o-right"
                                                                                         data-placement="top"
+                                                                                        data-toggle="tooltip"
                                                                                         title=" "></i> Snack
                 Selection</a></button>
 

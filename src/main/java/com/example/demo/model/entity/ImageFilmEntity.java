@@ -19,5 +19,4 @@ public class ImageFilmEntity {
     private String linkImage;
 
 
-
 }

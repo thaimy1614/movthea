@@ -9,10 +9,10 @@
 <html class="no-js" lang="" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <title>Nathan James - Admin</title>
-    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="Sufee Admin - HTML5 Admin Template" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
 
     <link rel="apple-touch-icon" th:href="@{/apple-icon.png}">
     <link rel="shortcut icon" th:href="@{/favicon.ico}">
@@ -42,7 +42,7 @@
 
 <!-- Right Panel -->
 
-<div id="right-panel" class="right-panel">
+<div class="right-panel" id="right-panel">
 
     <!-- Header-->
     <!-- Header-->
@@ -54,7 +54,7 @@
             <div class="page-header float-left">
                 <div class="page-title">
                     <h1>Dashboard</h1>
-                    <button type="button" class="btn btn-success btn-sm" onclick="refresh();">
+                    <button class="btn btn-success btn-sm" onclick="refresh();" type="button">
                         <i class="fa fa-refresh"></i> Refresh Page
                     </button>
 
@@ -87,20 +87,20 @@
                             <table class="table">
                                 <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col" id="movieid">FilmId</th>
-                                    <th scope="col" id="moviename">Name</th>
-                                    <th scope="col" id="movietheatre">Theatre</th>
-                                    <th scope="col" id="moviedescription">Description</th>
-                                    <th scope="col" id="movieactor">Main Actor</th>
-                                    <th scope="col" id="movieactress">Main Actress</th>
-                                    <th scope="col" id="movieproducer">Producer</th>
-                                    <th scope="col" id="movieimage">Image Link</th>
+                                    <th id="movieid" scope="col">FilmId</th>
+                                    <th id="moviename" scope="col">Name</th>
+                                    <th id="movietheatre" scope="col">Theatre</th>
+                                    <th id="moviedescription" scope="col">Description</th>
+                                    <th id="movieactor" scope="col">Main Actor</th>
+                                    <th id="movieactress" scope="col">Main Actress</th>
+                                    <th id="movieproducer" scope="col">Producer</th>
+                                    <th id="movieimage" scope="col">Image Link</th>
 
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th scope="row" id="id1">F001</th>
+                                    <th id="id1" scope="row">F001</th>
                                     <td id="name1">Nobody's Fool (2018)</td>
                                     <td id="theatre1">A</td>
                                     <td id="status1">Now Showing</td>
@@ -140,7 +140,7 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th scope="row" id="id2">B001</th>
+                                    <th id="id2" scope="row">B001</th>
                                     <td id="first2">U001</td>
                                     <td id="last2">01.01.2018</td>
                                     <td id="email2">Tiger</td>
@@ -180,7 +180,7 @@
                                 </thead>
                                 <tbody>
                                 <tr>
-                                    <th scope="row" id="id3">U001</th>
+                                    <th id="id3" scope="row">U001</th>
                                     <td id="name3">Kalhara</td>
                                     <td id="movierunning3">Perera</td>
                                     <td id="nextmovie3">adorekasun@icloud.com</td>

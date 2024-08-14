@@ -1,5 +1,4 @@
-
-function AddUser(){
+function AddUser() {
 
     var id = document.getElementById("userid").value;
     var firstname = document.getElementById("firstname").value;
@@ -8,18 +7,18 @@ function AddUser(){
     var mobile = document.getElementById("mobile").value;
     var password = document.getElementById("password").value;
 
-    
+
     var firebaseref = firebase.database().ref('Users/');
 
     firebaseref.push().set({
-        Firstname : firstname ,
-        Lastname : lastname,
-        Email : email,
-        Mobile : mobile,
-        Password : password,
-   } );
-    
-    
+        Firstname: firstname,
+        Lastname: lastname,
+        Email: email,
+        Mobile: mobile,
+        Password: password,
+    });
+
+
     document.getElementById("userid").value = " ";
     document.getElementById("firstname").value = " ";
     document.getElementById("lastname").value = " ";
@@ -31,7 +30,7 @@ function AddUser(){
 }
 
 
-function SearchUser(){
+function SearchUser() {
 
     var id = document.getElementById("userid");
     var firstname = document.getElementById("firstname").value;
@@ -42,13 +41,13 @@ function SearchUser(){
 
     const firebaseref = firebase.database().ref();
 
-    firebaseref.child('Users').orderByChild('Firstname').equalTo(firstname).on("value", function(snap) {
+    firebaseref.child('Users').orderByChild('Firstname').equalTo(firstname).on("value", function (snap) {
         console.log(snap.val());
 
-        snap.forEach(function(data) {
+        snap.forEach(function (data) {
             var alldata = data.val()
             console.log(data.key);
-            
+
             firstname.value = alldata.Firstname;
             id.value = data.key;
             lastname.value = alldata.Lastname;
@@ -61,27 +60,23 @@ function SearchUser(){
 }
 
 
+function UpdateUser() {
+    // A post entry.
 
-function UpdateUser(){
-        // A post entry.
-      
-        // Get a key for a new Post.
-        var newPostKey = firebase.database().ref().child('posts').push().key;
-      
-        // Write the new post's data simultaneously in the posts list and the user's post list.
-        var updates = {};
-        updates['/posts/' + newPostKey] = postData;
-        updates['/user-posts/' + uid + '/' + newPostKey] = postData;
-      
-        return firebase.database().ref().update(updates);
-      }
+    // Get a key for a new Post.
+    var newPostKey = firebase.database().ref().child('posts').push().key;
 
+    // Write the new post's data simultaneously in the posts list and the user's post list.
+    var updates = {};
+    updates['/posts/' + newPostKey] = postData;
+    updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+
+    return firebase.database().ref().update(updates);
+}
 
 
+function ClearFields() {
 
-
-function ClearFields(){
-        
     document.getElementById("userid").value = " ";
     document.getElementById("firstname").value = " ";
     document.getElementById("lastname").value = " ";
@@ -91,7 +86,7 @@ function ClearFields(){
 
 }
 
-function DeleteUser(){
+function DeleteUser() {
 
     var Id = document.getElementById("userid").value;
 
@@ -108,37 +103,6 @@ function DeleteUser(){
     window.alert("User has been removed from the database succesfully!!");
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // uploading the image open

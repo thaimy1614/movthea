@@ -1,5 +1,4 @@
-
-function addFilm(){
+function addFilm() {
 
     var name = document.getElementById("MovieName").value;
     var description = document.getElementById("MovieDescription").value;
@@ -9,25 +8,24 @@ function addFilm(){
     var theatre = document.getElementById("MovieTheatre").value;
 
 
-
     // var MovieName = fname.value;
     // var MovieDescription = sname.value;
 
     const selectedFile = document.getElementById("MovieImage").value;
-    
+
     var firebaseref = firebase.database().ref('Films/');
 
     firebaseref.push().set({
-        Name : name ,
-        Description : description,
-        MainActor : mainactor,
-        MainActress : mainactress,
-        Producer : producer,
-        Theatre : theatre,
-        ImagePath : selectedFile,
-   } );
-    console.log("Data Added"); 
-    
+        Name: name,
+        Description: description,
+        MainActor: mainactor,
+        MainActress: mainactress,
+        Producer: producer,
+        Theatre: theatre,
+        ImagePath: selectedFile,
+    });
+    console.log("Data Added");
+
     document.getElementById("MovieName").value = " ";
     document.getElementById("MovieDescription").value = " ";
     document.getElementById("MainActor").value = " ";
@@ -41,7 +39,7 @@ function addFilm(){
 }
 
 
-function searchmovie(){
+function searchmovie() {
 
     var name = document.getElementById("MovieName");
     var description = document.getElementById("MovieDescription");
@@ -56,13 +54,13 @@ function searchmovie(){
 
     const firebaseref = firebase.database().ref();
 
-    firebaseref.child('Films').orderByChild('Name').equalTo(searchName).on("value", function(moviesnapshot) {
+    firebaseref.child('Films').orderByChild('Name').equalTo(searchName).on("value", function (moviesnapshot) {
         console.log(moviesnapshot.val());
 
-        moviesnapshot.forEach(function(data) {
+        moviesnapshot.forEach(function (data) {
             var alldata = data.val()
             console.log(data.key);
-            
+
             name.value = alldata.Name;
             Id.value = data.key;
             description.value = alldata.Description;
@@ -77,27 +75,23 @@ function searchmovie(){
 }
 
 
+function Updatemovie() {
+    // A post entry.
 
-function Updatemovie(){
-        // A post entry.
-      
-        // Get a key for a new Post.
-        var newPostKey = firebase.database().ref().child('posts').push().key;
-      
-        // Write the new post's data simultaneously in the posts list and the user's post list.
-        var updates = {};
-        updates['/posts/' + newPostKey] = postData;
-        updates['/user-posts/' + uid + '/' + newPostKey] = postData;
-      
-        return firebase.database().ref().update(updates);
-      }
+    // Get a key for a new Post.
+    var newPostKey = firebase.database().ref().child('posts').push().key;
 
+    // Write the new post's data simultaneously in the posts list and the user's post list.
+    var updates = {};
+    updates['/posts/' + newPostKey] = postData;
+    updates['/user-posts/' + uid + '/' + newPostKey] = postData;
+
+    return firebase.database().ref().update(updates);
+}
 
 
+function ClearFields() {
 
-
-function ClearFields(){
-        
     document.getElementById("MovieName").value = " ";
     document.getElementById("MovieDescription").value = " ";
     document.getElementById("MainActor").value = " ";
@@ -110,7 +104,7 @@ function ClearFields(){
 
 }
 
-function DeleteFilm(){
+function DeleteFilm() {
 
     var Id = document.getElementById("MovieId").value;
 
@@ -129,37 +123,6 @@ function DeleteFilm(){
     window.alert("Film has been removed from the database succesfully!!");
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // uploading the image open

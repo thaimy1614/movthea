@@ -1,35 +1,33 @@
+var user = document.getElementById("user");
+var review = document.getElementById("review");
+var time = document.getElementById("time");
 
-    var user = document.getElementById("user");
-    var review = document.getElementById("review");
-    var time = document.getElementById("time");
+time.innerText = " " + new Date().toLocaleString();
+console.log(time);
 
-    time.innerText = " " + new Date().toLocaleString();
-    console.log(time);
-
-    var firebaseref = firebase.database().ref();
+var firebaseref = firebase.database().ref();
 
 
-    firebaseref.child('Reviews').limitToLast(1).on("value", function(snapshot) {
-        console.log(snapshot.val());
+firebaseref.child('Reviews').limitToLast(1).on("value", function (snapshot) {
+    console.log(snapshot.val());
 
-        snapshot.forEach(function(data) {
-            var alldata = data.val()
-            console.log(data.key);
+    snapshot.forEach(function (data) {
+        var alldata = data.val()
+        console.log(data.key);
 
-            
-            user.innerText = " " + alldata.UserName;
-            review.innerText = alldata.Review;
 
-        });
+        user.innerText = " " + alldata.UserName;
+        review.innerText = alldata.Review;
+
     });
+});
 
 // >> "09/08/2014, 2:35:56 AM"
 
 console.log(new Date().toLocaleString());
 
-function Review(){
+function Review() {
 
-  
 
     var name = document.getElementById("username").value;
     var mail = document.getElementById("useremail").value;
@@ -46,14 +44,14 @@ function Review(){
 
 
     firebaseref.child('Reviews').push().set({
-        UserName : name ,
-        Review : review,
-        Email : mail,
-    } );
+        UserName: name,
+        Review: review,
+        Email: mail,
+    });
 
-a.value = " ";
-b.value = " ";
-c.value = " ";
+    a.value = " ";
+    b.value = " ";
+    c.value = " ";
 
 
 }

@@ -9,10 +9,10 @@
 <html class="no-js" lang="" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <title>Nathan James - Admin</title>
-    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="Sufee Admin - HTML5 Admin Template" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
 
     <link rel="apple-touch-icon" th:href="@{/Ơapple-icon.png}">
     <link rel="shortcut icon" th:href="@{/favicon.ico}">
@@ -25,7 +25,7 @@
     <link rel="stylesheet" th:href="@{/assets/css/cs-skin-elastic.css}">
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" th:href="@{/assets/scss/style.css}">
-    <link th:href="@{/assets/css/lib/vector-map/jqvmap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/assets/css/lib/vector-map/jqvmap.min.css}">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -45,7 +45,7 @@
 
 <!-- Right Panel -->
 
-<div id="right-panel" class="right-panel">
+<div class="right-panel" id="right-panel">
 
     <!-- Header-->
     <!-- Header-->
@@ -85,25 +85,28 @@
                         <strong>Movie</strong> Updates
                     </div>
                     <div class="card-body card-block">
-                        <form th:action="@{/admin/add-movie}" method="post" th:object="${movie}" enctype="multipart/form-data" class="form-horizontal">
+                        <form class="form-horizontal" enctype="multipart/form-data" method="post"
+                              th:action="@{/admin/add-movie}" th:object="${movie}">
                             <div class="row form-group">
                                 <div class="col col-md-3"><label class=" form-control-label">Movie ID </label></div>
-                                <div class="col-12 col-md-9"><input type="text" id="MovieId" name="text-input"
-                                                                    class="form-control" disabled></div>
+                                <div class="col-12 col-md-9"><input class="form-control" disabled id="MovieId"
+                                                                    name="text-input" type="text"></div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="MovieName"
-                                                                 class=" form-control-label">Name </label></div>
-                                <div class="col-12 col-md-9"><input type="text" id="MovieName" name="text-input"
+                                <div class="col col-md-3"><label class=" form-control-label"
+                                                                 for="MovieName">Name </label></div>
+                                <div class="col-12 col-md-9"><input class="form-control" id="MovieName" name="text-input"
                                                                     placeholder="Name of the Movie."
-                                                                    class="form-control" th:field="*{id}" required></div>
+                                                                    required th:field="*{id}" type="text">
+                                </div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="MovieDuration"
-                                                                 class=" form-control-label">Duration </label></div>
-                                <div class="col-12 col-md-9"><input type="number" id="MovieDuration" name="text-input"
+                                <div class="col col-md-3"><label class=" form-control-label"
+                                                                 for="MovieDuration">Duration </label></div>
+                                <div class="col-12 col-md-9"><input class="form-control" id="MovieDuration" name="text-input"
                                                                     placeholder="Duration of the Movie."
-                                                                    class="form-control" th:field="*{duration}" required></div>
+                                                                    required th:field="*{duration}"
+                                                                    type="number"></div>
                             </div>
 
                             <!-- <div class="row form-group">
@@ -125,63 +128,68 @@
                                 </div> -->
 
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="MovieDescription" class=" form-control-label">Description</label>
+                                <div class="col col-md-3"><label class=" form-control-label" for="MovieDescription">Description</label>
                                 </div>
-                                <div class="col-12 col-md-9"><textarea name="textarea-input" id="MovieDescription"
-                                                                       rows="9" placeholder="Content..."
-                                                                       class="form-control" th:field="*{description}" required></textarea></div>
+                                <div class="col-12 col-md-9"><textarea class="form-control" id="MovieDescription"
+                                                                       name="textarea-input" placeholder="Content..."
+                                                                       required rows="9"
+                                                                       th:field="*{description}"></textarea></div>
                             </div>
 
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="MainActor" class=" form-control-label">Main
+                                <div class="col col-md-3"><label class=" form-control-label" for="MainActor">Main
                                     Actor </label></div>
-                                <div class="col-12 col-md-9"><input type="text" id="MainActor" name="text-input"
-                                                                    class="form-control" th:field="*{mainActor}" required></div>
+                                <div class="col-12 col-md-9"><input class="form-control" id="MainActor" name="text-input"
+                                                                    required th:field="*{mainActor}"
+                                                                    type="text"></div>
                             </div>
 
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="MainActress" class=" form-control-label">Main
+                                <div class="col col-md-3"><label class=" form-control-label" for="MainActress">Main
                                     Actress </label></div>
-                                <div class="col-12 col-md-9"><input type="text" id="MainActress" name="text-input"
-                                                                    class="form-control" th:field="*{mainActress}" required></div>
+                                <div class="col-12 col-md-9"><input class="form-control" id="MainActress" name="text-input"
+                                                                    required th:field="*{mainActress}"
+                                                                    type="text"></div>
                             </div>
 
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="MovieProducer" class=" form-control-label">Producer </label>
+                                <div class="col col-md-3"><label class=" form-control-label" for="MovieProducer">Producer </label>
                                 </div>
-                                <div class="col-12 col-md-9"><input type="text" id="MovieProducer" name="text-input"
-                                                                    class="form-control" th:field="*{producer}" required></div>
+                                <div class="col-12 col-md-9"><input class="form-control" id="MovieProducer" name="text-input"
+                                                                    required th:field="*{producer}"
+                                                                    type="text"></div>
                             </div>
 
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="MovieTheatre"
-                                                                 class=" form-control-label">Theatre </label></div>
-                                <div class="col-12 col-md-9"><input type="text" id="MovieTheatre" name="text-input"
-                                                                    class="form-control" th:field="*{theatre}" required></div>
+                                <div class="col col-md-3"><label class=" form-control-label"
+                                                                 for="MovieTheatre">Theatre </label></div>
+                                <div class="col-12 col-md-9"><input class="form-control" id="MovieTheatre" name="text-input"
+                                                                    required th:field="*{theatre}" type="text">
+                                </div>
                             </div>
 
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="MovieImage" class=" form-control-label">Movie
+                                <div class="col col-md-3"><label class=" form-control-label" for="MovieImage">Movie
                                     Image input</label></div>
-                                <div class="col-12 col-md-9"><input type="file" id="MovieImage" name="file-input"
-                                                                    class="form-control-file" ></div>
+                                <div class="col-12 col-md-9"><input class="form-control-file" id="MovieImage" name="file-input"
+                                                                    type="file"></div>
                             </div>
 
 
                             <div class="card-footer">
-                                <button type="button" class="btn btn-primary btn-sm" onclick="searchmovie();">
+                                <button class="btn btn-primary btn-sm" onclick="searchmovie();" type="button">
                                     <i class="fa fa-search"></i> By Name
                                 </button>
-                                <button type="button" class="btn btn-primary btn-sm" onclick="addFilm()">
+                                <button class="btn btn-primary btn-sm" onclick="addFilm()" type="button">
                                     <i class="fa fa-plus"></i> Add
                                 </button>
-                                <button type="button" class="btn btn-primary btn-sm" onclick="updateMovie()">
+                                <button class="btn btn-primary btn-sm" onclick="updateMovie()" type="button">
                                     <i class="fa fa-wrench"></i> Update
                                 </button>
-                                <button type="button" class="btn btn-danger btn-sm" onclick="DeleteFilm()">
+                                <button class="btn btn-danger btn-sm" onclick="DeleteFilm()" type="button">
                                     <i class="fa fa-trash"></i> Delete
                                 </button>
-                                <button type="button" class="btn btn-danger btn-sm" onclick="ClearFields()">
+                                <button class="btn btn-danger btn-sm" onclick="ClearFields()" type="button">
                                     <i class="fas fa-eraser"></i> Clear Fields
                                 </button>
                             </div>

@@ -1,15 +1,15 @@
-
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <title>Nathan James - Admin</title>
-    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="Sufee Admin - HTML5 Admin Template" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
 
     <link rel="apple-touch-icon" th:href="@{/Ơapple-icon.png}">
     <link rel="shortcut icon" th:href="@{/favicon.ico}">
@@ -22,7 +22,7 @@
     <link rel="stylesheet" th:href="@{/assets/css/cs-skin-elastic.css}">
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" th:href="@{/assets/scss/style.css}">
-    <link th:href="@{/assets/css/lib/vector-map/jqvmap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/assets/css/lib/vector-map/jqvmap.min.css}">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -42,7 +42,7 @@
 
 <!-- Right Panel -->
 
-<div id="right-panel" class="right-panel">
+<div class="right-panel" id="right-panel">
 
     <!-- Header-->
     <!-- Header-->
@@ -82,14 +82,18 @@
                         <strong>Movie</strong> Updates
                     </div>
                     <div class="card-body card-block">
-                        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+                        <form action="" class="form-horizontal" enctype="multipart/form-data" method="post">
                             <div class="row form-group">
-                                <div class="col col-md-3"><label  class=" form-control-label">Movie ID </label></div>
-                                <div class="col-12 col-md-9"><input type="text" id="MovieId" name="text-input"  class="form-control" disabled></div>
+                                <div class="col col-md-3"><label class=" form-control-label">Movie ID </label></div>
+                                <div class="col-12 col-md-9"><input class="form-control" disabled id="MovieId"
+                                                                    name="text-input" type="text"></div>
                             </div>
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Name </label></div>
-                                <div class="col-12 col-md-9"><input type="text" id="MovieName" name="text-input" placeholder="Name of the Movie." class="form-control" required></div>
+                                <div class="col col-md-3"><label class=" form-control-label"
+                                                                 for="text-input">Name </label></div>
+                                <div class="col-12 col-md-9"><input class="form-control" id="MovieName" name="text-input"
+                                                                    placeholder="Name of the Movie."
+                                                                    required type="text"></div>
                             </div>
 
                             <!-- <div class="row form-group">
@@ -111,50 +115,63 @@
                                 </div> -->
 
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="textarea-input" class=" form-control-label">Description</label></div>
-                                <div class="col-12 col-md-9"><textarea name="textarea-input" id="MovieDescription" rows="9" placeholder="Content..." class="form-control" required></textarea></div>
+                                <div class="col col-md-3"><label class=" form-control-label" for="textarea-input">Description</label>
+                                </div>
+                                <div class="col-12 col-md-9"><textarea class="form-control" id="MovieDescription"
+                                                                       name="textarea-input" placeholder="Content..."
+                                                                       required rows="9"></textarea></div>
                             </div>
 
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Main Actor </label></div>
-                                <div class="col-12 col-md-9"><input type="text" id="MainActor" name="text-input" class="form-control" required></div>
+                                <div class="col col-md-3"><label class=" form-control-label" for="text-input">Main
+                                    Actor </label></div>
+                                <div class="col-12 col-md-9"><input class="form-control" id="MainActor" name="text-input"
+                                                                    required type="text"></div>
                             </div>
 
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Main Actress </label></div>
-                                <div class="col-12 col-md-9"><input type="text" id="MainActress" name="text-input"  class="form-control" required></div>
+                                <div class="col col-md-3"><label class=" form-control-label" for="text-input">Main
+                                    Actress </label></div>
+                                <div class="col-12 col-md-9"><input class="form-control" id="MainActress" name="text-input"
+                                                                    required type="text"></div>
                             </div>
 
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Producer </label></div>
-                                <div class="col-12 col-md-9"><input type="text" id="MovieProducer" name="text-input"  class="form-control" required></div>
+                                <div class="col col-md-3"><label class=" form-control-label"
+                                                                 for="text-input">Producer </label></div>
+                                <div class="col-12 col-md-9"><input class="form-control" id="MovieProducer" name="text-input"
+                                                                    required type="text"></div>
                             </div>
 
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Theatre </label></div>
-                                <div class="col-12 col-md-9"><input type="text" id="MovieTheatre" name="text-input"  class="form-control" required></div>
+                                <div class="col col-md-3"><label class=" form-control-label"
+                                                                 for="text-input">Theatre </label></div>
+                                <div class="col-12 col-md-9"><input class="form-control" id="MovieTheatre" name="text-input"
+                                                                    required type="text"></div>
                             </div>
 
                             <div class="row form-group">
-                                <div class="col col-md-3"><label for="file-input" class=" form-control-label">Movie Image input</label></div>
-                                <div class="col-12 col-md-9"><input type="file" id="MovieImage" name="file-input" class="form-control-file"></div>
+                                <div class="col col-md-3"><label class=" form-control-label" for="file-input">Movie
+                                    Image input</label></div>
+                                <div class="col-12 col-md-9"><input class="form-control-file" id="MovieImage" name="file-input"
+                                                                    type="file"></div>
                             </div>
 
 
                             <div class="card-footer">
-                                <button type="button" class="btn btn-primary btn-sm" onclick="searchmovie();" >
+                                <button class="btn btn-primary btn-sm" onclick="searchmovie();" type="button">
                                     <i class="fa fa-search"></i> By Name
                                 </button>
-                                <button type="button" class="btn btn-primary btn-sm" onclick="addFilm()">
+                                <button class="btn btn-primary btn-sm" onclick="addFilm()" type="button">
                                     <i class="fa fa-plus"></i> Add
                                 </button>
-                                <button type="button" class="btn btn-primary btn-sm" onclick="UpdateMovie()" >
+                                <button class="btn btn-primary btn-sm" onclick="UpdateMovie()" type="button">
                                     <i class="fa fa-wrench"></i> Update
                                 </button>
-                                <button type="button" class="btn btn-danger btn-sm" onclick="DeleteFilm()" >
+                                <button class="btn btn-danger btn-sm" onclick="DeleteFilm()" type="button">
                                     <i class="fa fa-trash"></i> Delete
                                 </button>
-                                <button type="button" class="btn btn-danger btn-sm" onclick="ClearFields()">
+                                <button class="btn btn-danger btn-sm" onclick="ClearFields()" type="button">
                                     <i class="fas fa-eraser"></i> Clear Fields
                                 </button>
                             </div>
@@ -175,7 +192,6 @@
         <script th:src="@{/assets/js/main.js}"></script>
 
 
-
         <script th:src="@{/assets/js/lib/chart-js/Chart.bundle.js}"></script>
         <script th:src="@{/assets/js/dashboard.js}"></script>
         <script th:src="@{/assets/js/widgets.js}"></script>
@@ -184,10 +200,10 @@
         <script th:src="@{/assets/js/lib/vector-map/jquery.vmap.sampledata.js}"></script>
         <script th:src="@{/assets/js/lib/vector-map/country/jquery.vmap.world.js}"></script>
         <script>
-            ( function ( $ ) {
+            (function ($) {
                 "use strict";
 
-                jQuery( '#vmap' ).vectorMap( {
+                jQuery('#vmap').vectorMap({
                     map: 'world_en',
                     backgroundColor: null,
                     color: '#ffffff',
@@ -196,12 +212,11 @@
                     enableZoom: true,
                     showTooltip: true,
                     values: sample_data,
-                    scaleColors: [ '#1de9b6', '#03a9f5' ],
+                    scaleColors: ['#1de9b6', '#03a9f5'],
                     normalizeFunction: 'polynomial'
-                } );
-            } )( jQuery );
+                });
+            })(jQuery);
         </script>
-
 
 
         <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>

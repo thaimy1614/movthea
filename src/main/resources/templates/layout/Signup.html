@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title> Responsive Login and Signup Form </title>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title> Responsive Login and Signup Form </title>
 
-	<!-- CSS -->
-	<link rel="stylesheet" th:href="@{loginStatic/css/style.css}">
+    <!-- CSS -->
+    <link rel="stylesheet" th:href="@{loginStatic/css/style.css}">
 
-	<!-- Boxicons CSS -->
-	<link rel="stylesheet" th:href="@{'https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css'}">
+    <!-- Boxicons CSS -->
+    <link rel="stylesheet" th:href="@{'https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css'}">
 
 
 </head>
@@ -18,35 +18,35 @@
 <section class="container forms">
 
 
-	<!-- Signup Form -->
+    <!-- Signup Form -->
 
-	<div class="form show-signup">
-		<div class="form-content">
-			<header>Signup</header>
-			<form action="/signup" method="post">
-				<div class="field input-field">
-					<input type="text" placeholder="Username" class="input" name="username">
-				</div>
+    <div class="form show-signup">
+        <div class="form-content">
+            <header>Signup</header>
+            <form action="/signup" method="post">
+                <div class="field input-field">
+                    <input class="input" name="username" placeholder="Username" type="text">
+                </div>
 
-				<div class="field input-field">
-					<input type="password" placeholder="Create password" class="password" name="password">
-				</div>
+                <div class="field input-field">
+                    <input class="password" name="password" placeholder="Create password" type="password">
+                </div>
 
-				<div class="field input-field">
-					<input type="password" placeholder="Confirm password" class="password" name="confirmPassword">
-					<i class='bx bx-hide eye-icon'></i>
-				</div>
+                <div class="field input-field">
+                    <input class="password" name="confirmPassword" placeholder="Confirm password" type="password">
+                    <i class='bx bx-hide eye-icon'></i>
+                </div>
 
-				<div class="field button-field">
-					<button>Signup</button>
-				</div>
-			</form>
+                <div class="field button-field">
+                    <button>Signup</button>
+                </div>
+            </form>
 
-			<div class="form-link">
-				<span>Already have an account? <a th:href="@{/login}" class="link login-link">Login</a></span>
-			</div>
-		</div>
-	</div>
+            <div class="form-link">
+                <span>Already have an account? <a class="link login-link" th:href="@{/login}">Login</a></span>
+            </div>
+        </div>
+    </div>
 </section>
 
 <!-- JavaScript -->

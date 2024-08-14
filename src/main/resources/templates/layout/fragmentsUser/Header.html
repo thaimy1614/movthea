@@ -11,7 +11,8 @@
                     <li><a href="#">Advertise</a></li>
                     <li><a href="#">FAQ</a></li>
                     <li class="dropdown default-dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">ENG <i class="fa fa-caret-down"></i></a>
+                        <a aria-expanded="true" class="dropdown-toggle" data-toggle="dropdown">ENG <i
+                                class="fa fa-caret-down"></i></a>
                         <ul class="custom-menu">
                             <li><a href="#">English (ENG)</a></li>
                             <li><a href="#">German (DE)</a></li>
@@ -20,7 +21,8 @@
                         </ul>
                     </li>
                     <li class="dropdown default-dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">LKR <i class="fa fa-caret-down"></i></a>
+                        <a aria-expanded="true" class="dropdown-toggle" data-toggle="dropdown">LKR <i
+                                class="fa fa-caret-down"></i></a>
                         <ul class="custom-menu">
                             <li><a href="#">LKR (RS)</a></li>
                             <li><a href="#">EUR (€)</a></li>
@@ -41,7 +43,7 @@
                 <!-- Logo -->
                 <div class="header-logo">
                     <a class="logo" href="/home">
-                        <img src="fe/img/logo.png" alt="">
+                        <img alt="" src="fe/img/logo.png">
                     </a>
                 </div>
                 <!-- /Logo -->
@@ -49,7 +51,7 @@
                 <!-- Search -->
                 <div class="header-search">
                     <form>
-                        <input class="input search-input" type="text" placeholder="Enter your keyword">
+                        <input class="input search-input" placeholder="Enter your keyword" type="text">
                         <select class="input search-categories">
                             <option value="0">Film Categories</option>
                             <option value="1">All Movies</option>
@@ -66,7 +68,7 @@
                 <ul class="header-btns">
                     <!-- Account -->
                     <li class="header-account dropdown default-dropdown">
-                        <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+                        <div aria-expanded="true" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <div class="header-btns-icon">
                                 <i class="fa fa-user-o"></i>
                             </div>
@@ -75,7 +77,7 @@
 
 
                         <th:block th:if="${!isAuthenticated}">
-                            <a href="/login" class="text-uppercase">Login</a>
+                            <a class="text-uppercase" href="/login">Login</a>
                         </th:block>
                         <ul class="custom-menu">
                             <th:block th:if="${isAuthenticated}">

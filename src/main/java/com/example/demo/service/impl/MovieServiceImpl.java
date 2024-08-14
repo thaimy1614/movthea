@@ -6,7 +6,6 @@ import com.example.demo.service.MovieService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.Option;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,10 +16,9 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public List<Movie> getAllMovies(Movie.MovieStatus movieStatus) {
-        if(movieStatus==null){
+        if (movieStatus == null) {
             return movieRepository.findAll();
-        }
-        else{
+        } else {
             return movieRepository.findAllByStatus(movieStatus);
         }
     }
@@ -51,7 +49,7 @@ public class MovieServiceImpl implements MovieService {
         movieRepository.deleteById(id);
     }
 
-    public Optional<Movie> getMovie(Long id){
+    public Optional<Movie> getMovie(Long id) {
         return movieRepository.findById(id);
     }
 }

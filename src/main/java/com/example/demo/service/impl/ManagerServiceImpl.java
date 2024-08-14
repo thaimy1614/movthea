@@ -1,7 +1,9 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.exception.LoginFalseException;
-import com.example.demo.model.entity.*;
+import com.example.demo.model.entity.FilmEntity;
+import com.example.demo.model.entity.LocationEntity;
+import com.example.demo.model.entity.RoomEntity;
+import com.example.demo.model.entity.UserEntity;
 import com.example.demo.model.request.AddFilmRequest;
 import com.example.demo.model.request.AddRoomRequest;
 import com.example.demo.model.response.RoomResponse;
@@ -10,9 +12,7 @@ import com.example.demo.service.ManagerService;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 @AllArgsConstructor

@@ -6,6 +6,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class SeatsResponse {
-    private int number;
     public boolean status;
+    private int number;
 }

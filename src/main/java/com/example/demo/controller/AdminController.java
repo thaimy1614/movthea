@@ -143,9 +143,9 @@ public class AdminController {
         if (
                 !movie.getImageLink().isEmpty()
         ) {
-            try{
+            try {
                 fileService.delete(movie.getImageLink());
-            }catch (Exception e) {
+            } catch (Exception e) {
                 redirectAttributes.addFlashAttribute("message", "Failed to delete image");
                 return "redirect:/admin/show-all-movies";
             }

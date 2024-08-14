@@ -9,10 +9,10 @@
 <html class="no-js" lang="" xmlns:th="http://www.thymeleaf.org"> <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <title>Nathan James - Admin</title>
-    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="Sufee Admin - HTML5 Admin Template" name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
 
     <link rel="apple-touch-icon" th:href="@{/Ơapple-icon.png}">
     <link rel="shortcut icon" th:href="@{/favicon.ico}">
@@ -26,7 +26,7 @@
     <link rel="stylesheet" th:href="@{/assets/css/lib/datatable/dataTables.bootstrap.min.css}">
     <!-- <link rel="stylesheet" href="assets/css/bootstrap-select.less"> -->
     <link rel="stylesheet" th:href="@{/assets/scss/style.css}">
-    <link th:href="@{/assets/css/lib/vector-map/jqvmap.min.css}" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/assets/css/lib/vector-map/jqvmap.min.css}">
 
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
 
@@ -46,7 +46,7 @@
 
 <!-- Right Panel -->
 
-<div id="right-panel" class="right-panel">
+<div class="right-panel" id="right-panel">
 
     <!-- Header-->
     <!-- Header-->
@@ -87,20 +87,20 @@
                         </div>
                         <div class="card-body">
                             <span class="text-success" th:text="${message}"></span>
-                            <table id="bootstrap-data-table" class="table">
+                            <table class="table" id="bootstrap-data-table">
                                 <thead class="thead-dark">
                                 <tr>
-                                    <th scope="col" id="movieid">MovieId</th>
-                                    <th scope="col" id="moviename">Name</th>
-                                    <th scope="col" id="movieduration">Duration</th>
-                                    <th scope="col" id="movieprice">Price</th>
-                                    <th scope="col" id="movietheatre">Theatre</th>
-                                    <th scope="col" id="moviedescription">Description</th>
-                                    <th scope="col" id="movieactor">Main Actor</th>
-                                    <th scope="col" id="movieactress">Main Actress</th>
-                                    <th scope="col" id="movieproducer">Producer</th>
-                                    <th scope="col" id="movieimage">Image</th>
-                                    <th scope="col" id="moviestatus">Status</th>
+                                    <th id="movieid" scope="col">MovieId</th>
+                                    <th id="moviename" scope="col">Name</th>
+                                    <th id="movieduration" scope="col">Duration</th>
+                                    <th id="movieprice" scope="col">Price</th>
+                                    <th id="movietheatre" scope="col">Theatre</th>
+                                    <th id="moviedescription" scope="col">Description</th>
+                                    <th id="movieactor" scope="col">Main Actor</th>
+                                    <th id="movieactress" scope="col">Main Actress</th>
+                                    <th id="movieproducer" scope="col">Producer</th>
+                                    <th id="movieimage" scope="col">Image</th>
+                                    <th id="moviestatus" scope="col">Status</th>
                                     <th scope="col"></th>
                                 </tr>
                                 </thead>
@@ -117,14 +117,15 @@
                                         <td th:text="${m.mainActress}"></td>
                                         <td th:text="${m.Producer}"></td>
                                         <td>
-                                            <img class="img-thumbnail" alt="MOVIE IMG"
+                                            <img alt="MOVIE IMG" class="img-thumbnail"
                                                  th:src="@{'/uploads/'+${m.imageLink}}"/>
                                         </td>
                                         <td th:text="${m.status}"></td>
                                         <td>
                                             <div class="d-flex flex-column align-items-stretch">
-                                                <a th:href="@{'/admin/update-movie/'+${m.id}}" class="btn btn-primary mb-2">Edit</a>
-                                                <a th:href="@{'/admin/delete-movie/'+${m.id}}" class="btn btn-danger">Delete</a>
+                                                <a class="btn btn-primary mb-2"
+                                                   th:href="@{'/admin/update-movie/'+${m.id}}">Edit</a>
+                                                <a class="btn btn-danger" th:href="@{'/admin/delete-movie/'+${m.id}}">Delete</a>
                                             </div>
                                         </td>
                                     </tr>
@@ -135,7 +136,7 @@
 
                         </div>
                         <div class="card-footer">
-                            <button type="button" class="btn btn-primary btn-sm" onclick="searchmovie();">
+                            <button class="btn btn-primary btn-sm" onclick="searchmovie();" type="button">
                                 <i class="fa fa-search"></i> By Name
                             </button>
                         </div>

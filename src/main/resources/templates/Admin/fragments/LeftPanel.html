@@ -1,16 +1,16 @@
-
-<aside id="left-panel" class="left-panel" th:fragment="leftpanel">
+<aside class="left-panel" id="left-panel" th:fragment="leftpanel">
     <nav class="navbar navbar-expand-sm navbar-default">
 
         <div class="navbar-header">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu" aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <button aria-controls="main-menu" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"
+                    data-target="#main-menu" data-toggle="collapse" type="button">
                 <i class="fa fa-bars"></i>
             </button>
-            <a class="navbar-brand" href="/admin"><img th:src="@{/fe/img/logo.png}" alt="Logo"></a>
-            <a class="navbar-brand hidden" href="/admin"><img src="fe/img/logo.png" alt="Logo"></a>
+            <a class="navbar-brand" href="/admin"><img alt="Logo" th:src="@{/fe/img/logo.png}"></a>
+            <a class="navbar-brand hidden" href="/admin"><img alt="Logo" src="fe/img/logo.png"></a>
         </div>
 
-        <div id="main-menu" class="main-menu collapse navbar-collapse">
+        <div class="main-menu collapse navbar-collapse" id="main-menu">
             <ul class="nav navbar-nav">
                 <li class="active">
                     <a href="/admin"> <i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
@@ -20,7 +20,8 @@
 
                 <h3 class="menu-title">Actions</h3><!-- /.menu-title -->
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-film"></i>Movie</a>
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
+                       href="#"> <i class="menu-icon fa fa-film"></i>Movie</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-plus"></i><a href="/admin/add-movie">Add</a></li>
                         <li><i class="fa fa-wrench"></i><a href="/admin/show-all-movies">All movies</a></li>
@@ -28,14 +29,17 @@
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="/admin/show-user" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user-circle-o"></i>Customers</a>
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
+                       href="/admin/show-user"> <i class="menu-icon fa fa-user-circle-o"></i>Customers</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-search"></i><a href="/admin/show-user"> Search</a></li>
                         <li><i class="fa fa-trash"></i><a href="/admin/show-user"> Delete</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a th:href="@{/admin/show-theatre}" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-video-camera"></i>Theatre</a>
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle"
+                       data-toggle="dropdown" th:href="@{/admin/show-theatre}"> <i
+                            class="menu-icon fa fa-video-camera"></i>Theatre</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="menu-icon fa fa-wrench"></i><a th:href="@{/admin/show-theatre}">Update</a></li>
                         <li><i class="menu-icon fa fa-search"></i><a th:href="@{/admin/show-theatre}">Search</a></li>
@@ -44,7 +48,8 @@
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cutlery"></i>Snacks</a>
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
+                       href="#"> <i class="menu-icon fa fa-cutlery"></i>Snacks</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-plus"></i><a href="/snacks"> Add</a></li>
                         <li><i class="fa fa-wrench"></i><a href="/snacks"> Update</a></li>
@@ -56,7 +61,8 @@
                 <h3 class="menu-title">Data Comings</h3><!-- /.menu-title -->
 
                 <li class="menu-item-has-children dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-table"></i>Tables</a>
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
+                       href="#"> <i class="menu-icon fa fa-table"></i>Tables</a>
                     <ul class="sub-menu children dropdown-menu">
                         <li><i class="fa fa-table"></i><a href="/admin/show-all">All Information</a></li>
                         <li><i class="fa fa-table"></i><a href="/admin/show-user">User</a></li>

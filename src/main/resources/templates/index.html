@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     <title>Nathan James</title>
@@ -13,20 +13,20 @@
     <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
 
     <!-- Bootstrap -->
-    <link type="text/css" rel="stylesheet" href="fe/css/bootstrap.min.css" />
+    <link href="fe/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
     <!-- Slick -->
-    <link type="text/css" rel="stylesheet" href="fe/css/slick.css" />
-    <link type="text/css" rel="stylesheet" href="fe/css/slick-theme.css" />
+    <link href="fe/css/slick.css" rel="stylesheet" type="text/css"/>
+    <link href="fe/css/slick-theme.css" rel="stylesheet" type="text/css"/>
 
     <!-- nouislider -->
-    <link type="text/css" rel="stylesheet" href="fe/css/nouislider.min.css" />
+    <link href="fe/css/nouislider.min.css" rel="stylesheet" type="text/css"/>
 
     <!-- Font Awesome Icon -->
-    <link rel="stylesheet" href="fe/css/font-awesome.min.css">
+    <link href="fe/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- Custom stlylesheet -->
-    <link type="text/css" rel="stylesheet" href="fe/css/style.css" />
+    <link href="fe/css/style.css" rel="stylesheet" type="text/css"/>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,9 +42,11 @@
             width: 100%; /* Set width to 100% */
             margin: auto;
         }
+
         .carousel-caption h3 {
             color: #fff !important;
         }
+
         @media (max-width: 600px) {
             .carousel-caption {
                 display: none; /* Hide the carousel text when the screen is less than 600 pixels wide */
@@ -70,7 +72,8 @@
                     <li><a href="#">Advertise</a></li>
                     <li><a href="#">FAQ</a></li>
                     <li class="dropdown default-dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">ENG <i class="fa fa-caret-down"></i></a>
+                        <a aria-expanded="true" class="dropdown-toggle" data-toggle="dropdown">ENG <i
+                                class="fa fa-caret-down"></i></a>
                         <ul class="custom-menu">
                             <li><a href="#">English (ENG)</a></li>
                             <li><a href="#">German (DE)</a></li>
@@ -79,7 +82,8 @@
                         </ul>
                     </li>
                     <li class="dropdown default-dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">LKR <i class="fa fa-caret-down"></i></a>
+                        <a aria-expanded="true" class="dropdown-toggle" data-toggle="dropdown">LKR <i
+                                class="fa fa-caret-down"></i></a>
                         <ul class="custom-menu">
                             <li><a href="#">LKR (RS)</a></li>
                             <li><a href="#">EUR (€)</a></li>
@@ -100,7 +104,7 @@
                 <!-- Logo -->
                 <div class="header-logo">
                     <a class="logo" href="">
-                        <img src="fe/img/logo.png" alt="">
+                        <img alt="" src="fe/img/logo.png">
                     </a>
                 </div>
                 <!-- /Logo -->
@@ -108,7 +112,7 @@
                 <!-- Search -->
                 <div class="header-search">
                     <form>
-                        <input class="input search-input" type="text" placeholder="Enter your keyword">
+                        <input class="input search-input" placeholder="Enter your keyword" type="text">
                         <select class="input search-categories">
                             <option value="0">Film Categories</option>
                             <option value="1">All Movies</option>
@@ -125,13 +129,14 @@
                 <ul class="header-btns">
                     <!-- Account -->
                     <li class="header-account dropdown default-dropdown">
-                        <div class="dropdown-toggle" role="button" data-toggle="dropdown" aria-expanded="true">
+                        <div aria-expanded="true" class="dropdown-toggle" data-toggle="dropdown" role="button">
                             <div class="header-btns-icon">
                                 <i class="fa fa-user-o"></i>
                             </div>
                             <strong class="text-uppercase">My Account <i class="fa fa-caret-down"></i></strong>
                         </div>
-                        <a href="/logon" class="text-uppercase">Login</a> / <a href="Signin.html" class="text-uppercase">Join</a>
+                        <a class="text-uppercase" href="/logon">Login</a> / <a class="text-uppercase"
+                                                                               href="Signin.html">Join</a>
                         <ul class="custom-menu">
                             <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
                             <li><a href="#"><i class="fa fa-heart-o"></i> Film Wishlist</a></li>
@@ -239,18 +244,18 @@
         <!-- home slick -->
 
         <!-- banner -->
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel slide" data-ride="carousel" id="myCarousel">
             <!-- Indicators -->
             <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
+                <li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+                <li data-slide-to="1" data-target="#myCarousel"></li>
+                <li data-slide-to="2" data-target="#myCarousel"></li>
             </ol>
 
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <img src="fe/img/JonneyEnglish.jpg" alt="Jumanji" width="1200" height="700">
+                    <img alt="Jumanji" height="700" src="fe/img/JonneyEnglish.jpg" width="1200">
                     <div class="carousel-caption">
                         <h2>Jumanji</h2>
                         <h3>Welcome to the Jungle</h3>
@@ -259,7 +264,7 @@
                 </div>
 
                 <div class="item">
-                    <img src="./img/DeadPool.jpg" alt="Chicago" width="1200" height="700">
+                    <img alt="Chicago" height="700" src="./img/DeadPool.jpg" width="1200">
                     <div class="carousel-caption">
                         <h2>DeadPool</h2>
                         <h3>feel the love valantines day..</h3>
@@ -268,7 +273,7 @@
                 </div>
 
                 <div class="item">
-                    <img src="./img/Maze.jpg" alt="Los Angeles" width="1200" height="700">
+                    <img alt="Los Angeles" height="700" src="./img/Maze.jpg" width="1200">
                     <div class="carousel-caption">
                         <h2>Maze Runner : The Death Cure</h2>
                         <h3>Every Maze has an End</h3>
@@ -293,9 +298,9 @@
             <!-- row -->
             <div class="row">
                 <!-- banner -->
-                <div id="now Showing" class="col-md-4 col-sm-6">
+                <div class="col-md-4 col-sm-6" id="now Showing">
                     <a class="banner banner-1" href="#">
-                        <img src="./img/GOT.jpg" alt="">
+                        <img alt="" src="./img/GOT.jpg">
                         <div class="banner-caption text-center">
                             <h2 class="white-color">Arriving Soon</h2>
                         </div>
@@ -306,7 +311,7 @@
                 <!-- banner -->
                 <div class="col-md-4 col-sm-6">
                     <a class="banner banner-1" href="#">
-                        <img src="./img/Jumanji.jpg" alt="">
+                        <img alt="" src="./img/Jumanji.jpg">
                         <div class="banner-caption text-center">
                             <h2 class="white-color">Arriving soon</h2>
                         </div>
@@ -317,7 +322,7 @@
                 <!-- banner -->
                 <div class="col-md-4 col-md-offset-0 col-sm-6 col-sm-offset-3">
                     <a class="banner banner-1" href="#">
-                        <img src="./img/Jackie.jpg" alt="">
+                        <img alt="" src="./img/Jackie.jpg">
                         <div class="banner-caption text-center">
                             <h2 class="white-color">Arriving Soon</h2>
                         </div>
@@ -340,7 +345,7 @@
             <div class="row">
                 <!-- section-title -->
                 <div class="col-md-12">
-                    <div  class="section-title">
+                    <div class="section-title">
                         <h2 class="title">Now Showing..</h2>
                         <div class="pull-right">
                             <div class="product-slick-dots-1 custom-dots"></div>
@@ -352,7 +357,7 @@
                 <!-- banner -->
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="banner banner-2">
-                        <img src="./img/Maze.jpg" alt="">
+                        <img alt="" src="./img/Maze.jpg">
                         <div class="banner-caption">
                             <h2 class="white-color">NEW<br>SELECTION</h2>
                             <!-- <button class="primary-btn">Shop Now</button> -->
@@ -364,7 +369,7 @@
                 <!-- Product Slick -->
                 <div class="col-md-9 col-sm-6 col-xs-6">
                     <div class="row">
-                        <div id="product-slick-1" class="product-slick">
+                        <div class="product-slick" id="product-slick-1">
                             <!-- Product Single -->
                             <div class="product product-single">
                                 <div class="product-thumb">
@@ -377,9 +382,13 @@
                                         <li><span>00 M</span></li>
                                         <li><span>00 S</span></li>
                                     </ul> -->
-                                    <button class="main-btn quick-view" data-toggle="popover" data-placement="bottom" title="SHERLOCK HOLMES" data-content="Detective Sherlock Holmes and his stalwart partner Watson engage in a battle of wits and brawn with a nemesis whose plot is a threat to all of England."><i class="fa fa-search-plus" ></i> More info</button>
+                                    <button class="main-btn quick-view" data-content="Detective Sherlock Holmes and his stalwart partner Watson engage in a battle of wits and brawn with a nemesis whose plot is a threat to all of England." data-placement="bottom"
+                                            data-toggle="popover"
+                                            title="SHERLOCK HOLMES">
+                                        <i class="fa fa-search-plus"></i> More info
+                                    </button>
 
-                                    <img src="./img/SherlockHolmes.jpg" alt="">
+                                    <img alt="" src="./img/SherlockHolmes.jpg">
                                 </div>
                                 <div class="product-body">
                                     <h2 class="product-name"><a href="#">SHERLOCK HOLMES</a></h2>
@@ -391,11 +400,16 @@
                                         <div class="form-group">
                                             <div class="input-rating">
                                                 <div class="stars">
-                                                    <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
-                                                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
-                                                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
-                                                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
-                                                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+                                                    <input id="star5" name="rating" type="radio" value="5"/><label
+                                                        for="star5"></label>
+                                                    <input id="star4" name="rating" type="radio" value="4"/><label
+                                                        for="star4"></label>
+                                                    <input id="star3" name="rating" type="radio" value="3"/><label
+                                                        for="star3"></label>
+                                                    <input id="star2" name="rating" type="radio" value="2"/><label
+                                                        for="star2"></label>
+                                                    <input id="star1" name="rating" type="radio" value="1"/><label
+                                                        for="star1"></label>
                                                 </div>
                                             </div>
                                         </div>
@@ -404,7 +418,9 @@
                                         <!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
                                         <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
 
-                                        <button class="primary-btn add-to-cart" id="SherlockHolmes" value="SherlockHolmes"><a href="Select Time.html">Buy Tickets </a><i class="fa fa-ticket"></i></button>
+                                        <button class="primary-btn add-to-cart" id="SherlockHolmes"
+                                                value="SherlockHolmes"><a href="Select Time.html">Buy Tickets </a><i
+                                                class="fa fa-ticket"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -422,8 +438,12 @@
                                         <li><span>00 M</span></li>
                                         <li><span>00 S</span></li>
                                     </ul> -->
-                                    <button class="main-btn quick-view" data-toggle="popover" data-placement="bottom" title="DESPICABLE ME 3" data-content="Gru meets his long-lost charming, cheerful, and more successful twin brother Dru who wants to team up with him for one last criminal heist."><i class="fa fa-search-plus" ></i> More info</button>
-                                    <img src="./img/DespicableMe3.jpg" alt="">
+                                    <button class="main-btn quick-view" data-content="Gru meets his long-lost charming, cheerful, and more successful twin brother Dru who wants to team up with him for one last criminal heist." data-placement="bottom"
+                                            data-toggle="popover"
+                                            title="DESPICABLE ME 3">
+                                        <i class="fa fa-search-plus"></i> More info
+                                    </button>
+                                    <img alt="" src="./img/DespicableMe3.jpg">
                                 </div>
                                 <div class="product-body">
                                     <h2 class="product-name"><a href="#">DESPICABLE ME 3</a></h2>
@@ -434,11 +454,16 @@
                                         <div class="form-group">
                                             <div class="input-rating">
                                                 <div class="stars">
-                                                    <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
-                                                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
-                                                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
-                                                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
-                                                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+                                                    <input id="star5" name="rating" type="radio" value="5"/><label
+                                                        for="star5"></label>
+                                                    <input id="star4" name="rating" type="radio" value="4"/><label
+                                                        for="star4"></label>
+                                                    <input id="star3" name="rating" type="radio" value="3"/><label
+                                                        for="star3"></label>
+                                                    <input id="star2" name="rating" type="radio" value="2"/><label
+                                                        for="star2"></label>
+                                                    <input id="star1" name="rating" type="radio" value="1"/><label
+                                                        for="star1"></label>
                                                 </div>
                                             </div>
                                         </div>
@@ -447,7 +472,9 @@
                                         <!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
                                         <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
 
-                                        <button class="primary-btn add-to-cart" id="DespicableMe3" value="DespicableMe3"><a href="Select Time.html">Buy Tickets </a><i class="fa fa-ticket"></i></button>
+                                        <button class="primary-btn add-to-cart" id="DespicableMe3"
+                                                value="DespicableMe3"><a href="Select Time.html">Buy Tickets </a><i
+                                                class="fa fa-ticket"></i></button>
                                     </div>
                                 </div>
                             </div>
@@ -465,8 +492,12 @@
                                         <li><span>00 M</span></li>
                                         <li><span>00 S</span></li>
                                     </ul> -->
-                                    <button class="main-btn quick-view" data-toggle="popover" data-placement="bottom" title="MECHANIC 2" data-content="Follows an elite hit man as he teaches his trade to an apprentice who has a connection to one of his previous victims."><i class="fa fa-search-plus" ></i> More info</button>
-                                    <img src="./img/Mechanic2.jpg" alt="">
+                                    <button class="main-btn quick-view" data-content="Follows an elite hit man as he teaches his trade to an apprentice who has a connection to one of his previous victims." data-placement="bottom"
+                                            data-toggle="popover"
+                                            title="MECHANIC 2">
+                                        <i class="fa fa-search-plus"></i> More info
+                                    </button>
+                                    <img alt="" src="./img/Mechanic2.jpg">
                                 </div>
                                 <div class="product-body">
                                     <h2 class="product-name"><a href="#">MECHANIC 2</a></h2>
@@ -477,11 +508,16 @@
                                         <div class="form-group">
                                             <div class="input-rating">
                                                 <div class="stars">
-                                                    <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
-                                                    <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
-                                                    <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
-                                                    <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
-                                                    <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+                                                    <input id="star5" name="rating" type="radio" value="5"/><label
+                                                        for="star5"></label>
+                                                    <input id="star4" name="rating" type="radio" value="4"/><label
+                                                        for="star4"></label>
+                                                    <input id="star3" name="rating" type="radio" value="3"/><label
+                                                        for="star3"></label>
+                                                    <input id="star2" name="rating" type="radio" value="2"/><label
+                                                        for="star2"></label>
+                                                    <input id="star1" name="rating" type="radio" value="1"/><label
+                                                        for="star1"></label>
                                                 </div>
                                             </div>
                                         </div>
@@ -490,7 +526,9 @@
                                         <!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
                                         <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
 
-                                        <button class="primary-btn add-to-cart" id="Mechanic" value="Mechanic" ><a href="Select Time.html">Buy Tickets </a><i class="fa fa-ticket"></i></button>
+                                        <button class="primary-btn add-to-cart" id="Mechanic" value="Mechanic"><a
+                                                href="Select Time.html">Buy Tickets </a><i class="fa fa-ticket"></i>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -516,13 +554,14 @@
         <!-- container -->
         <div class="container">
             <!-- row -->
-            <div  class="row">
+            <div class="row">
                 <!-- banner -->
                 <div class="col-md-8">
                     <div class="banner banner-1">
-                        <img src="./img/PrisonBreak.jpg" alt="">
+                        <img alt="" src="./img/PrisonBreak.jpg">
                         <div class="banner-caption text-center">
-                            <h2 class="primary-color">HOT DEAL<br><span class="white-color font-weak">Up to 50% OFF for regular signed in users</span></h2>
+                            <h2 class="primary-color">HOT DEAL<br><span class="white-color font-weak">Up to 50% OFF for regular signed in users</span>
+                            </h2>
                             <button class="primary-btn"><a href="Signin.html"> Signin </a></button>
                         </div>
                     </div>
@@ -532,7 +571,7 @@
                 <!-- banner -->
                 <div class="col-md-4">
                     <a class="banner banner-1" href="#">
-                        <img src="./img/Destiny2.jpg" alt="">
+                        <img alt="" src="./img/Destiny2.jpg">
                         <div class="banner-caption text-center">
                             <h2 class="white-color">NEW COLLECTION</h2>
                         </div>
@@ -541,9 +580,9 @@
                 <!-- /banner -->
 
                 <!-- banner -->
-                <div id="Reservations" class="col-md-4">
+                <div class="col-md-4" id="Reservations">
                     <a class="banner banner-1" href="#">
-                        <img src="./img/JurassicWorld.jpg" alt="">
+                        <img alt="" src="./img/JurassicWorld.jpg">
                         <div class="banner-caption text-center">
                             <h2 class="white-color">NEW COLLECTION</h2>
                         </div>
@@ -573,11 +612,15 @@
                 <!-- section title -->
 
                 <!-- Product Single -->
-                <div id="Trending" class="col-md-3 col-sm-6 col-xs-6">
+                <div class="col-md-3 col-sm-6 col-xs-6" id="Trending">
                     <div class="product product-single">
                         <div class="product-thumb">
-                            <button class="main-btn quick-view" data-toggle="popover" data-placement="bottom" title="Peter Rabbit" data-content="Feature adaptation of Beatrix Potter's classic tale of a rebellious rabbit trying to sneak into a farmer's vegetable garden."><i class="fa fa-search-plus" ></i> More info</button>
-                            <img src="./img/PeterRabbit.jpg" alt="">
+                            <button class="main-btn quick-view" data-content="Feature adaptation of Beatrix Potter's classic tale of a rebellious rabbit trying to sneak into a farmer's vegetable garden." data-placement="bottom"
+                                    data-toggle="popover"
+                                    title="Peter Rabbit">
+                                <i class="fa fa-search-plus"></i> More info
+                            </button>
+                            <img alt="" src="./img/PeterRabbit.jpg">
                         </div>
                         <div class="product-body">
                             <!-- <h3 class="product-price">$32.50</h3> -->
@@ -587,11 +630,16 @@
                                 <div class="form-group">
                                     <div class="input-rating">
                                         <div class="stars">
-                                            <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
-                                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
-                                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
-                                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
-                                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+                                            <input id="star5" name="rating" type="radio" value="5"/><label
+                                                for="star5"></label>
+                                            <input id="star4" name="rating" type="radio" value="4"/><label
+                                                for="star4"></label>
+                                            <input id="star3" name="rating" type="radio" value="3"/><label
+                                                for="star3"></label>
+                                            <input id="star2" name="rating" type="radio" value="2"/><label
+                                                for="star2"></label>
+                                            <input id="star1" name="rating" type="radio" value="1"/><label
+                                                for="star1"></label>
                                         </div>
                                     </div>
                                 </div>
@@ -600,7 +648,8 @@
                             <div class="product-btns">
                                 <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                                 <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a href="Select Time.html"> Reserve</a></button>
+                                <button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a
+                                        href="Select Time.html"> Reserve</a></button>
                             </div>
                         </div>
                     </div>
@@ -611,8 +660,12 @@
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="product product-single">
                         <div class="product-thumb">
-                            <button class="main-btn quick-view" data-toggle="popover" data-placement="bottom" title="TombRaider" data-content="Lara Croft, the fiercely independent daughter of a missing adventurer, must push herself beyond her limits when she discovers the island where her father disappeared."><i class="fa fa-search-plus" ></i> More info</button>
-                            <img src="./img/TombRaider.jpg" alt="">
+                            <button class="main-btn quick-view" data-content="Lara Croft, the fiercely independent daughter of a missing adventurer, must push herself beyond her limits when she discovers the island where her father disappeared." data-placement="bottom"
+                                    data-toggle="popover"
+                                    title="TombRaider">
+                                <i class="fa fa-search-plus"></i> More info
+                            </button>
+                            <img alt="" src="./img/TombRaider.jpg">
                         </div>
                         <div class="product-body">
                             <!-- <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3> -->
@@ -622,11 +675,16 @@
                                 <div class="form-group">
                                     <div class="input-rating">
                                         <div class="stars">
-                                            <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
-                                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
-                                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
-                                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
-                                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+                                            <input id="star5" name="rating" type="radio" value="5"/><label
+                                                for="star5"></label>
+                                            <input id="star4" name="rating" type="radio" value="4"/><label
+                                                for="star4"></label>
+                                            <input id="star3" name="rating" type="radio" value="3"/><label
+                                                for="star3"></label>
+                                            <input id="star2" name="rating" type="radio" value="2"/><label
+                                                for="star2"></label>
+                                            <input id="star1" name="rating" type="radio" value="1"/><label
+                                                for="star1"></label>
                                         </div>
                                     </div>
                                 </div>
@@ -635,7 +693,8 @@
                             <div class="product-btns">
                                 <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                                 <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a href="Select Time.html"> Reserve </a></button>
+                                <button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a
+                                        href="Select Time.html"> Reserve </a></button>
                             </div>
                         </div>
                     </div>
@@ -650,8 +709,12 @@
                                 <span>New</span>
                                 <!-- <span class="sale">-20%</span> -->
                             </div>
-                            <button class="main-btn quick-view" data-toggle="popover" data-placement="bottom" title="Walking Dead" data-content="Sheriff Deputy Rick Grimes wakes up from a coma to learn the world is in ruins, and must lead a group of survivors to stay alive."><i class="fa fa-search-plus" ></i> More info</button>
-                            <img src="./img/WalkingDead.jpg" alt="">
+                            <button class="main-btn quick-view" data-content="Sheriff Deputy Rick Grimes wakes up from a coma to learn the world is in ruins, and must lead a group of survivors to stay alive." data-placement="bottom"
+                                    data-toggle="popover"
+                                    title="Walking Dead">
+                                <i class="fa fa-search-plus"></i> More info
+                            </button>
+                            <img alt="" src="./img/WalkingDead.jpg">
                         </div>
                         <div class="product-body">
                             <!-- <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3> -->
@@ -661,11 +724,16 @@
                                 <div class="form-group">
                                     <div class="input-rating">
                                         <div class="stars">
-                                            <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
-                                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
-                                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
-                                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
-                                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+                                            <input id="star5" name="rating" type="radio" value="5"/><label
+                                                for="star5"></label>
+                                            <input id="star4" name="rating" type="radio" value="4"/><label
+                                                for="star4"></label>
+                                            <input id="star3" name="rating" type="radio" value="3"/><label
+                                                for="star3"></label>
+                                            <input id="star2" name="rating" type="radio" value="2"/><label
+                                                for="star2"></label>
+                                            <input id="star1" name="rating" type="radio" value="1"/><label
+                                                for="star1"></label>
                                         </div>
                                     </div>
                                 </div>
@@ -674,7 +742,8 @@
                             <div class="product-btns">
                                 <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                                 <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a href="Select Time.html"> Reserve </a></button>
+                                <button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a
+                                        href="Select Time.html"> Reserve </a></button>
                             </div>
                         </div>
                     </div>
@@ -685,8 +754,12 @@
                 <div class="col-md-3 col-sm-6 col-xs-6">
                     <div class="product product-single">
                         <div class="product-thumb">
-                            <button class="main-btn quick-view" data-toggle="popover" data-placement="bottom" title="SuperGirl"  data-content="The adventures of Superman's cousin in her own superhero career."><i class="fa fa-search-plus" ></i> More info</button>
-                            <img src="./img/SuperGirl.jpg" alt="">
+                            <button class="main-btn quick-view" data-content="The adventures of Superman's cousin in her own superhero career." data-placement="bottom"
+                                    data-toggle="popover"
+                                    title="SuperGirl"><i
+                                    class="fa fa-search-plus"></i> More info
+                            </button>
+                            <img alt="" src="./img/SuperGirl.jpg">
                         </div>
                         <div class="product-body">
                             <!-- <h3 class="product-price">$32.50</h3> -->
@@ -697,11 +770,16 @@
                                 <div class="form-group">
                                     <div class="input-rating">
                                         <div class="stars">
-                                            <input type="radio" id="star5" name="rating" value="5" /><label for="star5"></label>
-                                            <input type="radio" id="star4" name="rating" value="4" /><label for="star4"></label>
-                                            <input type="radio" id="star3" name="rating" value="3" /><label for="star3"></label>
-                                            <input type="radio" id="star2" name="rating" value="2" /><label for="star2"></label>
-                                            <input type="radio" id="star1" name="rating" value="1" /><label for="star1"></label>
+                                            <input id="star5" name="rating" type="radio" value="5"/><label
+                                                for="star5"></label>
+                                            <input id="star4" name="rating" type="radio" value="4"/><label
+                                                for="star4"></label>
+                                            <input id="star3" name="rating" type="radio" value="3"/><label
+                                                for="star3"></label>
+                                            <input id="star2" name="rating" type="radio" value="2"/><label
+                                                for="star2"></label>
+                                            <input id="star1" name="rating" type="radio" value="1"/><label
+                                                for="star1"></label>
                                         </div>
                                     </div>
                                 </div>
@@ -710,7 +788,8 @@
                             <div class="product-btns">
                                 <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
                                 <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a href="Select Time.html"> Reserve </a></button>
+                                <button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a
+                                        href="Select Time.html"> Reserve </a></button>
                             </div>
                         </div>
                     </div>
@@ -845,8 +924,12 @@
                             <div class="product-label">
                                 <span>In Theatres</span>
                             </div>
-                            <button class="main-btn quick-view" data-toggle="popover" data-placement="bottom" title="Everyday" data-content="Small time Hungarian matchmakers get the job to make a Hollywood star fall in love with a Russian 'businessman's spoiled brat sister. They get one million dollars if they succeed, but if they fail, they will have to pay with their lives."><i class="fa fa-search-plus" ></i> More info</button>
-                            <img src="./img/EveryDay.jpg" alt="">
+                            <button class="main-btn quick-view" data-content="Small time Hungarian matchmakers get the job to make a Hollywood star fall in love with a Russian 'businessman's spoiled brat sister. They get one million dollars if they succeed, but if they fail, they will have to pay with their lives." data-placement="bottom"
+                                    data-toggle="popover"
+                                    title="Everyday">
+                                <i class="fa fa-search-plus"></i> More info
+                            </button>
+                            <img alt="" src="./img/EveryDay.jpg">
                         </div>
                         <div class="product-body">
                             <h3 class="product-name"><a href="#">Everyday</a></h3>
@@ -862,7 +945,8 @@
                             <div class="product-btns">
                                 <!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
                                 <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn"><i class="fa fa-star"></i><a href="Ratings.html"> Rate this Film </a></button>
+                                <button class="primary-btn"><i class="fa fa-star"></i><a href="Ratings.html"> Rate this
+                                    Film </a></button>
                             </div>
                         </div>
                     </div>
@@ -874,8 +958,12 @@
                     <div class="product product-single">
                         <div class="product-thumb">
 
-                            <button class="main-btn quick-view" data-toggle="popover" data-placement="bottom"  title="A-X-L" data-content="A.X.L. is a top-secret, robotic dog who develops a special friendship with Miles and will go to any length to protect his new companion."><i class="fa fa-search-plus" ></i> More info</button>
-                            <img src="./img/axl.jpg" alt="">
+                            <button class="main-btn quick-view" data-content="A.X.L. is a top-secret, robotic dog who develops a special friendship with Miles and will go to any length to protect his new companion." data-placement="bottom"
+                                    data-toggle="popover"
+                                    title="A-X-L">
+                                <i class="fa fa-search-plus"></i> More info
+                            </button>
+                            <img alt="" src="./img/axl.jpg">
                         </div>
                         <div class="product-body">
                             <h3 class="product-name"><a href="#">A-X-L</a></h3>
@@ -885,13 +973,14 @@
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o empty" ></i>
+                                <i class="fa fa-star-o empty"></i>
                                 <hr>
                             </div>
                             <div class="product-btns">
                                 <!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
                                 <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn"><i class="fa fa-star"></i><a href="Ratings.html"> Rate this Film </a></button>
+                                <button class="primary-btn"><i class="fa fa-star"></i><a href="Ratings.html"> Rate this
+                                    Film </a></button>
                             </div>
                         </div>
                     </div>
@@ -905,8 +994,12 @@
                             <!-- <div class="product-label">
                                 <span class="sale">-20%</span>
                             </div> -->
-                            <button class="main-btn quick-view" data-toggle="popover" data-placement="bottom"  title="12 Strong" data-content="A.X.L. is a top-secret, robotic dog who develops a special friendship with Miles and will go to any length to protect his new companion."><i class="fa fa-search-plus" x></i> More info</button>
-                            <img src="./img/12Strong.jpg" alt="">
+                            <button class="main-btn quick-view" data-content="A.X.L. is a top-secret, robotic dog who develops a special friendship with Miles and will go to any length to protect his new companion." data-placement="bottom"
+                                    data-toggle="popover"
+                                    title="12 Strong">
+                                <i class="fa fa-search-plus" x></i> More info
+                            </button>
+                            <img alt="" src="./img/12Strong.jpg">
                         </div>
                         <div class="product-body">
                             <h3 class="product-name"><a href="#">12 Strong</a></h3>
@@ -923,7 +1016,8 @@
                             <div class="product-btns">
                                 <!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
                                 <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn"><i class="fa fa-star"></i><a href="Ratings.html"> Rate this Film </a></button>
+                                <button class="primary-btn"><i class="fa fa-star"></i><a href="Ratings.html"> Rate this
+                                    Film </a></button>
                             </div>
                         </div>
                     </div>
@@ -938,8 +1032,12 @@
                                 <span>New</span>
                                 <span class="sale">-20%</span>
                             </div> -->
-                            <button class="main-btn quick-view" data-toggle="popover" data-placement="bottom" title="HomeFront" data-content="A former DEA agent moves his family to a quiet town, where he soon tangles with a local meth druglord."><i class="fa fa-search-plus" ></i> More info</button>
-                            <img src="./img/JasonStatham.jpg" alt="">
+                            <button class="main-btn quick-view" data-content="A former DEA agent moves his family to a quiet town, where he soon tangles with a local meth druglord." data-placement="bottom"
+                                    data-toggle="popover"
+                                    title="HomeFront">
+                                <i class="fa fa-search-plus"></i> More info
+                            </button>
+                            <img alt="" src="./img/JasonStatham.jpg">
                         </div>
                         <div class="product-body">
                             <h3 class="product-name"><a href="#">HomeFront</a></h3>
@@ -955,7 +1053,9 @@
                             <div class="product-btns">
                                 <!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
                                 <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn"><i class="fa fa-star"></i><a href="Ratings.html"> Rate this Film </a></button>                               							</div>
+                                <button class="primary-btn"><i class="fa fa-star"></i><a href="Ratings.html"> Rate this
+                                    Film </a></button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -972,7 +1072,7 @@
         <!-- container -->
         <div class="container">
             <!-- row -->
-            <div  class="row">
+            <div class="row">
 
                 <!-- banner -->
                 <div class="col-md-2">
@@ -983,9 +1083,10 @@
                 <!-- banner -->
                 <div class="col-md-8">
                     <div class="banner banner-1">
-                        <img src="./img/app.png" alt="">
+                        <img alt="" src="./img/app.png">
                         <div class="banner-caption text-center">
-                            <h2 class="primary-color">Wait is Over !! <br><span class="white-color font-weak">We will be releasing our mobile application soon!! </span></h2>
+                            <h2 class="primary-color">Wait is Over !! <br><span class="white-color font-weak">We will be releasing our mobile application soon!! </span>
+                            </h2>
                             <button class="primary-btn"><a href="#StayConnected"> Stay Connected</a></button>
                         </div>
                     </div>
@@ -993,9 +1094,8 @@
                 <!-- /banner -->
 
 
-
                 <!-- banner -->
-                <div id="Reservations" class="col-md-6">
+                <div class="col-md-6" id="Reservations">
 
                 </div>
                 <!-- /banner -->
@@ -1010,7 +1110,7 @@
     <hr>
 
     <!-- FOOTER -->
-    <footer id="footer" class="section section-grey">
+    <footer class="section section-grey" id="footer">
         <!-- container -->
         <div class="container">
             <!-- row -->
@@ -1021,12 +1121,13 @@
                         <!-- footer logo -->
                         <div class="footer-logo">
                             <a class="logo" href="#">
-                                <img src="./img/logo.png" alt="">
+                                <img alt="" src="./img/logo.png">
                             </a>
                         </div>
                         <!-- /footer logo -->
 
-                        <p>This site is made for the software project of second year by the students of the group 12..</p>
+                        <p>This site is made for the software project of second year by the students of the group
+                            12..</p>
                         <!-- footer social -->
                         <ul class="footer-social">
                             <li><a href="www.facebook.com"><i class="fa fa-facebook"></i></a></li>
@@ -1071,7 +1172,7 @@
                 <!-- /footer widget -->
 
                 <!-- footer subscribe -->
-                <div class="col-md-3 col-sm-6 col-xs-6" id="StayConnected" >
+                <div class="col-md-3 col-sm-6 col-xs-6" id="StayConnected">
                     <div class="footer">
                         <h3 class="footer-header">Stay Connected</h3>
                         <p>Get to Know about the fresh films just in time it comes to the Theatre</p>
@@ -1115,7 +1216,7 @@
 
     <!-- my js files -->
     <script>
-        $(document).ready(function(){
+        $(document).ready(function () {
             $('[data-toggle="popover"]').popover();
         });
     </script>

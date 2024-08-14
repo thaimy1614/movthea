@@ -1,6 +1,5 @@
 package com.example.demo.service;
 
-import com.example.demo.model.entity.TicketEntity;
 import com.example.demo.model.response.TicketResponse;
 
 import java.util.List;

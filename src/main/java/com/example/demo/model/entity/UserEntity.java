@@ -4,8 +4,6 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.Set;
-
 
 @Getter
 @Setter
@@ -29,7 +27,7 @@ public class UserEntity {
     @Enumerated(EnumType.STRING)
     private UserRole role;
 
-    public enum UserRole{
+    public enum UserRole {
         ADMIN,
         USER
     }

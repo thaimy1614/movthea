@@ -1,15 +1,15 @@
 package com.example.demo.service.impl;
 
-import com.example.demo.model.entity.*;
-import com.example.demo.model.response.*;
-import com.example.demo.repository.*;
+import com.example.demo.model.entity.UserEntity;
+import com.example.demo.model.response.UserResponse;
+import com.example.demo.repository.UserRepository;
 import com.example.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -18,7 +18,7 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder passwordEncoder;
 
     public UserEntity findByUsername(String username) {
-        return userRepository.findByUsername(username).orElseThrow(()->new UsernameNotFoundException("User not found"));
+        return userRepository.findByUsername(username).orElseThrow(() -> new UsernameNotFoundException("User not found"));
     }
 
 
@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
     }
 
-    public void updateProfile(Long userId, UserEntity newProfile){
+    public void updateProfile(Long userId, UserEntity newProfile) {
         UserEntity user = userRepository.findById(userId).orElseThrow();
         user.setEmail(newProfile.getEmail());
         user.setName(newProfile.getName());
@@ -52,17 +52,17 @@ public class UserServiceImpl implements UserService {
 
     public void changePassword(String username, String oldPassword, String newPassword) {
         UserEntity user = userRepository.findByUsername(username).orElseThrow();
-        if(passwordEncoder.matches(oldPassword, user.getPassword())){
+        if (passwordEncoder.matches(oldPassword, user.getPassword())) {
             user.setPassword(passwordEncoder.encode(newPassword));
         }
         userRepository.save(user);
     }
 
-    public List<UserEntity> getAllUsers(){
+    public List<UserEntity> getAllUsers() {
         return userRepository.findAllByRoleEquals(UserEntity.UserRole.USER);
     }
 
-    public List<UserEntity> searchUser(String username, String name, String email){
+    public List<UserEntity> searchUser(String username, String name, String email) {
         return userRepository.findByUsernameContainingOrNameContainingOrEmailContaining(username, name, email);
     }
 }
