@@ -59,11 +59,6 @@ public class AdminController {
         return "Admin/admin.basicTable.html";
     }
 
-    @GetMapping("/snacks")
-    public String snacks() {
-        return "Admin/admin.snacks.html";
-    }
-
     @GetMapping("/show-all-movies")
     public String showAllMovies(Model model) {
         List<Movie> movies = movieService.getAllMovies(null);

@@ -8,15 +8,17 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.sql.Time;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity
-@Table(name = "cinema")
+@Table(name = "theatre")
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Cinema {
+public class Theatre {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -24,10 +26,11 @@ public class Cinema {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
-    private String location;
-
-    private Integer numberOfScreens;
+    private Long movieRunning;
+    private Long nextMovie;
+    private Integer remainingSeats;
+    private Integer reservedSeats;
+    private Long timeSlot;
 
     @CreationTimestamp
     private LocalDateTime createdAt;

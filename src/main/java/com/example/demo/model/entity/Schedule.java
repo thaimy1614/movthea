@@ -29,7 +29,7 @@ public class Schedule {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cinema_id", nullable = false)
-    private Cinema cinema;
+    private Theatre cinema;
 
     @Column(name = "show_date", nullable = false)
     private LocalDate showDate;
