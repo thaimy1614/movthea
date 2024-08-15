@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import com.example.demo.model.entity.Movie;
 import com.example.demo.model.entity.Schedule;
+import com.example.demo.model.entity.Seat;
 import com.example.demo.model.entity.UserEntity;
 import com.example.demo.service.MovieService;
 import com.example.demo.service.ScheduleService;
@@ -16,6 +17,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Controller
 @RequiredArgsConstructor
@@ -78,13 +82,28 @@ public class HomeController {
 
     @GetMapping("/home/movie/select-time")
     public String selectTime(Model model) {
+        List<Schedule> schedule = scheduleService.getSchedulesByStartAtFromNow();
+        model.addAttribute("schedule", schedule);
+        return "layout/Event_Schedule_list";
+    }
+
+    @GetMapping("/home/movie/schedule/{scheduleId}/select-seat")
+    public String selectSeat(@PathVariable Long scheduleId, Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         boolean isAuthenticated = authentication != null && authentication.isAuthenticated() &&
                 !(authentication.getPrincipal() instanceof String && "anonymousUser".equals(authentication.getPrincipal()));
         model.addAttribute("isAuthenticated", isAuthenticated);
-        List<Schedule> schedule = scheduleService.getSchedulesByStartAtFromNow();
-        model.addAttribute("schedule", schedule);
-        return "layout/Event_Schedule_list";
+        Optional<Schedule> schedule = scheduleService.getSchedule(scheduleId);
+        if(schedule.isEmpty()){
+            return "redirect:/home";
+        }
+        model.addAttribute("schedule", schedule.get());
+        List<Seat> seats = schedule.get().getRoom().getSeat();
+        Map<Character, List<Seat>> groupedSeats = seats.stream()
+                .collect(Collectors.groupingBy(seat -> seat.getSeatCode().charAt(0)));
+
+        model.addAttribute("groupedSeats", groupedSeats);
+        return "layout/seats";
     }
 
 }

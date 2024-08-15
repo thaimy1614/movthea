@@ -18,8 +18,16 @@ public class Seat {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "room_id")
-    private RoomEntity theatre;
+    private RoomEntity room;
 
     @Column(name = "seat_code")
     private String seatCode;
+
+    @Enumerated(EnumType.STRING)
+    private Status status;
+
+    public enum Status{
+        AVAILABLE,
+        UNAVAILABLE
+    }
 }

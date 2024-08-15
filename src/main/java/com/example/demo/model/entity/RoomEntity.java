@@ -33,4 +33,6 @@ public class RoomEntity {
     @JoinColumn(name = "theatre_id")
     private Theatre theatre;
 
+    @OneToMany(mappedBy = "room", fetch = FetchType.LAZY)
+    private List<Seat> seat;
 }
