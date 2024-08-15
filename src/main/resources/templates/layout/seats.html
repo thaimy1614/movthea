@@ -400,21 +400,28 @@
             <!-- Display row labels dynamically -->
             <p th:each="row : ${groupedSeats.keySet()}" th:text="${row}"></p><br>
         </div>
-        <div class="col-sm-3">
+        <div class="col-sm-9">
             <br>
             <!-- Display seats grouped by row -->
             <th:block th:each="row : ${groupedSeats}">
                 <div>
-                    <div th:each="seat : ${row.value}">
-                        <button class="seat"
+                    <span th:each="seat,i: ${row.value}">
+                        <button th:if="${seat.status.name().equals('UNAVAILABLE')}" class="seat"
+                                th:value="${seat.seatCode}"
+                                th:text="${seat.seatCode}"
+                                disabled
+                                type="button"></button>
+                        <button th:if="${seat.status.name().equals('AVAILABLE')}" class="seat"
                                 th:id="${seat.seatCode}"
                                 th:value="${seat.seatCode}"
                                 th:text="${seat.seatCode}"
                                 th:data-seat-code="${seat.seatCode}"
                                 onclick="seatToggle(this)"
                                 type="button"></button>
+                        <!-- Add a space after every 6th seat -->
+                        <span th:if="${i.index % 6 == 5}">&nbsp;&nbsp;&nbsp;</span>
 
-                    </div>
+                    </span>
                 </div>
             </th:block>
         </div>
