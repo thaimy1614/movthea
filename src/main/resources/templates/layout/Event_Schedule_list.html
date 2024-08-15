@@ -316,6 +316,7 @@
                                             <th scope="col">Thumbnail</th>
                                             <th scope="col">Information</th>
                                             <th scope="col">Room</th>
+                                            <th scope="col">Price</th>
                                             <th class="text-center" scope="col"></th>
                                         </tr>
                                         </thead>
@@ -360,6 +361,11 @@
                                                 <td>
                                                     <div class="r-no">
                                                         <span th:text="${s.room.name}"></span>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="r-no">
+                                                        <span th:text="${s.movie.price} + ' VND'"></span>
                                                     </div>
                                                 </td>
                                                 <td>
