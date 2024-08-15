@@ -1,6 +1,10 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.entity.Movie;
+import com.example.demo.model.entity.Schedule;
 import com.example.demo.model.entity.UserEntity;
+import com.example.demo.service.MovieService;
+import com.example.demo.service.ScheduleService;
 import com.example.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
@@ -9,11 +13,16 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.List;
 
 @Controller
 @RequiredArgsConstructor
 public class HomeController {
     private final UserService userService;
+    private final MovieService movieService;
+    private final ScheduleService scheduleService;
 
     @GetMapping("/home")
     public String home(Model model) {
@@ -30,7 +39,13 @@ public class HomeController {
                 }
             }
         }
+        List<Movie> nowShowing = movieService.getAllMovies(Movie.MovieStatus.NOW_SHOWING);
+        List<Movie> comingSoon = movieService.getAllMovies(Movie.MovieStatus.COMING_SOON);
+        List<Movie> trending = movieService.getAllMovies(Movie.MovieStatus.TRENDING);
         model.addAttribute("isAuthenticated", isAuthenticated);
+        model.addAttribute("nowShowing", nowShowing);
+        model.addAttribute("comingSoon", comingSoon);
+        model.addAttribute("trending", trending);
         return "layout/index";
     }
 
@@ -49,9 +64,27 @@ public class HomeController {
         return "Profile/myAccount";
     }
 
-
-    @GetMapping("/buyTicket")
-    public String buyTicket() {
-        return "layout/SelectTime.html";
+    @GetMapping("/home/movie/{id}/select-time")
+    public String selectTime(@PathVariable Long id, Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        boolean isAuthenticated = authentication != null && authentication.isAuthenticated() &&
+                !(authentication.getPrincipal() instanceof String && "anonymousUser".equals(authentication.getPrincipal()));
+        model.addAttribute("isAuthenticated", isAuthenticated);
+        Movie movie = movieService.getMovie(id).orElse(new Movie());
+        List<Schedule> schedule = scheduleService.getSchedulesByMovie(movie);
+        model.addAttribute("schedule", schedule);
+        return "layout/Event_Schedule_list";
     }
+
+    @GetMapping("/home/movie/select-time")
+    public String selectTime(Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        boolean isAuthenticated = authentication != null && authentication.isAuthenticated() &&
+                !(authentication.getPrincipal() instanceof String && "anonymousUser".equals(authentication.getPrincipal()));
+        model.addAttribute("isAuthenticated", isAuthenticated);
+        List<Schedule> schedule = scheduleService.getSchedulesByStartAtFromNow();
+        model.addAttribute("schedule", schedule);
+        return "layout/Event_Schedule_list";
+    }
+
 }

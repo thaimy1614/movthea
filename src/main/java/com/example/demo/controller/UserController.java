@@ -21,15 +21,6 @@ public class UserController {
         return "redirect:/myAccount";
     }
 
-    @GetMapping("/select-time")
-    public String selectTime(Model model) {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        boolean isAuthenticated = authentication != null && authentication.isAuthenticated() &&
-                !(authentication.getPrincipal() instanceof String && "anonymousUser".equals(authentication.getPrincipal()));
-        model.addAttribute("isAuthenticated", isAuthenticated);
-        return "layout/SelectTime.html";
-    }
-
     @GetMapping("/seat")
     public String seat(Model model) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

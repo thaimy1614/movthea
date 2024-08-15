@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 
+import com.example.demo.model.entity.Movie;
 import com.example.demo.model.entity.Schedule;
 
 import java.util.List;
@@ -18,4 +19,8 @@ public interface ScheduleService {
     void deleteSchedule(Long id);
 
     Optional<Schedule> getSchedule(Long id);
+
+    List<Schedule> getSchedulesByMovie(Movie movie);
+
+    List<Schedule> getSchedulesByStartAtFromNow();
 }

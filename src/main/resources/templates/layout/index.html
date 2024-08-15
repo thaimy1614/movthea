@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:sec="http://www.thymeleaf.org/thymeleaf-security" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
@@ -30,9 +30,9 @@
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
 
     <style>
         .carousel-inner img {
@@ -184,171 +184,49 @@
                 <div class="col-md-9 col-sm-6 col-xs-6">
                     <div class="row">
                         <div class="product-slick" id="product-slick-1">
-                            <!-- Product Single -->
-                            <div class="product product-single">
-                                <div class="product-thumb">
-                                    <div class="product-label">
-                                        <span>Theatre A</span>
-                                        <!-- <span class="sale">-20%</span> -->
-                                    </div>
-                                    <!-- <ul class="product-countdown">
-                                        <li><span>00 H</span></li>
-                                        <li><span>00 M</span></li>
-                                        <li><span>00 S</span></li>
-                                    </ul> -->
-                                    <button class="main-btn quick-view" data-content="Detective Sherlock Holmes and his stalwart partner Watson engage in a battle of wits and brawn with a nemesis whose plot is a threat to all of England." data-placement="bottom"
-                                            data-toggle="popover"
-                                            title="SHERLOCK HOLMES">
-                                        <i class="fa fa-search-plus"></i> More info
-                                    </button>
-
-                                    <img alt="" th:src="@{/fe/img/SherlockHolmes.jpg}">
-                                </div>
-                                <div class="product-body">
-                                    <h2 class="product-name"><a href="#">SHERLOCK HOLMES</a></h2>
-
-                                    <!-- <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3> -->
-
-                                    <p class="product-name"><a href="#">Misery | Adventure</a></p>
-                                    <form class="review-form">
-                                        <div class="form-group">
-                                            <div class="input-rating">
-                                                <div class="stars">
-                                                    <input id="star5" name="rating" type="radio" value="5"/><label
-                                                        for="star5"></label>
-                                                    <input id="star4" name="rating" type="radio" value="4"/><label
-                                                        for="star4"></label>
-                                                    <input id="star3" name="rating" type="radio" value="3"/><label
-                                                        for="star3"></label>
-                                                    <input id="star2" name="rating" type="radio" value="2"/><label
-                                                        for="star2"></label>
-                                                    <input id="star1" name="rating" type="radio" value="1"/><label
-                                                        for="star1"></label>
-                                                </div>
-                                            </div>
+                            <th:block th:each="now:${nowShowing}">
+                                <!-- Product Single -->
+                                <div class="product product-single">
+                                    <div class="product-thumb">
+                                        <div class="product-label">
+                                            <span th:text="${now.theatre}"></span>
                                         </div>
-                                    </form>
-                                    <div class="product-btns">
-                                        <!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
-                                        <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-
-                                        <button class="primary-btn add-to-cart" id="SherlockHolmes"
-                                                value="SherlockHolmes"><a th:href="@{/user/select-time}">Buy
-                                            Tickets </a><i class="fa fa-ticket"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /Product Single -->
-
-                            <!-- Product Single -->
-                            <div class="product product-single">
-                                <div class="product-thumb">
-                                    <div class="product-label">
-                                        <span>Theatre B</span>
-                                        <!-- <span class="sale">-20%</span> -->
-                                    </div>
-                                    <!-- <ul class="product-countdown">
-                                        <li><span>00 H</span></li>
-                                        <li><span>00 M</span></li>
-                                        <li><span>00 S</span></li>
-                                    </ul> -->
-                                    <button class="main-btn quick-view" data-content="Gru meets his long-lost charming, cheerful, and more successful twin brother Dru who wants to team up with him for one last criminal heist." data-placement="bottom"
-                                            data-toggle="popover"
-                                            title="DESPICABLE ME 3">
-                                        <i class="fa fa-search-plus"></i> More info
-                                    </button>
-                                    <img alt="" src="./img/DespicableMe3.jpg">
-                                </div>
-                                <div class="product-body">
-                                    <h2 class="product-name"><a href="#">DESPICABLE ME 3</a></h2>
-                                    <!-- <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3> -->
-
-                                    <p class="product-name"><a href="#">Animation | Comedy</a></p>
-                                    <form class="review-form">
-                                        <div class="form-group">
-                                            <div class="input-rating">
-                                                <div class="stars">
-                                                    <input id="star5" name="rating" type="radio" value="5"/><label
-                                                        for="star5"></label>
-                                                    <input id="star4" name="rating" type="radio" value="4"/><label
-                                                        for="star4"></label>
-                                                    <input id="star3" name="rating" type="radio" value="3"/><label
-                                                        for="star3"></label>
-                                                    <input id="star2" name="rating" type="radio" value="2"/><label
-                                                        for="star2"></label>
-                                                    <input id="star1" name="rating" type="radio" value="1"/><label
-                                                        for="star1"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <div class="product-btns">
-                                        <!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
-                                        <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-
-                                        <button class="primary-btn add-to-cart" id="DespicableMe3"
-                                                value="DespicableMe3"><a href="SelectTime.html">Buy Tickets </a><i
-                                                class="fa fa-ticket"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /Product Single -->
-
-                            <!-- Product Single -->
-                            <div class="product product-single">
-                                <div class="product-thumb">
-                                    <div class="product-label">
-                                        <span>Theatre C</span>
-                                        <!-- <span class="sale">-20%</span> -->
-                                    </div>
-                                    <!-- <ul class="product-countdown">
-                                        <li><span>00 H</span></li>
-                                        <li><span>00 M</span></li>
-                                        <li><span>00 S</span></li>
-                                    </ul> -->
-                                    <button class="main-btn quick-view" data-content="Follows an elite hit man as he teaches his trade to an apprentice who has a connection to one of his previous victims." data-placement="bottom"
-                                            data-toggle="popover"
-                                            title="MECHANIC 2">
-                                        <i class="fa fa-search-plus"></i> More info
-                                    </button>
-                                    <img alt="" src="./img/Mechanic2.jpg">
-                                </div>
-                                <div class="product-body">
-                                    <h2 class="product-name"><a href="#">MECHANIC 2</a></h2>
-                                    <!-- <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3> -->
-
-                                    <p class="product-name"><a href="#">Adventure</a></p>
-                                    <form class="review-form">
-                                        <div class="form-group">
-                                            <div class="input-rating">
-                                                <div class="stars">
-                                                    <input id="star5" name="rating" type="radio" value="5"/><label
-                                                        for="star5"></label>
-                                                    <input id="star4" name="rating" type="radio" value="4"/><label
-                                                        for="star4"></label>
-                                                    <input id="star3" name="rating" type="radio" value="3"/><label
-                                                        for="star3"></label>
-                                                    <input id="star2" name="rating" type="radio" value="2"/><label
-                                                        for="star2"></label>
-                                                    <input id="star1" name="rating" type="radio" value="1"/><label
-                                                        for="star1"></label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                    <div class="product-btns">
-                                        <!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
-                                        <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-
-                                        <button class="primary-btn add-to-cart" id="Mechanic" value="Mechanic"><a
-                                                href="SelectTime.html">Buy Tickets </a><i class="fa fa-ticket"></i>
+                                        <button class="main-btn quick-view" th:data-content="${now.description}"
+                                                data-placement="bottom"
+                                                data-toggle="popover"
+                                                th:title="${now.title}">
+                                            <i class="fa fa-search-plus"></i> More info
                                         </button>
+
+                                        <img alt="" th:src="@{'/uploads/'+${now.imageLink}}">
+                                    </div>
+                                    <div class="product-body">
+                                        <h3 class="product-name"><a th:href="@{'/home/movie/'+${now.id}}"
+                                                                    th:text="${now.title}"></a></h3>
+                                        <p th:text="${now.genre} + ' ‧ ' +${now.duration}+'m'"></p>
+                                        <!--                                        <div class="product-rating">-->
+                                        <!--                                            <i class="fa fa-star"></i>-->
+                                        <!--                                            <i class="fa fa-star"></i>-->
+                                        <!--                                            <i class="fa fa-star"></i>-->
+                                        <!--                                            <i class="fa fa-star"></i>-->
+                                        <!--                                            <i class="fa fa-star-o empty"></i>-->
+                                        <!--                                            <hr>-->
+                                        <!--                                        </div>-->
+                                        <div class="product-btns">
+                                            <button class="primary-btn add-to-cart" id="SherlockHolmes"
+                                                    value="SherlockHolmes"><a th:href="@{'/home/movie/'+${now.id}}">
+                                                View Detail
+                                            </a><i class="fa fa-ticket"></i></button>
+
+                                            <button class="primary-btn add-to-cart" id="SherlockHolmes1"
+                                                    value="SherlockHolmes"><a
+                                                    th:href="@{'/home/movie/'+${now.id}+'/select-time'}">Buy
+                                                Tickets </a><i class="fa fa-ticket"></i></button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- /Product Single -->
-
-
+                                <!-- /Product Single -->
+                            </th:block>
                         </div>
                     </div>
                 </div>
@@ -385,344 +263,50 @@
 
                 <!-- Product Single -->
                 <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="product product-single">
-                        <div class="product-thumb">
-                            <div class="product-label">
-                                <span>In Theatres</span>
-                            </div>
-                            <button class="main-btn quick-view" data-content="Small time Hungarian matchmakers get the job to make a Hollywood star fall in love with a Russian 'businessman's spoiled brat sister. They get one million dollars if they succeed, but if they fail, they will have to pay with their lives." data-placement="bottom"
-                                    data-toggle="popover"
-                                    title="Everyday">
-                                <i class="fa fa-search-plus"></i> More info
-                            </button>
-                            <img alt="" src="./img/EveryDay.jpg">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Everyday</a></h3>
-                            <p>2018 ‧ Drama/Fantasy ‧ 1h 40m</p>
-                            <div class="product-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o empty"></i>
-                                <hr>
-                            </div>
-                            <div class="product-btns">
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn"><i class="fa fa-star"></i><a href="Ratings.html"> Rate this
-                                    Film </a></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Product Single -->
-
-                <!-- Product Single -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="product product-single">
-                        <div class="product-thumb">
-
-                            <button class="main-btn quick-view" data-content="A.X.L. is a top-secret, robotic dog who develops a special friendship with Miles and will go to any length to protect his new companion." data-placement="bottom"
-                                    data-toggle="popover"
-                                    title="A-X-L">
-                                <i class="fa fa-search-plus"></i> More info
-                            </button>
-                            <img alt="" src="./img/axl.jpg">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">A-X-L</a></h3>
-                            <p>2018 ‧ Science Fiction/Action ‧ 1h 40m</p>
-                            <div class="product-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o empty"></i>
-                                <hr>
-                            </div>
-                            <div class="product-btns">
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn"><i class="fa fa-star"></i><a href="Ratings.html"> Rate this
-                                    Film </a></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Product Single -->
-
-                <!-- Product Single -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="product product-single">
-                        <div class="product-thumb">
-                            <!-- <div class="product-label">
-                                <span class="sale">-20%</span>
-                            </div> -->
-                            <button class="main-btn quick-view" data-content="A.X.L. is a top-secret, robotic dog who develops a special friendship with Miles and will go to any length to protect his new companion." data-placement="bottom"
-                                    data-toggle="popover"
-                                    title="12 Strong">
-                                <i class="fa fa-search-plus" x></i> More info
-                            </button>
-                            <img alt="" src="./img/12Strong.jpg">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">12 Strong</a></h3>
-                            <p>2018 ‧ Drama/Action ‧ 2h 11m</p>
-                            <div class="product-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o empty"></i>
-                                <hr>
-                            </div>
-
-                            <div class="product-btns">
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn"><i class="fa fa-star"></i><a href="Ratings.html"> Rate this
-                                    Film </a></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Product Single -->
-
-                <!-- Product Single -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="product product-single">
-                        <div class="product-thumb">
-                            <!-- <div class="product-label">
-                                <span>New</span>
-                                <span class="sale">-20%</span>
-                            </div> -->
-                            <button class="main-btn quick-view" data-content="A former DEA agent moves his family to a quiet town, where he soon tangles with a local meth druglord." data-placement="bottom"
-                                    data-toggle="popover"
-                                    title="HomeFront">
-                                <i class="fa fa-search-plus"></i> More info
-                            </button>
-                            <img alt="" src="./img/JasonStatham.jpg">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">HomeFront</a></h3>
-                            <p>2013 ‧ Drama/Crime ‧ 1h 40m</p>
-                            <div class="product-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o empty"></i>
-                                <hr>
-                            </div>
-                            <div class="product-btns">
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn"><i class="fa fa-star"></i><a href="Ratings.html"> Rate this
-                                    Film </a></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Product Single -->
-            </div>
-
-
-            <!-- row -->
-            <div class="row">
-                <!-- section title -->
-                <div class="col-md-12">
-                    <div class="section-title">
-                        <h2 class="title">Reserve Tickets</h2>
-                    </div>
-                </div>
-                <!-- section title -->
-
-                <!-- Product Single -->
-                <div class="col-md-3 col-sm-6 col-xs-6" id="Trending">
-                    <div class="product product-single">
-                        <div class="product-thumb">
-                            <button class="main-btn quick-view" data-content="Feature adaptation of Beatrix Potter's classic tale of a rebellious rabbit trying to sneak into a farmer's vegetable garden." data-placement="bottom"
-                                    data-toggle="popover"
-                                    title="Peter Rabbit">
-                                <i class="fa fa-search-plus"></i> More info
-                            </button>
-                            <img alt="" src="./img/PeterRabbit.jpg">
-                        </div>
-                        <div class="product-body">
-                            <!-- <h3 class="product-price">$32.50</h3> -->
-                            <h3 class="product-name"><a href="#">Peter Rabbit</a></h3>
-                            <p>2018 ‧ Fantasy/Adventure ‧ 1h 35m</p>
-                            <form class="review-form">
-                                <div class="form-group">
-                                    <div class="input-rating">
-                                        <div class="stars">
-                                            <input id="star5" name="rating" type="radio" value="5"/><label
-                                                for="star5"></label>
-                                            <input id="star4" name="rating" type="radio" value="4"/><label
-                                                for="star4"></label>
-                                            <input id="star3" name="rating" type="radio" value="3"/><label
-                                                for="star3"></label>
-                                            <input id="star2" name="rating" type="radio" value="2"/><label
-                                                for="star2"></label>
-                                            <input id="star1" name="rating" type="radio" value="1"/><label
-                                                for="star1"></label>
-                                        </div>
-                                    </div>
+                    <th:block th:each="come:${comingSoon}">
+                        <!-- Product Single -->
+                        <div class="product product-single">
+                            <div class="product-thumb">
+                                <div class="product-label">
+                                    <span th:text="${come.theatre}"></span>
                                 </div>
-                            </form>
-                            <h2 class="product-name"><a href="#"></a></h2>
-                            <div class="product-btns">
-                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a
-                                        href="SelectTime.html"> Reserve</a></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Product Single -->
+                                <button class="main-btn quick-view" th:data-content="${come.description}"
+                                        data-placement="bottom"
+                                        data-toggle="popover"
+                                        th:title="${come.title}">
+                                    <i class="fa fa-search-plus"></i> More info
+                                </button>
 
-                <!-- Product Single -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="product product-single">
-                        <div class="product-thumb">
-                            <button class="main-btn quick-view" data-content="Lara Croft, the fiercely independent daughter of a missing adventurer, must push herself beyond her limits when she discovers the island where her father disappeared." data-placement="bottom"
-                                    data-toggle="popover"
-                                    title="TombRaider">
-                                <i class="fa fa-search-plus"></i> More info
-                            </button>
-                            <img alt="" src="./img/TombRaider.jpg">
-                        </div>
-                        <div class="product-body">
-                            <!-- <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3> -->
-                            <h3 class="product-name"><a href="#">TombRaider</a></h3>
-                            <p>2018 ‧ 2h 2m</p>
-                            <form class="review-form">
-                                <div class="form-group">
-                                    <div class="input-rating">
-                                        <div class="stars">
-                                            <input id="star5" name="rating" type="radio" value="5"/><label
-                                                for="star5"></label>
-                                            <input id="star4" name="rating" type="radio" value="4"/><label
-                                                for="star4"></label>
-                                            <input id="star3" name="rating" type="radio" value="3"/><label
-                                                for="star3"></label>
-                                            <input id="star2" name="rating" type="radio" value="2"/><label
-                                                for="star2"></label>
-                                            <input id="star1" name="rating" type="radio" value="1"/><label
-                                                for="star1"></label>
-                                        </div>
-                                    </div>
+                                <img alt="" th:src="@{'/uploads/'+${come.imageLink}}">
+                            </div>
+                            <div class="product-body">
+                                <h3 class="product-name"><a th:href="@{'/home/movie/'+${come.id}}"
+                                                            th:text="${come.title}"></a></h3>
+                                <p th:text="${come.genre} + ' ‧ ' +${come.duration}+'m'"></p>
+                                <!--                                        <div class="product-rating">-->
+                                <!--                                            <i class="fa fa-star"></i>-->
+                                <!--                                            <i class="fa fa-star"></i>-->
+                                <!--                                            <i class="fa fa-star"></i>-->
+                                <!--                                            <i class="fa fa-star"></i>-->
+                                <!--                                            <i class="fa fa-star-o empty"></i>-->
+                                <!--                                            <hr>-->
+                                <!--                                        </div>-->
+                                <div class="product-btns">
+                                    <button class="primary-btn add-to-cart" id="SherlockHolmess"
+                                            value="SherlockHolmes"><a th:href="@{'/home/movie/'+${come.id}}">
+                                        View Detail
+                                    </a><i class="fa fa-ticket"></i></button>
+
+                                    <button class="primary-btn add-to-cart" id="SherlockHolmes1s"
+                                            value="SherlockHolmes"><a
+                                            th:href="@{'/home/movie/'+${come.id}+'/select-time'}">Buy
+                                        Tickets </a><i class="fa fa-ticket"></i></button>
                                 </div>
-                            </form>
-                            <h2 class="product-name"><a href="#"></a></h2>
-                            <div class="product-btns">
-                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a
-                                        href="SelectTime.html"> Reserve </a></button>
                             </div>
                         </div>
-                    </div>
+                        <!-- /Product Single -->
+                    </th:block>
                 </div>
-                <!-- /Product Single -->
-
-                <!-- Product Single -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="product product-single">
-                        <div class="product-thumb">
-                            <div class="product-label">
-                                <span>New</span>
-                                <!-- <span class="sale">-20%</span> -->
-                            </div>
-                            <button class="main-btn quick-view" data-content="Sheriff Deputy Rick Grimes wakes up from a coma to learn the world is in ruins, and must lead a group of survivors to stay alive." data-placement="bottom"
-                                    data-toggle="popover"
-                                    title="Walking Dead">
-                                <i class="fa fa-search-plus"></i> More info
-                            </button>
-                            <img alt="" src="./img/WalkingDead.jpg">
-                        </div>
-                        <div class="product-body">
-                            <!-- <h3 class="product-price">$32.50 <del class="product-old-price">$45.00</del></h3> -->
-                            <h3 class="product-name"><a href="#">Walking Dead</a></h3>
-                            <p>1995 ‧ Drama/Costume drama ‧ 1h 28m</p>
-                            <form class="review-form">
-                                <div class="form-group">
-                                    <div class="input-rating">
-                                        <div class="stars">
-                                            <input id="star5" name="rating" type="radio" value="5"/><label
-                                                for="star5"></label>
-                                            <input id="star4" name="rating" type="radio" value="4"/><label
-                                                for="star4"></label>
-                                            <input id="star3" name="rating" type="radio" value="3"/><label
-                                                for="star3"></label>
-                                            <input id="star2" name="rating" type="radio" value="2"/><label
-                                                for="star2"></label>
-                                            <input id="star1" name="rating" type="radio" value="1"/><label
-                                                for="star1"></label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <h2 class="product-name"><a href="#"></a></h2>
-                            <div class="product-btns">
-                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a
-                                        href="SelectTime.html"> Reserve </a></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Product Single -->
-
-                <!-- Product Single -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="product product-single">
-                        <div class="product-thumb">
-                            <button class="main-btn quick-view" data-content="The adventures of Superman's cousin in her own superhero career." data-placement="bottom"
-                                    data-toggle="popover"
-                                    title="SuperGirl"><i
-                                    class="fa fa-search-plus"></i> More info
-                            </button>
-                            <img alt="" src="./img/SuperGirl.jpg">
-                        </div>
-                        <div class="product-body">
-                            <!-- <h3 class="product-price">$32.50</h3> -->
-                            <h3 class="product-name"><a href="#">SuperGirl</a></h3>
-                            <p class="product-name">1984 ‧ Fantasy/Science Fiction ‧ 2h 30m</p>
-
-                            <form class="review-form">
-                                <div class="form-group">
-                                    <div class="input-rating">
-                                        <div class="stars">
-                                            <input id="star5" name="rating" type="radio" value="5"/><label
-                                                for="star5"></label>
-                                            <input id="star4" name="rating" type="radio" value="4"/><label
-                                                for="star4"></label>
-                                            <input id="star3" name="rating" type="radio" value="3"/><label
-                                                for="star3"></label>
-                                            <input id="star2" name="rating" type="radio" value="2"/><label
-                                                for="star2"></label>
-                                            <input id="star1" name="rating" type="radio" value="1"/><label
-                                                for="star1"></label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                            <h2 class="product-name"><a href="#"></a></h2>
-                            <div class="product-btns">
-                                <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn add-to-cart"><i class="fa fa-check"></i><a
-                                        href="SelectTime.html"> Reserve </a></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Product Single -->
             </div>
 
             <div class="row">
@@ -736,272 +320,177 @@
 
                 <!-- Product Single -->
                 <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="product product-single">
-                        <div class="product-thumb">
-                            <div class="product-label">
-                                <span>In Theatres</span>
-                            </div>
-                            <button class="main-btn quick-view" data-content="Small time Hungarian matchmakers get the job to make a Hollywood star fall in love with a Russian 'businessman's spoiled brat sister. They get one million dollars if they succeed, but if they fail, they will have to pay with their lives." data-placement="bottom"
-                                    data-toggle="popover"
-                                    title="Everyday">
-                                <i class="fa fa-search-plus"></i> More info
-                            </button>
-                            <img alt="" src="./img/EveryDay.jpg">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">Everyday</a></h3>
-                            <p>2018 ‧ Drama/Fantasy ‧ 1h 40m</p>
-                            <div class="product-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o empty"></i>
-                                <hr>
-                            </div>
-                            <div class="product-btns">
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn"><i class="fa fa-star"></i><a href="Ratings.html"> Rate this
-                                    Film </a></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Product Single -->
+                    <th:block th:each="trend:${trending}">
+                        <!-- Product Single -->
+                        <div class="product product-single">
+                            <div class="product-thumb">
+                                <div class="product-label">
+                                    <span th:text="${trend.theatre}"></span>
+                                </div>
+                                <button class="main-btn quick-view" th:data-content="${trend.description}"
+                                        data-placement="bottom"
+                                        data-toggle="popover"
+                                        th:title="${trend.title}">
+                                    <i class="fa fa-search-plus"></i> More info
+                                </button>
 
-                <!-- Product Single -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="product product-single">
-                        <div class="product-thumb">
+                                <img alt="" th:src="@{'/uploads/'+${trend.imageLink}}">
+                            </div>
+                            <div class="product-body">
+                                <h3 class="product-name"><a th:href="@{'/home/movie/'+${trend.id}}"
+                                                            th:text="${trend.title}"></a></h3>
+                                <p th:text="${trend.genre} + ' ‧ ' +${trend.duration}+'m'"></p>
+                                <!--                                        <div class="product-rating">-->
+                                <!--                                            <i class="fa fa-star"></i>-->
+                                <!--                                            <i class="fa fa-star"></i>-->
+                                <!--                                            <i class="fa fa-star"></i>-->
+                                <!--                                            <i class="fa fa-star"></i>-->
+                                <!--                                            <i class="fa fa-star-o empty"></i>-->
+                                <!--                                            <hr>-->
+                                <!--                                        </div>-->
+                                <div class="product-btns">
+                                    <button class="primary-btn add-to-cart" id="SherlockHolms"
+                                            value="SherlockHolmes"><a th:href="@{'/home/movie/'+${trend.id}}">
+                                        View Detail
+                                    </a><i class="fa fa-ticket"></i></button>
 
-                            <button class="main-btn quick-view" data-content="A.X.L. is a top-secret, robotic dog who develops a special friendship with Miles and will go to any length to protect his new companion." data-placement="bottom"
-                                    data-toggle="popover"
-                                    title="A-X-L">
-                                <i class="fa fa-search-plus"></i> More info
-                            </button>
-                            <img alt="" src="./img/axl.jpg">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">A-X-L</a></h3>
-                            <p>2018 ‧ Science Fiction/Action ‧ 1h 40m</p>
-                            <div class="product-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o empty"></i>
-                                <hr>
-                            </div>
-                            <div class="product-btns">
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn"><i class="fa fa-star"></i><a href="Ratings.html"> Rate this
-                                    Film </a></button>
+                                    <button class="primary-btn add-to-cart" id="SherlockHolmes1ss"
+                                            value="SherlockHolmes"><a
+                                            th:href="@{'/home/movie/'+${trend.id}+'/select-time'}">Buy
+                                        Tickets </a><i class="fa fa-ticket"></i></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <!-- /Product Single -->
-
-                <!-- Product Single -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="product product-single">
-                        <div class="product-thumb">
-                            <!-- <div class="product-label">
-                                <span class="sale">-20%</span>
-                            </div> -->
-                            <button class="main-btn quick-view" data-content="A.X.L. is a top-secret, robotic dog who develops a special friendship with Miles and will go to any length to protect his new companion." data-placement="bottom"
-                                    data-toggle="popover"
-                                    title="12 Strong">
-                                <i class="fa fa-search-plus" x></i> More info
-                            </button>
-                            <img alt="" src="./img/12Strong.jpg">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">12 Strong</a></h3>
-                            <p>2018 ‧ Drama/Action ‧ 2h 11m</p>
-                            <div class="product-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o empty"></i>
-                                <hr>
-                            </div>
-
-                            <div class="product-btns">
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn"><i class="fa fa-star"></i><a href="Ratings.html"> Rate this
-                                    Film </a></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- /Product Single -->
-
-                <!-- Product Single -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="product product-single">
-                        <div class="product-thumb">
-                            <!-- <div class="product-label">
-                                <span>New</span>
-                                <span class="sale">-20%</span>
-                            </div> -->
-                            <button class="main-btn quick-view" data-content="A former DEA agent moves his family to a quiet town, where he soon tangles with a local meth druglord." data-placement="bottom"
-                                    data-toggle="popover"
-                                    title="HomeFront">
-                                <i class="fa fa-search-plus"></i> More info
-                            </button>
-                            <img alt="" src="./img/JasonStatham.jpg">
-                        </div>
-                        <div class="product-body">
-                            <h3 class="product-name"><a href="#">HomeFront</a></h3>
-                            <p>2013 ‧ Drama/Crime ‧ 1h 40m</p>
-                            <div class="product-rating">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-o empty"></i>
-                                <hr>
-                            </div>
-                            <div class="product-btns">
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button> -->
-                                <!-- <button class="main-btn icon-btn"><i class="fa fa-exchange"></i></button> -->
-                                <button class="primary-btn"><i class="fa fa-star"></i><a href="Ratings.html"> Rate this
-                                    Film </a></button>
-                            </div>
-                        </div>
-                    </div>
+                        <!-- /Product Single -->
+                    </th:block>
                 </div>
                 <!-- /Product Single -->
             </div>
             <!-- /row -->
+            <!-- /container -->
         </div>
-        <!-- /container -->
+        <!-- /section -->
+
+        <!-- section -->
+
+        <!-- /section -->
+
+        <hr>
+
+        <!-- FOOTER -->
+        <footer class="section section-grey" id="footer">
+            <!-- container -->
+            <div class="container">
+                <!-- row -->
+                <div class="row">
+                    <!-- footer widget -->
+                    <div class="col-md-3 col-sm-6 col-xs-6">
+                        <div class="footer">
+                            <!-- footer logo -->
+                            <div class="footer-logo">
+                                <a class="logo" href="#">
+                                    <img alt="" src="./img/logo.png">
+                                </a>
+                            </div>
+                            <!-- /footer logo -->
+
+                            <p>This site is made for the software project of second year by the students of the group
+                                12..</p>
+                            <!-- footer social -->
+                            <ul class="footer-social">
+                                <li><a href="www.facebook.com"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="www.twitter.com"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="www.instagram.com"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="www.googleplus.com"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="www.pinterest.com"><i class="fa fa-pinterest"></i></a></li>
+                            </ul>
+                            <!-- /footer social -->
+                        </div>
+                    </div>
+                    <!-- /footer widget -->
+
+                    <!-- footer widget -->
+                    <div class="col-md-3 col-sm-6 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-header">My Account</h3>
+                            <ul class="list-links">
+                                <li><a href="#">My Account</a></li>
+                                <li><a href="#">My Wishlist</a></li>
+                                <li><a href="#">Checkout</a></li>
+                                <li><a href="#">Login</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /footer widget -->
+
+                    <div class="clearfix visible-sm visible-xs"></div>
+
+                    <!-- footer widget -->
+                    <div class="col-md-3 col-sm-6 col-xs-6">
+                        <div class="footer">
+                            <h3 class="footer-header">Customer Service</h3>
+                            <ul class="list-links">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Payments</a></li>
+                                <li><a href="#">Reservation</a></li>
+                                <li><a href="#">FAQ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- /footer widget -->
+
+                    <!-- footer subscribe -->
+                    <div class="col-md-3 col-sm-6 col-xs-6" id="StayConnected">
+                        <div class="footer">
+                            <h3 class="footer-header">Stay Connected</h3>
+                            <p>Get to Know about the fresh films just in time it comes to the Theatre</p>
+                            <form>
+                                <div class="form-group">
+                                    <input class="input" placeholder="Enter Email Address">
+                                </div>
+                                <button class="primary-btn">Join NewsLetter</button>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- /footer subscribe -->
+                </div>
+                <!-- /row -->
+                <hr>
+                <!-- row -->
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2 text-center">
+                        <!-- footer copyright -->
+                        <div class="footer-copyright">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This is made <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://www.kdu.ac.lk" target="_blank">KDU</a> -->
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </div>
+                        <!-- /footer copyright -->
+                    </div>
+                </div>
+                <!-- /row -->
+            </div>
+            <!-- /container -->
+        </footer>
+
+        <!-- /FOOTER -->
     </div>
-    <!-- /section -->
+</div>
+<!-- jQuery Plugins -->
+<script th:src="@{/fe/js/jquery.min.js}"></script>
+<script th:src="@{/fe/js/bootstrap.min.js}"></script>
+<script th:src="@{/fe/js/slick.min.js}"></script>
+<script th:src="@{/fe/js/nouislider.min.js}"></script>
+<script th:src="@{/fe/js/jquery.zoom.min.js}"></script>
+<script th:src="@{/fe/js/main.js}"></script>
 
-    <!-- section -->
-
-    <!-- /section -->
-
-    <hr>
-
-    <!-- FOOTER -->
-    <footer class="section section-grey" id="footer">
-        <!-- container -->
-        <div class="container">
-            <!-- row -->
-            <div class="row">
-                <!-- footer widget -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="footer">
-                        <!-- footer logo -->
-                        <div class="footer-logo">
-                            <a class="logo" href="#">
-                                <img alt="" src="./img/logo.png">
-                            </a>
-                        </div>
-                        <!-- /footer logo -->
-
-                        <p>This site is made for the software project of second year by the students of the group
-                            12..</p>
-                        <!-- footer social -->
-                        <ul class="footer-social">
-                            <li><a href="www.facebook.com"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="www.twitter.com"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="www.instagram.com"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="www.googleplus.com"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="www.pinterest.com"><i class="fa fa-pinterest"></i></a></li>
-                        </ul>
-                        <!-- /footer social -->
-                    </div>
-                </div>
-                <!-- /footer widget -->
-
-                <!-- footer widget -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="footer">
-                        <h3 class="footer-header">My Account</h3>
-                        <ul class="list-links">
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">My Wishlist</a></li>
-                            <li><a href="#">Checkout</a></li>
-                            <li><a href="#">Login</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- /footer widget -->
-
-                <div class="clearfix visible-sm visible-xs"></div>
-
-                <!-- footer widget -->
-                <div class="col-md-3 col-sm-6 col-xs-6">
-                    <div class="footer">
-                        <h3 class="footer-header">Customer Service</h3>
-                        <ul class="list-links">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Payments</a></li>
-                            <li><a href="#">Reservation</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- /footer widget -->
-
-                <!-- footer subscribe -->
-                <div class="col-md-3 col-sm-6 col-xs-6" id="StayConnected">
-                    <div class="footer">
-                        <h3 class="footer-header">Stay Connected</h3>
-                        <p>Get to Know about the fresh films just in time it comes to the Theatre</p>
-                        <form>
-                            <div class="form-group">
-                                <input class="input" placeholder="Enter Email Address">
-                            </div>
-                            <button class="primary-btn">Join NewsLetter</button>
-                        </form>
-                    </div>
-                </div>
-                <!-- /footer subscribe -->
-            </div>
-            <!-- /row -->
-            <hr>
-            <!-- row -->
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <!-- footer copyright -->
-                    <div class="footer-copyright">
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        <!-- Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This is made <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://www.kdu.ac.lk" target="_blank">KDU</a> -->
-                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    </div>
-                    <!-- /footer copyright -->
-                </div>
-            </div>
-            <!-- /row -->
-        </div>
-        <!-- /container -->
-    </footer>
-    <!-- /FOOTER -->
-
-    <!-- jQuery Plugins -->
-    <script th:src="@{/fe/js/jquery.min.js}"></script>
-    <script th:src="@{/fe/js/bootstrap.min.js}"></script>
-    <script th:src="@{/fe/js/slick.min.js}"></script>
-    <script th:src="@{/fe/js/nouislider.min.js}"></script>
-    <script th:src="@{/fe/js/jquery.zoom.min.js}"></script>
-    <script th:src="@{/fe/js/main.js}"></script>
-
-    <!-- my js files -->
-    <script>
-        $(document).ready(function () {
-            $('[data-toggle="popover"]').popover();
-        });
-    </script>
-    <script src="index.js"></script>
+<!-- my js files -->
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="popover"]').popover();
+    });
+</script>
+<script src="index.js"></script>
 </body>
 
 </html>
