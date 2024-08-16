@@ -1,5 +1,6 @@
 package com.example.demo.service.impl;
 
+import com.example.demo.model.entity.Payment;
 import com.example.demo.model.entity.Ticket;
 import com.example.demo.model.entity.UserEntity;
 import com.example.demo.repository.TicketRepository;
@@ -8,6 +9,7 @@ import com.example.demo.service.TicketService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -48,5 +50,10 @@ public class TicketServiceImpl implements TicketService {
     public void confirm(Long id) {
         Ticket ticket = getTicket(id);
         ticket.setStatus(Ticket.Status.CONFIRMED);
+        Payment payment = Payment.builder()
+                .ticket(ticket)
+                .price(ticket.getTotalPrice())
+                .paymentDate(LocalDate.now())
+                .build();
     }
 }

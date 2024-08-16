@@ -29,14 +29,6 @@
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
-                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
-                       href="/admin/show-user"> <i class="menu-icon fa fa-user-circle-o"></i>Customers</a>
-                    <ul class="sub-menu children dropdown-menu">
-                        <li><i class="fa fa-search"></i><a href="/admin/show-user"> Search</a></li>
-                        <li><i class="fa fa-trash"></i><a href="/admin/show-user"> Delete</a></li>
-                    </ul>
-                </li>
-                <li class="menu-item-has-children dropdown">
                     <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle"
                        data-toggle="dropdown" th:href="@{/admin/theatre/show-theatre}"> <i
                             class="menu-icon fa fa-video-camera"></i>Theatre</a>
@@ -54,6 +46,20 @@
                         <li><i class="menu-icon fa fa-wrench"></i><a th:href="@{/admin/schedule/add-schedule}">Add</a></li>
                         <li><i class="menu-icon fa fa-search"></i><a th:href="@{/admin/schedule/show-schedule}">Show all Schedule</a></li>
 
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
+                       href="/admin/ticket"> <i class="menu-icon fa fa-user-circle-o"></i>Ticket</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-search"></i><a href="/admin/ticket"> Show all Ticket</a></li>
+                    </ul>
+                </li>
+                <li class="menu-item-has-children dropdown">
+                    <a aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown"
+                       href="/admin/payment"> <i class="menu-icon fa fa-user-circle-o"></i>Payment</a>
+                    <ul class="sub-menu children dropdown-menu">
+                        <li><i class="fa fa-search"></i><a href="/admin/payment"> Show all Payment</a></li>
                     </ul>
                 </li>
                 <li class="menu-item-has-children dropdown">
