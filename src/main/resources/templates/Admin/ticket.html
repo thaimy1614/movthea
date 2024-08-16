@@ -89,27 +89,26 @@
                                 <thead class="thead-dark">
                                 <tr>
                                     <th scope="col">Ticket ID</th>
-                                    <th scope="col">Ticket</th>
+                                    <th scope="col">Schedule ID</th>
                                     <th scope="col">Number Of Seat</th>
-                                    <th scope="col">Ticket ID</th>
                                     <th scope="col">Total Price</th>
                                     <th scope="col">Status</th>
                                     <th scope="col"></th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                <th:block th:each="pay:${paymentList}">
+                                <th:block th:each="tick:${tickets}">
                                     <tr>
-                                        <td th:text="${pay.ticket.user.username}"></td>
-                                        <td th:text="${pay.ticket.id}"></td>
-                                        <td th:text="${pay.price}"></td>
-                                        <th th:text="${pay.paymentDate}"></th>\
-                                        <th>
+                                        <td th:text="${tick.id}"></td>
+                                        <td th:text="${tick.schedule.id}"></td>
+                                        <td th:text="${tick.numberSeats}"></td>
+                                        <td th:text="${tick.totalPrice}"></td>
+                                        <td th:text="${tick.status.name()}"></td>
                                         <td>
-                                            <div class="d-flex flex-column align-items-stretch">
-                                                <a class="btn btn-primary mb-2"
-                                                   th:href="@{'/admin/theatre/update-theatre/'+${t.id}}">Edit</a>
-                                                <a class="btn btn-danger" th:href="@{'/admin/theatre/delete-theatre/'+${t.id}}">Delete</a>
+                                            <div th:if="${tick.status.name().equals('PENDING')}" class="d-flex flex-column align-items-stretch">
+                                                <a class="btn btn-primary" th:href="@{'/admin/ticket/confirm/'+${tick.id}}">CONFIRM</a>
+                                                <a class="btn btn-danger mb-2"
+                                                th:href="@{'/admin/ticket/reject/'+${tick.id}}">REJECT</a>
                                             </div>
                                         </td>
                                     </tr>

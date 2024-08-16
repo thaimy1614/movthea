@@ -155,8 +155,23 @@ public class AdminController {
     }
 
     @GetMapping("/ticket")
-    public String showTicket() {
-        List<Ticket> ticketList = tickS
+    public String showTicket(Model model) {
+        List<Ticket> ticketList = ticketService.getAllTickets();
+        model.addAttribute("tickets", ticketList);
         return "Admin/ticket";
+    }
+
+    @GetMapping("/ticket/reject/{id}")
+    public String showTicketReject(@PathVariable Long id, RedirectAttributes redirectAttributes) {
+        ticketService.reject(id);
+        redirectAttributes.addFlashAttribute("message", "Ticket rejected successfully!");
+        return "redirect:/admin/ticket";
+    }
+
+    @GetMapping("/ticket/confirm/{id}")
+    public String showTicketConfirm(@PathVariable Long id, RedirectAttributes redirectAttributes) {
+        ticketService.confirm(id);
+        redirectAttributes.addFlashAttribute("message", "Ticket confirmed successfully!");
+        return "redirect:/admin/ticket";
     }
 }

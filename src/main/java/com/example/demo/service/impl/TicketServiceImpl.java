@@ -32,4 +32,21 @@ public class TicketServiceImpl implements TicketService {
         }
         return ticketRepository.findAllByUser(user.get());
     }
+
+    @Override
+    public List<Ticket> getAllTickets() {
+        return ticketRepository.findAll();
+    }
+
+    @Override
+    public void reject(Long id) {
+        Ticket ticket = getTicket(id);
+        ticket.setStatus(Ticket.Status.CANCELLED);
+    }
+
+    @Override
+    public void confirm(Long id) {
+        Ticket ticket = getTicket(id);
+        ticket.setStatus(Ticket.Status.CONFIRMED);
+    }
 }

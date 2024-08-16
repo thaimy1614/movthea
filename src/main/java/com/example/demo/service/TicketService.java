@@ -11,4 +11,10 @@ public interface TicketService {
     Ticket getTicket(Long id);
 
     List<Ticket> getAllTicketsByUsername(String username);
+
+    List<Ticket> getAllTickets();
+
+    void reject(Long id);
+
+    void confirm(Long id);
 }
