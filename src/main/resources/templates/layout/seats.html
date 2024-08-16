@@ -192,7 +192,7 @@
     <div id="top-header">
         <div class="container">
             <div class="pull-left">
-                <span>Welcome to Nathan James film Ticketing system</span>
+                <span>Welcome to G5 film Ticketing system</span>
             </div>
             <div class="pull-right">
                 <ul class="header-top-links">
@@ -231,8 +231,8 @@
             <div class="pull-left">
                 <!-- Logo -->
                 <div class="header-logo">
-                    <a class="logo" href="index.html">
-                        <img alt="" src="./img/logo.png">
+                    <a class="logo" th:href="@{/home}">
+                        <img alt="" th:src="@{/fe/img/logo.png}">
                     </a>
                 </div>
                 <!-- /Logo -->
@@ -297,7 +297,7 @@
             </div>
 
             <ul class="custom-menu">
-                <li><a href="#"><i class="fa fa-user-o"></i> My Account</a></li>
+                <li><a th:href="@{/myAccount}"><i class="fa fa-user-o"></i> My Account</a></li>
                 <li><a href="#"><i class="fa fa-heart-o"></i> Future Film Wishlist</a></li>
                 <li><a href="#"><i class="fa fa-check"></i> Checkout</a></li>
                 <li><a th:href="@{/login}"><i class="fa fa-unlock-alt"></i> Login</a></li>
@@ -338,8 +338,8 @@
                 <ul class="menu-list">
                     <li><a th:href="@{/home}">Home</a></li>
                     <li><a th:href="@{/home/movie/select-time}">Buy Ticket</a></li>
-                    <li><a href="index.html">Now Showing</a></li>
-                    <li><a href="index.html">Trending</a></li>
+                    <li><a th:href="@{/home}">Now Showing</a></li>
+                    <li><a th:href="@{/home}">Trending</a></li>
 
                 </ul>
             </div>
@@ -356,10 +356,9 @@
     <div id="breadcrumb">
         <div class="container">
             <ul class="breadcrumb">
-                <li class="active"><a href="index.html">Home</a></li>
+                <li class="active"><a th:href="@{/home}">Home</a></li>
                 <li><a th:href="@{/home/movie/select-time}">Selecting a Date and Time</a></li>
                 <li class="active">Seat Selection</li>
-
             </ul>
         </div>
     </div>
