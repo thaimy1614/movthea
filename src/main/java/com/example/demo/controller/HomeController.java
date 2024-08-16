@@ -43,10 +43,11 @@ public class HomeController {
                 }
             }
         }
+        model.addAttribute("isAuthenticated", isAuthenticated);
+
         List<Movie> nowShowing = movieService.getAllMovies(Movie.MovieStatus.NOW_SHOWING);
         List<Movie> comingSoon = movieService.getAllMovies(Movie.MovieStatus.COMING_SOON);
         List<Movie> trending = movieService.getAllMovies(Movie.MovieStatus.TRENDING);
-        model.addAttribute("isAuthenticated", isAuthenticated);
         model.addAttribute("nowShowing", nowShowing);
         model.addAttribute("comingSoon", comingSoon);
         model.addAttribute("trending", trending);
@@ -92,6 +93,16 @@ public class HomeController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         boolean isAuthenticated = authentication != null && authentication.isAuthenticated() &&
                 !(authentication.getPrincipal() instanceof String && "anonymousUser".equals(authentication.getPrincipal()));
+
+        if (isAuthenticated) {
+            Object principal = authentication.getPrincipal();
+            if (principal instanceof UserDetails userDetails) {
+                model.addAttribute("username", userDetails.getUsername());
+                if (userDetails.getAuthorities().stream().anyMatch(authority -> authority.getAuthority().equals("ADMIN"))) {
+                    return "redirect:/admin";
+                }
+            }
+        }
         model.addAttribute("isAuthenticated", isAuthenticated);
         Optional<Schedule> schedule = scheduleService.getSchedule(scheduleId);
         if(schedule.isEmpty()){

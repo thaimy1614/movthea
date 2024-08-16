@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title>Seat</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Hind:400,700" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" th:href="@{/fe/css/bootstrap.min.css}" type="text/css"/>
+
+    <!-- Slick -->
+    <link rel="stylesheet" th:href="@{/fe/css/slick.css}" type="text/css"/>
+    <link rel="stylesheet" th:href="@{/fe/css/slick-theme.css}" type="text/css"/>
+
+    <!-- nouislider -->
+    <link rel="stylesheet" th:href="@{/fe/css/nouislider.min.css}" type="text/css"/>
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" th:href="@{/fe/css/font-awesome.min.css}">
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" th:href="@{/fe/css/style.css}" type="text/css"/>
+
+    <!-- jQuery -->
+    <script th:src="@{/fe/js/jquery.min.js}"></script>
+    <script th:src="@{/fe/js/bootstrap.min.js}"></script>
+    <script th:src="@{/fe/js/slick.min.js}"></script>
+    <script th:src="@{/fe/js/nouislider.min.js}"></script>
+    <script th:src="@{/fe/js/jquery.zoom.min.js}"></script>
+    <script th:src="@{/fe/js/main.js}"></script>
+</head>
+
+<body>
+<header th:replace="layout/fragmentsUser/Header :: header2"></header>
+
+<!-- NAVIGATION -->
+<div id="navigation">
+    <div class="container">
+        <div id="responsive-nav">
+            <div class="menu-nav">
+                <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
+                <ul class="menu-list">
+                    <li><a th:href="@{/home}">Home</a></li>
+                    <li><a th:href="@{/home/movie/select-time}">Buy Ticket</a></li>
+                    <li><a th:href="@{/home}">Now Showing</a></li>
+                    <li><a th:href="@{/home}">Trending</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /NAVIGATION -->
+
+<div id="grad1">
+    <!-- BREADCRUMB -->
+    <div id="breadcrumb">
+        <div class="container">
+            <ul class="breadcrumb">
+                <li><a th:href="@{/home}">Home</a></li>
+                <li class="active">History</li>
+            </ul>
+        </div>
+    </div>
+    <!-- /BREADCRUMB -->
+
+    <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="col-sm-10">
+            <h2 class="">Movie Booking Details</h2>
+            <table class="table table-bordered table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Movie Name</th>
+                    <th scope="col">Theatre Name</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">Room</th>
+                    <th scope="col">Seat</th>
+                    <th scope="col">QR Code</th>
+                    <th scope="col">Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Inception</td>
+                    <td>Grand Cinema</td>
+                    <td>7:00 PM</td>
+                    <td>Room 5</td>
+                    <td>A10</td>
+                    <td><img src="https://via.placeholder.com/50x50" alt="QR Code"></td>
+                    <td><span class="badge badge-success">Confirmed</span></td>
+                </tr>
+                <tr>
+                    <td>Interstellar</td>
+                    <td>City Mall Theatre</td>
+                    <td>8:30 PM</td>
+                    <td>Room 2</td>
+                    <td>B15</td>
+                    <td><img src="https://via.placeholder.com/50x50" alt="QR Code"></td>
+                    <td><span class="badge badge-warning">Pending</span></td>
+                </tr>
+                <tr>
+                    <td>Avatar</td>
+                    <td>Galaxy Theatre</td>
+                    <td>9:45 PM</td>
+                    <td>Room 1</td>
+                    <td>C22</td>
+                    <td><img src="https://via.placeholder.com/50x50" alt="QR Code"></td>
+                    <td><span class="badge badge-danger">Cancelled</span></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col-sm-1"></div>
+    </div>
+</div>
+
+<script>
+    function buyTicket() {
+        const seatsInput = document.getElementById("seatsInput");
+        const buyTicket = document.getElementById("buyTicket");
+        const fillInput = document.getElementById("fill");
+        seatsInput.value = fillInput.value;
+        buyTicket.submit();
+    }
+
+    function Seat(price) {
+        let count = parseInt(document.getElementById('CalculatedTotal').innerHTML, 10);
+        count = isNaN(count) ? 0 : count;
+        count += parseInt(price, 10);
+        document.getElementById('CalculatedTotal').innerHTML = count.toString();
+    }
+
+    function BookedSeat(price) {
+        let count = parseInt(document.getElementById('CalculatedTotal').innerHTML, 10);
+        count = isNaN(count) ? 0 : count;
+        count -= parseInt(price, 10);
+        document.getElementById('CalculatedTotal').innerHTML = count;
+    }
+
+    function seatToggle(buttonElement) {
+        const price = parseInt(document.getElementById("moviePrice").getAttribute("data-movie-price"));
+        const seatCode = buttonElement.getAttribute('data-seat-code');
+        const fillInput = document.getElementById("fill");
+
+        if (buttonElement.classList.contains("booked-seat")) {
+            buttonElement.classList.remove("booked-seat");
+            buttonElement.classList.add("seat");
+            BookedSeat(price);
+            fillInput.value = fillInput.value.split(',')
+                .filter(item => item !== seatCode)
+                .join(',');
+        } else {
+            buttonElement.classList.remove("seat");
+            buttonElement.classList.add("booked-seat");
+            Seat(price);
+            if (fillInput.value === "") {
+                fillInput.value = seatCode;
+            } else {
+                fillInput.value += "," + seatCode;
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
