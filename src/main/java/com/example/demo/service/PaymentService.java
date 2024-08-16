@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface PaymentService {
     List<Payment> getAllPayment();
+
+    void savePayment(Payment payment);
 }

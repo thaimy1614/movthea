@@ -42,6 +42,6 @@ public class Ticket {
     public enum Status{
         CONFIRMED,
         PENDING,
-        CANCELLED
+        REJECTED
     }
 }

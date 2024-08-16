@@ -3,8 +3,10 @@ package com.example.demo.service.impl;
 import com.example.demo.model.entity.Payment;
 import com.example.demo.model.entity.Ticket;
 import com.example.demo.model.entity.UserEntity;
+import com.example.demo.repository.PaymentRepository;
 import com.example.demo.repository.TicketRepository;
 import com.example.demo.repository.UserRepository;
+import com.example.demo.service.PaymentService;
 import com.example.demo.service.TicketService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -18,6 +20,7 @@ import java.util.Optional;
 public class TicketServiceImpl implements TicketService {
     private final TicketRepository ticketRepository;
     private final UserRepository userRepository;
+    private final PaymentService paymentService;
 
     public void addTicket(Ticket ticket) {
         ticketRepository.save(ticket);
@@ -43,7 +46,7 @@ public class TicketServiceImpl implements TicketService {
     @Override
     public void reject(Long id) {
         Ticket ticket = getTicket(id);
-        ticket.setStatus(Ticket.Status.CANCELLED);
+        ticket.setStatus(Ticket.Status.REJECTED);
     }
 
     @Override
@@ -55,5 +58,6 @@ public class TicketServiceImpl implements TicketService {
                 .price(ticket.getTotalPrice())
                 .paymentDate(LocalDate.now())
                 .build();
+        paymentService.savePayment(payment);
     }
 }
