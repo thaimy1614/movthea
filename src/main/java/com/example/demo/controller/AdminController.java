@@ -1,9 +1,11 @@
 package com.example.demo.controller;
 
 import com.example.demo.model.entity.Movie;
+import com.example.demo.model.entity.Ticket;
 import com.example.demo.model.entity.UserEntity;
 import com.example.demo.service.FileSystemStorageService;
 import com.example.demo.service.MovieService;
+import com.example.demo.service.TicketService;
 import com.example.demo.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -24,6 +26,7 @@ public class AdminController {
     private final UserService userService;
     private final MovieService movieService;
     private final FileSystemStorageService fileService;
+    private final TicketService ticketService;
 
     @GetMapping()
     public String index() {
@@ -149,5 +152,11 @@ public class AdminController {
         movieService.deleteMovie(id);
         redirectAttributes.addAttribute("message", "Movie deleted successfully!");
         return "redirect:/admin/show-all-movies";
+    }
+
+    @GetMapping("/ticket")
+    public String showTicket() {
+        List<Ticket> ticketList = tickS
+        return "Admin/ticket";
     }
 }
