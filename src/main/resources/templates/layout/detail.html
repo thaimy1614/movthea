@@ -32,6 +32,14 @@
     <script th:src="@{/fe/js/nouislider.min.js}"></script>
     <script th:src="@{/fe/js/jquery.zoom.min.js}"></script>
     <script th:src="@{/fe/js/main.js}"></script>
+    <style type="text/css">
+        td, th {
+            vertical-align: middle;
+            text-align: center; /* Optional: Center horizontally */
+            height: 100%; /* Example height */
+            line-height: 100%; /* Same as the height */
+        }
+    </style>
 </head>
 
 <body>
@@ -70,49 +78,45 @@
     <div class="row">
         <div class="col-sm-1"></div>
         <div class="col-sm-10">
+            <br>
             <h2 class="">Movie Booking Details</h2>
             <table class="table table-bordered table-hover">
                 <thead class="thead-dark">
                 <tr>
                     <th scope="col">Movie Name</th>
                     <th scope="col">Theatre Name</th>
+                    <th scope="col">Location</th>
                     <th scope="col">Time</th>
                     <th scope="col">Room</th>
                     <th scope="col">Seat</th>
+                    <th scope="col">Total Price</th>
                     <th scope="col">QR Code</th>
                     <th scope="col">Status</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td>Inception</td>
-                    <td>Grand Cinema</td>
-                    <td>7:00 PM</td>
-                    <td>Room 5</td>
-                    <td>A10</td>
-                    <td><img src="https://via.placeholder.com/50x50" alt="QR Code"></td>
-                    <td><span class="badge badge-success">Confirmed</span></td>
-                </tr>
-                <tr>
-                    <td>Interstellar</td>
-                    <td>City Mall Theatre</td>
-                    <td>8:30 PM</td>
-                    <td>Room 2</td>
-                    <td>B15</td>
-                    <td><img src="https://via.placeholder.com/50x50" alt="QR Code"></td>
-                    <td><span class="badge badge-warning">Pending</span></td>
-                </tr>
-                <tr>
-                    <td>Avatar</td>
-                    <td>Galaxy Theatre</td>
-                    <td>9:45 PM</td>
-                    <td>Room 1</td>
-                    <td>C22</td>
-                    <td><img src="https://via.placeholder.com/50x50" alt="QR Code"></td>
-                    <td><span class="badge badge-danger">Cancelled</span></td>
-                </tr>
+                <th:block th:each="tick : ${tickets}">
+                    <tr>
+                        <td th:text="${tick.schedule.movie.title}"></td>
+                        <td th:text="${tick.schedule.theatre.name}"></td>
+                        <td th:text="${tick.schedule.theatre.location}"></td>
+                        <td th:text="${tick.schedule.startAt} + ' - ' + ${tick.schedule.slot.startTime}"></td>
+                        <td th:text="${tick.schedule.room.name}"></td>
+                        <td th:text="${tick.seats}"></td>
+                        <td th:text="${tick.totalPrice}"></td>
+                        <td>
+                            <img style="width: 100px; height: 100px;" th:src="@{/fe/img/qr.png}" alt="QR Code">
+                        </td>
+                        <td>
+                    <span th:classappend="${tick.status.name() == 'CONFIRMED' ? 'badge badge-success' : (tick.status.name() == 'CANCELLED' ? 'badge badge-danger' : 'badge badge-warning')}"
+                          th:text="${tick.status.name()}"></span>
+                        </td>
+
+                    </tr>
+                </th:block>
                 </tbody>
             </table>
+
 
         </div>
         <div class="col-sm-1"></div>

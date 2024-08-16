@@ -26,9 +26,22 @@ public class Ticket {
     @Column(name = "number_seats")
     private Integer numberSeats;
 
+    private Long totalPrice;
+
+    private String seats;
+
+    @Enumerated(EnumType.STRING)
+    private Status status;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")
     private UserEntity user;
     @CreationTimestamp
     private LocalDateTime purchaseDate;
+
+    public enum Status{
+        CONFIRMED,
+        PENDING,
+        CANCELLED
+    }
 }
