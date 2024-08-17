@@ -171,7 +171,7 @@
                 <!-- section-title -->
                 <div class="col-md-12">
                     <div class="section-title">
-                        <h2 class="title">Now Showing</h2>
+                        <h2 class="title" id="nowShowing">Now Showing</h2>
                         <div class="pull-right">
                             <div class="product-slick-dots-1 custom-dots"></div>
                         </div>
@@ -181,9 +181,7 @@
 
 
                 <!-- Product Slick -->
-                <div class="col-md-9 col-sm-6 col-xs-6">
-                    <div class="row">
-                        <div class="product-slick" id="product-slick-1">
+                <div class="col-md-3 col-sm-6 col-xs-6">
                             <th:block th:each="now:${nowShowing}">
                                 <!-- Product Single -->
                                 <div class="product product-single">
@@ -227,8 +225,7 @@
                                 </div>
                                 <!-- /Product Single -->
                             </th:block>
-                        </div>
-                    </div>
+
                 </div>
                 <!-- /Product Slick -->
             </div>
@@ -255,8 +252,8 @@
             <div class="row">
                 <!-- section title -->
                 <div class="col-md-12">
-                    <div class="section-title">
-                        <h2 class="title">Cooming soon</h2>
+                    <div class="section-title" id="Comingsoon">
+                        <h2 class="title">Coming Soon</h2>
                     </div>
                 </div>
                 <!-- section title -->
@@ -312,8 +309,8 @@
             <div class="row">
                 <!-- section title -->
                 <div class="col-md-12">
-                    <div class="section-title">
-                        <h2 class="title">Trending..</h2>
+                    <div class="section-title" id="Trending">
+                        <h2 class="title">Trending</h2>
                     </div>
                 </div>
                 <!-- section title -->

@@ -45,24 +45,10 @@
 
 <!-- NAVIGATION -->
 <div th:replace="layout/fragmentsUser/DivNavigation :: Navigation"></div>
-<!-- menu nav -->
-<div class="menu-nav">
-    <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
-    <ul class="menu-list">
-        <li><a href="#">Home</a></li>
-        <li><a th:href="@{/home#now Showing}">Now Showing</a></li>
-        <li><a href="#Reservations">Reservations</a></li>
-        <li><a th:href="@{/home#Trending}">Trending</a></li>
-        <li><a href="index.html">Events</a></li>
-        <li><a href="index.html">Seminars</a></li>
-        <li><a href="index.html">Offers</a></li>
 
-    </ul>
+
 </div>
-<!-- menu nav -->
-</div>
-</div>
-<!-- /container -->
+
 </div>
 <!-- /NAVIGATION -->
 
@@ -100,7 +86,7 @@
                         </div>
                         <h2 class="product-name" th:text="${movie.title}"></h2>
                         <h3 class="product-price" th:text="${movie.price}">
-<!--                            <del class="product-old-price">$45.00</del>-->
+                            <!--                            <del class="product-old-price">$45.00</del>-->
                         </h3>
                         <div>
                             <div class="product-rating">
@@ -112,12 +98,16 @@
                             </div>
                             <a th:href="@{/home/movie/${movie.id}/review}">3 Review(s) / Add Review</a>
                         </div>
-                        <p><strong>Genre:</strong> <th:block th:text="${movie.genre}"></th:block> </p>
-                        <p><strong>Duration:</strong> <th:block th:text="${movie.duration}+' minutes'"></th:block> </p>
+                        <p><strong>Genre:</strong>
+                            <th:block th:text="${movie.genre}"></th:block>
+                        </p>
+                        <p><strong>Duration:</strong>
+                            <th:block th:text="${movie.duration}+' minutes'"></th:block>
+                        </p>
                         <p th:text="${movie.description}"></p>
 
                         <div class="product-btns">
-                            <a class="button primary-btn"><i class="fa fa-ticket"></i> Buy Ticket Now
+                            <a class="button primary-btn" th:href="@{'/home/movie/'+${movie.id}+'/select-time'}"><i class="fa fa-ticket"></i> Buy Ticket Now
                             </a>
                             <div class="pull-right">
                                 <button class="main-btn icon-btn"><i class="fa fa-heart"></i></button>
@@ -131,7 +121,7 @@
                     <div class="product-tab">
                         <ul class="tab-nav">
                             <li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
-<!--                            <li><a data-toggle="tab" href="#tab2">Reviews (3)</a></li>-->
+                            <!--                            <li><a data-toggle="tab" href="#tab2">Reviews (3)</a></li>-->
                         </ul>
                         <div class="tab-content">
                             <div class="tab-pane fade in active" id="tab1">
@@ -253,8 +243,6 @@
                                         </form>
                                     </div>
                                 </div>
-
-
                             </div>
                         </div>
                     </div>
@@ -286,8 +274,7 @@
                     </div>
                     <!-- /footer logo -->
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna</p>
+                    <p></p>
 
                     <!-- footer social -->
                     <ul class="footer-social">
@@ -337,12 +324,12 @@
             <div class="col-md-3 col-sm-6 col-xs-6">
                 <div class="footer">
                     <h3 class="footer-header">Stay Connected</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor.</p>
+                    <p></p>
                     <form>
                         <div class="form-group">
                             <input class="input" placeholder="Enter Email Address">
                         </div>
-                        <button class="primary-btn">Join Newslatter</button>
+                        <button class="primary-btn">G5</button>
                     </form>
                 </div>
             </div>

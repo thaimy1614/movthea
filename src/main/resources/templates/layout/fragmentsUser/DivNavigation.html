@@ -10,12 +10,9 @@
                 <span class="menu-header">Menu <i class="fa fa-bars"></i></span>
                 <ul class="menu-list">
                     <li><a href="/home">Home</a></li>
-                    <li><a href="#now Showing">Now Showing</a></li>
-                    <li><a href="index.html">Coming soon</a></li>
-                    <li><a href="/buyTicket">Reservations</a></li>
-                    <li><a href="#Trending">Trending</a></li>
-
-
+                    <li><a th:href="@{/home#nowShowing}">Now Showing</a></li>
+                    <li><a th:href="@{/home#Comingsoon}">Coming soon</a></li>
+                    <li><a th:href="@{/home#Trending}">Trending</a></li>
                 </ul>
             </div>
             <!-- menu nav -->
