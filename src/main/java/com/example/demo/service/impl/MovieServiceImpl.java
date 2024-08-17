@@ -41,7 +41,7 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public List<Movie> searchMovie(String keyword) {
-        return List.of();
+        return movieRepository.findAllByTitleContainingOrMainActorContainingOrMainActressContaining(keyword, keyword, keyword);
     }
 
     @Override

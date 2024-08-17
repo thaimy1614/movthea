@@ -44,21 +44,13 @@
                     </a>
                 </div>
                 <!-- /Logo -->
-
-                <!-- Search -->
-                <div class="header-search">
-                    <form>
-                        <input class="input search-input" placeholder="Enter your keyword" type="text">
-                        <select class="input search-categories">
-                            <option value="0">Film Categories</option>
-                            <option value="1">All Movies</option>
-                            <option value="1">Children Movies</option>
-                            <option value="1">Elders Movies</option>
-                        </select>
-                        <button class="search-btn"><i class="fa fa-search"></i></button>
+                <div class="search">
+                    <form id="searchForm">
+                        <input id="searchInput" class="input search-input" placeholder="Enter your keyword" type="text">
+                        <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
-                <!-- /Search -->
+                <div id="searchResults" class="search-results"></div>
             </div>
             <div class="pull-right">
                 <ul class="header-btns">
@@ -98,4 +90,68 @@
         <!-- /header -->
     </div>
     <!-- /container -->
+    <style>
+        .search-results {
+            position: absolute;
+            background-color: white;
+            width: 100%;
+            border: 1px solid #ccc;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
+
+        .search-results a {
+            padding: 10px;
+            display: block;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .search-results a:hover {
+            background-color: #f0f0f0;
+        }
+
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#searchInput').on('keyup', function (e) {
+                e.preventDefault();
+                let keyword = $('#searchInput').val();
+                console.log(keyword)
+                if (keyword) {
+                    $.ajax({
+                        url: '/home/search',
+                        method: 'GET',
+                        data: { keyword: keyword },
+                        dataType: 'json', // Ensure you're expecting JSON data
+                        success: function (data) {
+                            console.log(data)
+                            let resultsContainer = $('#searchResults');
+                            resultsContainer.empty(); // Clear previous results
+
+                            if (Array.isArray(data) && data.length > 0) {
+                                $.each(data, function (index, movie) {
+                                    let movieLink = `
+                                        <a href="/home/movie/${movie.id}" class="list-group-item list-group-item-action">
+                                            ${movie.title}
+
+                                        </a>
+                                `;
+                                    resultsContainer.append(movieLink);
+                                });
+                            } else {
+                                resultsContainer.append('<p>No movies found</p>');
+                            }
+                        },
+                        error: function (err) {
+                            console.log(this.url)
+                            console.error('Error fetching movies:', err);
+                        }
+                    });
+                }
+            });
+        });
+
+    </script>
 </header>

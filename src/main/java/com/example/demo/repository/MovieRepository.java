@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface MovieRepository extends JpaRepository<Movie, Long> {
     List<Movie> findAllByStatus(Movie.MovieStatus status);
+
+    List<Movie> findAllByTitleContainingOrMainActorContainingOrMainActressContaining(String title, String actor, String actress);
 }
