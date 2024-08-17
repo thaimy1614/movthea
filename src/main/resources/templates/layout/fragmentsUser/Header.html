@@ -3,7 +3,7 @@
     <div id="top-header">
         <div class="container">
             <div class="pull-left">
-                <span>Welcome to Nathan James film Ticketing system</span>
+                <span>G5</span>
             </div>
             <div class="pull-right">
                 <ul class="header-top-links">
@@ -11,7 +11,8 @@
                     <li><a href="#">Advertise</a></li>
                     <li><a href="#">FAQ</a></li>
                     <li class="dropdown default-dropdown">
-                        <a aria-expanded="true" class="dropdown-toggle" data-toggle="dropdown">ENG <i class="fa fa-caret-down"></i></a>
+                        <a aria-expanded="true" class="dropdown-toggle" data-toggle="dropdown">ENG <i
+                                class="fa fa-caret-down"></i></a>
                         <ul class="custom-menu">
                             <li><a href="#">English (ENG)</a></li>
                             <li><a href="#">German (DE)</a></li>
@@ -20,7 +21,8 @@
                         </ul>
                     </li>
                     <li class="dropdown default-dropdown">
-                        <a aria-expanded="true" class="dropdown-toggle" data-toggle="dropdown">LKR <i class="fa fa-caret-down"></i></a>
+                        <a aria-expanded="true" class="dropdown-toggle" data-toggle="dropdown">LKR <i
+                                class="fa fa-caret-down"></i></a>
                         <ul class="custom-menu">
                             <li><a href="#">LKR (RS)</a></li>
                             <li><a href="#">EUR (€)</a></li>
@@ -44,13 +46,12 @@
                     </a>
                 </div>
                 <!-- /Logo -->
-                <div class="search">
+                <div class="header-search">
                     <form id="searchForm">
                         <input id="searchInput" class="input search-input" placeholder="Enter your keyword" type="text">
-                        <button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
                     </form>
+                    <div id="searchResults" class="search-results" hidden></div>
                 </div>
-                <div id="searchResults" class="search-results"></div>
             </div>
             <div class="pull-right">
                 <ul class="header-btns">
@@ -93,63 +94,119 @@
     <style>
         .search-results {
             position: absolute;
-            background-color: white;
-            width: 100%;
+            background-color: #ffffff;
+            width: 500px;
             border: 1px solid #ccc;
-            max-height: 200px;
+            max-height: 300px; /* Increase height to show more results */
             overflow-y: auto;
             z-index: 1000;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 4px;
         }
 
         .search-results a {
+            display: flex;
             padding: 10px;
-            display: block;
-            color: #333;
+            align-items: center;
+            border-bottom: 1px solid #f0f0f0;
             text-decoration: none;
+            color: #333;
+        }
+
+        .search-results a:last-child {
+            border-bottom: none; /* Remove border from the last item */
+        }
+
+        .search-results img {
+            width: 60px; /* Adjust size of movie image */
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 15px;
+        }
+
+        .search-results .movie-info {
+            flex: 1; /* Allow movie info to take up remaining space */
+        }
+
+        .search-results .movie-info span {
+            display: block;
+            font-size: 14px;
+        }
+
+        .search-results .movie-info .title {
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .search-results .movie-info .genre,
+        .search-results .movie-info .theatre,
+        .search-results .movie-info .duration {
+            color: #777;
         }
 
         .search-results a:hover {
             background-color: #f0f0f0;
         }
 
+
     </style>
+
+
     <script type="text/javascript">
         $(document).ready(function () {
-            $('#searchInput').on('keyup', function (e) {
-                e.preventDefault();
+            function fetchAndShowResults() {
                 let keyword = $('#searchInput').val();
-                console.log(keyword)
                 if (keyword) {
                     $.ajax({
                         url: '/home/search',
                         method: 'GET',
                         data: { keyword: keyword },
-                        dataType: 'json', // Ensure you're expecting JSON data
+                        dataType: 'json',
                         success: function (data) {
-                            console.log(data)
                             let resultsContainer = $('#searchResults');
-                            resultsContainer.empty(); // Clear previous results
+                            resultsContainer.empty();
 
                             if (Array.isArray(data) && data.length > 0) {
+                                resultsContainer.removeAttr('hidden');
+
                                 $.each(data, function (index, movie) {
                                     let movieLink = `
-                                        <a href="/home/movie/${movie.id}" class="list-group-item list-group-item-action">
-                                            ${movie.title}
-
-                                        </a>
-                                `;
+                                <a href="/home/movie/${movie.id}" class="list-group-item list-group-item-action">
+                                    <img src="${'/uploads/' + movie.imageLink}" alt="${movie.title}">
+                                    <div class="movie-info">
+                                        <span class="title">${movie.title}</span>
+                                        <span class="genre">${'Genre: ' + movie.genre}</span>
+                                        <span class="theatre">${'Theatre: '+ movie.theatre}</span>
+                                        <span class="duration">${movie.duration + ' minutes'}</span>
+                                    </div>
+                                </a>
+                            `;
                                     resultsContainer.append(movieLink);
                                 });
                             } else {
-                                resultsContainer.append('<p>No movies found</p>');
+                                resultsContainer.append('<p class="text-info">No movies found</p>');
                             }
                         },
                         error: function (err) {
-                            console.log(this.url)
                             console.error('Error fetching movies:', err);
                         }
                     });
                 }
+            }
+
+            $('#searchInput').on('keyup', function (e) {
+                e.preventDefault();
+                fetchAndShowResults();
+            });
+            $('#searchInput').on('blur', function () {
+                $('#searchResults').attr('hidden', 'hidden');
+            });
+            $('#searchInput').on('focus', function () {
+                fetchAndShowResults();
+            });
+            $('#searchResults').on('mousedown', function (e) {
+                e.preventDefault();
             });
         });
 
