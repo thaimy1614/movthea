@@ -83,6 +83,10 @@ public class HomeController {
 
     @GetMapping("/home/movie/select-time")
     public String selectTime(Model model) {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        boolean isAuthenticated = authentication != null && authentication.isAuthenticated() &&
+                !(authentication.getPrincipal() instanceof String && "anonymousUser".equals(authentication.getPrincipal()));
+        model.addAttribute("isAuthenticated", isAuthenticated);
         List<Schedule> schedule = scheduleService.getSchedulesByStartAtFromNow();
         model.addAttribute("schedule", schedule);
         return "layout/Event_Schedule_list";
